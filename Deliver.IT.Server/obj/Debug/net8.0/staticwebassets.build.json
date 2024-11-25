@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "BOwo5KB56SURyiUyKnukDC1qZmyCXtY84Is4afX5Vds=",
+  "Source": "Deliver.IT.Server",
+  "BasePath": "_content/Deliver.IT.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\user\\source\\repos\\Deliver.IT\\deliver.it.client\\deliver.it.client.esproj",
+      "Version": 2,
+      "Source": "deliver.it.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
