@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:59038",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\user\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\..\\deliver.it.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
