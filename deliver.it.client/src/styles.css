@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #ed9552;
+  --accent-color: #f4d136;
+  --warn-color: #1139a5;
+}
+
+mat-toolbar {
+  background-color: var(--primary-color);
+  margin: 2px;
+}
+
+button.mat-button {
+  color: var(--accent-color);
+}
+button.mat-button:hover{
+  color: #e3c61e;
+}

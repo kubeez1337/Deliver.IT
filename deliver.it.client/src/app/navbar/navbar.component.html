@@ -1,10 +1,22 @@
-<nav>
-  <!-- <button mat-button (click)="onClick">Action</button> -->
+<!-- <mat-toolbar color="primary">
+    <span>Title</span>
+</mat-toolbar>
+   <button mat-button (click)="onClick">Action</button>
       <button mat-button>Basic</button>
       <a class="home" routerLink="info-page">Domov</a>
       <a  routerLink="about-page">O projekte</a>
       <a  routerLink="login-page">Prihlásenie</a>
       <a  routerLink="orders-page">Objednávky</a>
 
-</nav>
+<router-outlet></router-outlet> -->
+
+<mat-toolbar color="">
+  <a mat-button routerLink="info-page">Domov</a>
+
+  <a mat-button routerLink="about-page">O projekte</a>
+  <a mat-button routerLink="login-page">Prihlásenie</a>
+  <a mat-button routerLink="orders-page">Objednávky</a>
+  <span class="right-spacer"></span>
+  <h1>Deliver.IT</h1>
+</mat-toolbar>
 <router-outlet></router-outlet>

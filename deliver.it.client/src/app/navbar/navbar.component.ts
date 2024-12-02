@@ -1,5 +1,4 @@
 import { Component, NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+toggleSidenav() {
+//throw new Error('Method not implemented.');
+}
 
 }
