@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -113,8 +117,25 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\.gitignore",
+              "RelativeDocumentMoniker": "deliver.it.client\\.gitignore",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\.gitignore",
+              "RelativeToolTip": "deliver.it.client\\.gitignore",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG/SURBVDhPrZRNTgIxFMerDIaEhHgU97JxwUKGGaNeQJdyCY0XUBDWGhg4AB\u002BuvQk7OQCRFTP1fXWmMxUMCT94ee177eu/LVQdFK31kTSJ0WgEIa0SMJ2A6QTHcF9iicQqlYpa/6zv2\u002B2HD5nuEkWR/l4udRzHZBtjGzFor1YrPR6P9WKx0MNhpN96vTuZThyLJ1AJLK/iJFFxjBanBsXIozqkWq2qev1c1Wq19063e0ZBwBNP4JaQ6WRC/i8ajQb5wWBAvnxyghpOqQPkC8L5IEEQKjgxaqOTFsCd65tb6nmlkur1\u002BxwXCgX58KfT7QptwvCK52wrSLcJvtUKOABkQ6HFXwbGsmMRBkchzpjNphLZDSrEn5G1qnsp\u002BPEtheloXouRnXDTTjhb5tXmeyg0IgzuliHp\u002By0OANbiOCDXp1IYo3mMUxBT8/mMA/8QhGH6ZzC4Zwi5ZqoQB9M3h62I/\u002B/SAQpniBmtPvdQyGeYUdgyX8pl05eIBSxmTzQYEYbc42AuJQWLGJNQEcrJG4A4BTHneSW2sqfKOyybkxXMPbAvrx3IsyLzkPJFmUcWYtDntjG6lIvnp8cvKXNIlPoFvstpJRlQPIAAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-12-03T23:15:10.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "login-page.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.html",
@@ -122,12 +143,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.html",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-03T19:15:25.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T19:15:25.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Program.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Program.cs",
@@ -140,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Deliver.IT.Server.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
@@ -148,12 +168,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-03T17:26:15.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T17:26:15.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DeliverItDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Migrations\\DeliverItDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Migrations\\DeliverItDbContextModelSnapshot.cs",
@@ -161,12 +180,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Migrations\\DeliverItDbContextModelSnapshot.cs",
               "ViewState": "AgIAADYBAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T20:58:31.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T20:58:31.795Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\User.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\User.cs",
@@ -174,12 +192,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\User.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T10:20:23.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T10:20:23.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "login-page.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
@@ -187,12 +204,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-03T21:49:34.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T21:49:34.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "login-page.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.css",
@@ -200,12 +216,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-03T21:57:44.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T21:57:44.652Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\AccountController.cs",
@@ -213,12 +228,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Controllers\\AccountController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAA3wDYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T19:06:42.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T19:06:42.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\WeatherForecastController.cs",
@@ -230,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "DeliverItDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\DeliverItDbContext.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\DeliverItDbContext.cs",
@@ -242,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "20241203203549_IdentityDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Migrations\\20241203203549_IdentityDbContext.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Migrations\\20241203203549_IdentityDbContext.cs",
@@ -254,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "app.module.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.module.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.module.ts",
@@ -266,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "registration.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration\\registration.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\registration\\registration.component.css",
@@ -278,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "app.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.ts",
@@ -290,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\WeatherForecast.cs",
@@ -302,19 +316,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Deliver.IT.Server",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "RelativeToolTip": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-03T18:24:56.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T18:24:56.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\styles.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\styles.css",
@@ -326,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "navbar.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.html",
@@ -338,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "app.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.css",
@@ -350,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "app.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.html",
@@ -362,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "navbar.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.spec.ts",
@@ -374,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "app-routing.module.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app-routing.module.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app-routing.module.ts",
@@ -386,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "routes.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\routes.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\routes.ts",
@@ -398,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "about.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\about.html",
               "RelativeDocumentMoniker": "about.html",
@@ -420,7 +433,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "registration.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration\\registration.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\registration\\registration.component.html",
