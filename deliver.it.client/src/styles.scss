@@ -1,6 +1,5 @@
 @use '@angular/material/theming' as mat;
 
-// Define your custom them
 $primary-palette: mat.define-palette(mat.$indigo-palette);
 $accent-palette: mat.define-palette(mat.$pink-palette);
 $warn-palette: mat.define-palette(mat.$red-palette);
@@ -13,5 +12,4 @@ $theme: mat.define-light-theme((
   ),
 ));
 
-// Apply the theme
 @include mat.all-component-themes($theme);

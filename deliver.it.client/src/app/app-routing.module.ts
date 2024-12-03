@@ -6,6 +6,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 
 const routes: Routes = [
+  { path: '', component: InfoPageComponent},
   { path: 'about-page', component: AboutPageComponent },
   { path: 'info-page', component: InfoPageComponent },
   { path: 'login-page', component: LoginPageComponent },

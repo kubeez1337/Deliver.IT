@@ -1,18 +1,17 @@
 mat-toolbar {
   background-color: var(--primary-color);
   color: var(--text-color);
+/*  margin: auto;*/
 }
 
-/* Example for buttons */
-button.mat-button {
-  background-color: var(--accent-color);
-  color: rgb(255, 140, 52);
-  outline: 1px;
-}
 
 button.mat-button:hover {
-  background-color: var(--warn-color);
+    color: #e3c61e;
 }
+/*mat-button{
+
+}*/
+
 .right-spacer{
   flex: 1 1 auto;
 
