@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Deliver.IT.Server.Migrations
 {
     [DbContext(typeof(DeliverItDbContext))]
-    [Migration("20241203180858_CreateIdentitySchema")]
-    partial class CreateIdentitySchema
+    [Migration("20241203203549_IdentityDbContext")]
+    partial class IdentityDbContext
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,6 +81,11 @@ namespace Deliver.IT.Server.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
@@ -118,6 +123,7 @@ namespace Deliver.IT.Server.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
 
@@ -131,6 +137,10 @@ namespace Deliver.IT.Server.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator().HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -210,6 +220,72 @@ namespace Deliver.IT.Server.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.User", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserRole")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasDiscriminator().HasValue("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "122e3272-1cdb-458b-bbba-9094b3c92b8c",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "4e10a237-2905-492e-8485-137df3c1ce1f",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "7cec504a-d696-4221-ac28-dcadf5ca1a04",
+                            TwoFactorEnabled = false,
+                            UserName = "admin",
+                            FirstName = "Admin",
+                            LastName = "Adminovic",
+                            UserRole = "Admin"
+                        },
+                        new
+                        {
+                            Id = "b5234704-6456-4d29-a946-32989d0b90c1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "521490ce-62c1-4ca8-8ff8-251120dd3701",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "a6ea78f2-be05-4db2-9c50-aa232442f06b",
+                            TwoFactorEnabled = false,
+                            UserName = "cigorigo",
+                            FirstName = "Peter",
+                            LastName = "Facka",
+                            UserRole = "Rozvozca"
+                        },
+                        new
+                        {
+                            Id = "a9e2e6b5-d638-4118-8b1c-9b8a2f5babad",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "52b6d6f3-7e78-4b0c-8838-76acef9029ef",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "edc65e0d-bacd-4f22-982b-3880ffed1d16",
+                            TwoFactorEnabled = false,
+                            UserName = "romanek",
+                            FirstName = "Roman",
+                            LastName = "Hladny",
+                            UserRole = "Zakaznik"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

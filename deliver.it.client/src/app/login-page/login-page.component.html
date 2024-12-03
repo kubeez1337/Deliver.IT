@@ -1,1 +1,30 @@
 <p>login-page works!</p>
+<div>
+
+  <div class="normalized-field">
+    <h3>Zadaj svoje pouzivatelske meno a heslo</h3>
+        <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+  <div class="normalized-field">
+    <mat-form-field>
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'" />
+      <button mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()">
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <div>
+      <button mat-stroked-button onclick="tryLogin()">Login</button>
+
+    </div>
+  </div>
+  
+  <app-registration></app-registration>
+</div>

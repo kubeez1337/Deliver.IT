@@ -15,6 +15,8 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { RegistrationComponent } from './registration/registration.component';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +25,11 @@ import { MatListModule } from '@angular/material/list';
     LoginPageComponent,
     OrdersPageComponent,
     NavbarComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule
+    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule
   ],
   providers: [
     provideAnimationsAsync()

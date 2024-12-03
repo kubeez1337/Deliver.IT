@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateIdentitySchema : Migration
+    public partial class IdentityDbContext : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,7 +32,11 @@ namespace Deliver.IT.Server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    Discriminator = table.Column<string>(type: "TEXT", maxLength: 13, nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
+                    LastName = table.Column<string>(type: "TEXT", nullable: true),
+                    UserRole = table.Column<string>(type: "TEXT", nullable: true),
+                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -154,6 +160,16 @@ namespace Deliver.IT.Server.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
+                values: new object[,]
+                {
+                    { "122e3272-1cdb-458b-bbba-9094b3c92b8c", 0, "4e10a237-2905-492e-8485-137df3c1ce1f", "User", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "7cec504a-d696-4221-ac28-dcadf5ca1a04", false, "admin", "Admin" },
+                    { "a9e2e6b5-d638-4118-8b1c-9b8a2f5babad", 0, "52b6d6f3-7e78-4b0c-8838-76acef9029ef", "User", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "edc65e0d-bacd-4f22-982b-3880ffed1d16", false, "romanek", "Zakaznik" },
+                    { "b5234704-6456-4d29-a946-32989d0b90c1", 0, "521490ce-62c1-4ca8-8ff8-251120dd3701", "User", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "a6ea78f2-be05-4db2-9c50-aa232442f06b", false, "cigorigo", "Rozvozca" }
                 });
 
             migrationBuilder.CreateIndex(
