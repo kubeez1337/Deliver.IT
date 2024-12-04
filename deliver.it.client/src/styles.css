@@ -4,7 +4,19 @@
   --warn-color: #1139a5;
   
 }
+h2 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
 
+h3 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+h1 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+p {
+  font-family: 'Trebuchet MS', sans-serif;
+}
 
 /*mat-toolbar {
   background-color: var(--primary-color);

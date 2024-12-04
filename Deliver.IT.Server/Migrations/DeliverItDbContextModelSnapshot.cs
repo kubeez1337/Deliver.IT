@@ -17,6 +17,93 @@ namespace Deliver.IT.Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
 
+            modelBuilder.Entity("Deliver.IT.Server.Food", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Foods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "McRoyal",
+                            Price = 20m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Banan",
+                            Price = 1m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Adventny kalendar",
+                            Price = 2m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Cokoladovy Mikulas",
+                            Price = 1m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Pivo",
+                            Price = 1m
+                        });
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CustomerAddress")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeliveryGuy")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.OrderFood", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("FoodId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderId", "FoodId");
+
+                    b.HasIndex("FoodId");
+
+                    b.ToTable("OrderFoods");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -219,7 +306,7 @@ namespace Deliver.IT.Server.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Deliver.IT.Server.User", b =>
+            modelBuilder.Entity("Deliver.IT.Server.UserClass", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -235,54 +322,69 @@ namespace Deliver.IT.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasDiscriminator().HasValue("User");
+                    b.HasDiscriminator().HasValue("UserClass");
 
                     b.HasData(
                         new
                         {
-                            Id = "122e3272-1cdb-458b-bbba-9094b3c92b8c",
+                            Id = "e0f39b03-ae80-4570-969c-8e361d8efeb1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4e10a237-2905-492e-8485-137df3c1ce1f",
+                            ConcurrencyStamp = "1a4c5503-429f-4822-b6b9-d284e51dd618",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7cec504a-d696-4221-ac28-dcadf5ca1a04",
+                            SecurityStamp = "646a3f02-9216-4551-afb7-a9198e385e3a",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             FirstName = "Admin",
                             LastName = "Adminovic",
-                            UserRole = "Admin"
+                            UserRole = "1"
                         },
                         new
                         {
-                            Id = "b5234704-6456-4d29-a946-32989d0b90c1",
+                            Id = "34688722-f3ad-43bb-ba14-8f71200055ce",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "521490ce-62c1-4ca8-8ff8-251120dd3701",
+                            ConcurrencyStamp = "fe429ae0-9738-4f89-ad52-75f6d1478fb4",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a6ea78f2-be05-4db2-9c50-aa232442f06b",
+                            SecurityStamp = "25971b67-f0fb-4a56-b468-126ae2a7e88d",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             FirstName = "Peter",
                             LastName = "Facka",
-                            UserRole = "Rozvozca"
+                            UserRole = "2"
                         },
                         new
                         {
-                            Id = "a9e2e6b5-d638-4118-8b1c-9b8a2f5babad",
+                            Id = "16df99bc-eb23-4e3f-890b-ab3d2048f2f9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "52b6d6f3-7e78-4b0c-8838-76acef9029ef",
+                            ConcurrencyStamp = "edb0f3ae-76a3-4f93-9d3e-953a68f8c8d5",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "edc65e0d-bacd-4f22-982b-3880ffed1d16",
+                            SecurityStamp = "3c4747fd-6f7c-47aa-8b4b-12cf895f7718",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             FirstName = "Roman",
                             LastName = "Hladny",
-                            UserRole = "Zakaznik"
+                            UserRole = "0"
                         });
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.OrderFood", b =>
+                {
+                    b.HasOne("Deliver.IT.Server.Food", null)
+                        .WithMany("OrderFoods")
+                        .HasForeignKey("FoodId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Deliver.IT.Server.Order", null)
+                        .WithMany("OrderFoods")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -334,6 +436,16 @@ namespace Deliver.IT.Server.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Food", b =>
+                {
+                    b.Navigation("OrderFoods");
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Order", b =>
+                {
+                    b.Navigation("OrderFoods");
                 });
 #pragma warning restore 612, 618
         }

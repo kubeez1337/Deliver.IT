@@ -1,0 +1,54 @@
+<div class="order-container">
+  <h2>Vytvorenie objednávky</h2>
+  <form [formGroup]="orderForm" (ngSubmit)="submitOrder()" class="order-form">
+    <div class="customer-details">
+      <mat-form-field appearance="outline">
+        <mat-label>Meno zákazníka</mat-label>
+        <input matInput formControlName="customerName" placeholder="Zadajte meno" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Adresa zákazníka</mat-label>
+        <input matInput formControlName="customerAddress" placeholder="Zadajte adresu" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Tel. číslo</mat-label>
+        <input matInput formControlName="deliveryGuy" placeholder="Zadajte telefónne číslo" type="tel" pattern="[0-9]*"/>
+      </mat-form-field>
+    </div>
+
+    <div class="food-selection">
+      <mat-form-field appearance="outline">
+        <mat-label>Vyberte jedlo</mat-label>
+        <mat-select [(value)]="selectedFood" (selectionChange)="onFoodSelected($event)">
+          <mat-option *ngFor="let food of availableFoods" [value]="food">
+            {{ food.name }} - {{ food.price | currency }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div *ngIf="selectedFood">
+          <mat-label>Množstvo</mat-label>
+          <div class="quantity-container">
+            <button mat-button type="button" (click)="decrementQuantity()">-</button>
+            <span>{{ selectedFoodQuantity }}</span>
+            <button mat-button type="button" (click)="incrementQuantity()">+</button>
+          </div>
+        <button mat-raised-button color="primary" type="button" (click)="addFood(selectedFood, selectedFoodQuantity)">
+          Pridať jedlo
+        </button>
+      </div>
+    </div>
+
+    <div class="selected-foods" *ngIf="selectedFoods.length">
+      <h3>Vybrané jedlá</h3>
+      <div *ngFor="let food of selectedFoods.controls; let i = index" class="selected-item">
+        <span>{{ food.get('name')?.value }} (x{{ food.get('quantity')?.value }})</span>
+        <button mat-button type="button" color="warn" (click)="removeFood(i)">Odstrániť</button>
+      </div>
+    </div>
+
+    <button mat-raised-button color="accent" type="submit" [disabled]="orderForm.invalid">
+      Potvrdiť objednávku
+    </button>
+  </form>
+</div>

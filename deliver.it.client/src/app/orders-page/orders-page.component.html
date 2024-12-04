@@ -1,1 +1,56 @@
-<p>orders-page works!</p>
+
+<div class="orders-container">
+  <h2>Zoznam objednávok</h2>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="orders" class="mat-table">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="toggleSelectAll($event)" [checked]="isAllSelected()" [indeterminate]="isIndeterminate()"></mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let order">
+          <mat-checkbox [(ngModel)]="order.selected"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let order">{{ order.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef>Meno zákazníka</th>
+        <td mat-cell *matCellDef="let order">{{ order.customerName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="customerAddress">
+        <th mat-header-cell *matHeaderCellDef>Adresa zákazníka</th>
+        <td mat-cell *matCellDef="let order">{{ order.customerAddress }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="deliveryGuy">
+        <th mat-header-cell *matHeaderCellDef>Telefónne číslo</th>
+        <td mat-cell *matCellDef="let order">{{ order.deliveryGuy }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="foodItems">
+        <th mat-header-cell *matHeaderCellDef>Počet položiek</th>
+        <td mat-cell *matCellDef="let order">{{ order.orderFoods.length }}</td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let order">
+          <button mat-button color="primary" (click)="openEditDialog(order, order.id)">Edit</button>
+        </td>
+      </ng-container>
+
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <div class="delete-button-container">
+    <button mat-raised-button color="warn" (click)="deleteSelectedOrders()" [disabled]="!hasSelectedOrders()">Vymazať zvolené objednávky</button>
+  </div>
+</div>

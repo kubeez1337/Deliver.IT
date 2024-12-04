@@ -9,7 +9,6 @@ import { Component, NgModule } from '@angular/core';
 })
 export class NavbarComponent {
 toggleSidenav() {
-//throw new Error('Method not implemented.');
 }
 
 }

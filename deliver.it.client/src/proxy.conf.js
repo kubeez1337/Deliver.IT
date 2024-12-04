@@ -11,6 +11,12 @@ const PROXY_CONFIG = [
       // "/orders-page",
       // "/login-page",
       // "/about-page",
+      "/login",
+      "/getUsers",
+      "/order",
+      "/getFoods",
+      "/order/",
+      "/create-order"
 
     ],
     target,

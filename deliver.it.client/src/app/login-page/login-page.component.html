@@ -5,13 +5,13 @@
     <h3>Zadaj svoje pouzivatelske meno a heslo</h3>
         <mat-form-field>
       <mat-label>Username</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="username" name="username" required>
     </mat-form-field>
   </div>
   <div class="normalized-field">
     <mat-form-field>
       <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide() ? 'password' : 'text'" />
+      <input matInput [(ngModel)]="password" name="password" [type]="hide() ? 'password' : 'text'" />
       <button mat-icon-button
               matSuffix
               (click)="clickEvent($event)"
@@ -21,8 +21,8 @@
       </button>
     </mat-form-field>
     <div>
-      <button mat-stroked-button onclick="tryLogin()">Login</button>
-
+      <button mat-stroked-button (click)="tryLogin()">Login</button>
+      <button mat-stroked-button (click) ="verifyAdmin()">PLS</button>
     </div>
   </div>
   

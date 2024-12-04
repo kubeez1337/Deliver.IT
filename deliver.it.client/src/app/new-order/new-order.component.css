@@ -1,0 +1,81 @@
+.order-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+  .order-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customer-details,
+.food-selection,
+.selected-foods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.food-selection {
+  align-items: center;
+}
+
+.food-dropdown {
+  width: 60%;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selected-foods {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selected-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.selected-item button {
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  align-self: center;
+  width: 200px;
+}
+::ng-deep .mat-select-panel {
+  position: absolute !important;
+  z-index: 1000 !important;
+}
+h2 {
+  font-family: 'Trebuchet MS', sans-serif; 
+  
+}
+h3 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+mat-label {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.nice-font  {
+  font-family: 'Trebuchet MS', sans-serif;
+}

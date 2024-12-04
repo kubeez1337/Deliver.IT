@@ -17,6 +17,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RegistrationComponent } from './registration/registration.component';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card'
+import { MatMenuModule } from '@angular/material/menu';
+import { NewOrderComponent } from './new-order/new-order.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { EditOrderDialogComponent } from './edit-order-dialog/edit-order-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +42,19 @@ import { MatInputModule } from '@angular/material/input';
     OrdersPageComponent,
     NavbarComponent,
     RegistrationComponent,
+    NewOrderComponent,
+    EditOrderDialogComponent,
+    
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule
+    MatCardModule,
+    BrowserModule, HttpClientModule, FormsModule, MatMenuModule, MatTableModule,MatPaginatorModule, MatCheckboxModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatOptionModule, MatDialogModule,
+    MatFormFieldModule, MatInputModule, MatSelectModule,
+    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule
   ],
   providers: [
     provideAnimationsAsync()

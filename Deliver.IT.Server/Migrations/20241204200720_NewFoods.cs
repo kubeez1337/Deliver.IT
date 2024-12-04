@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class IdentityDbContext : Migration
+    public partial class NewFoods : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,6 +54,35 @@ namespace Deliver.IT.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Foods",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Foods", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    CustomerName = table.Column<string>(type: "TEXT", nullable: true),
+                    CustomerAddress = table.Column<string>(type: "TEXT", nullable: true),
+                    DeliveryGuy = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -162,14 +191,51 @@ namespace Deliver.IT.Server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "OrderFoods",
+                columns: table => new
+                {
+                    OrderId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FoodId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Quantity = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderFoods", x => new { x.OrderId, x.FoodId });
+                    table.ForeignKey(
+                        name: "FK_OrderFoods_Foods_FoodId",
+                        column: x => x.FoodId,
+                        principalTable: "Foods",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_OrderFoods_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
                 values: new object[,]
                 {
-                    { "122e3272-1cdb-458b-bbba-9094b3c92b8c", 0, "4e10a237-2905-492e-8485-137df3c1ce1f", "User", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "7cec504a-d696-4221-ac28-dcadf5ca1a04", false, "admin", "Admin" },
-                    { "a9e2e6b5-d638-4118-8b1c-9b8a2f5babad", 0, "52b6d6f3-7e78-4b0c-8838-76acef9029ef", "User", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "edc65e0d-bacd-4f22-982b-3880ffed1d16", false, "romanek", "Zakaznik" },
-                    { "b5234704-6456-4d29-a946-32989d0b90c1", 0, "521490ce-62c1-4ca8-8ff8-251120dd3701", "User", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "a6ea78f2-be05-4db2-9c50-aa232442f06b", false, "cigorigo", "Rozvozca" }
+                    { "16df99bc-eb23-4e3f-890b-ab3d2048f2f9", 0, "edb0f3ae-76a3-4f93-9d3e-953a68f8c8d5", "UserClass", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "3c4747fd-6f7c-47aa-8b4b-12cf895f7718", false, "romanek", "0" },
+                    { "34688722-f3ad-43bb-ba14-8f71200055ce", 0, "fe429ae0-9738-4f89-ad52-75f6d1478fb4", "UserClass", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "25971b67-f0fb-4a56-b468-126ae2a7e88d", false, "cigorigo", "2" },
+                    { "e0f39b03-ae80-4570-969c-8e361d8efeb1", 0, "1a4c5503-429f-4822-b6b9-d284e51dd618", "UserClass", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "646a3f02-9216-4551-afb7-a9198e385e3a", false, "admin", "1" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Foods",
+                columns: new[] { "Id", "Name", "Price" },
+                values: new object[,]
+                {
+                    { 1, "McRoyal", 20m },
+                    { 2, "Banan", 1m },
+                    { 3, "Adventny kalendar", 2m },
+                    { 4, "Cokoladovy Mikulas", 1m },
+                    { 5, "Pivo", 1m }
                 });
 
             migrationBuilder.CreateIndex(
@@ -208,6 +274,11 @@ namespace Deliver.IT.Server.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderFoods_FoodId",
+                table: "OrderFoods",
+                column: "FoodId");
         }
 
         /// <inheritdoc />
@@ -229,10 +300,19 @@ namespace Deliver.IT.Server.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "OrderFoods");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Foods");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
         }
     }
 }

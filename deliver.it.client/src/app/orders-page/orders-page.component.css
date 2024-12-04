@@ -1,0 +1,36 @@
+.orders-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mat-table-container {
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mat-checkbox-label {
+  font-size: 14px;
+}
+
+button {
+  margin-right: 10px;
+}
+h2 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+h3 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
