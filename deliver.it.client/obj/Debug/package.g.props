@@ -24,6 +24,7 @@
     <PackageJsonDependenciesAngularPlatformBrowserDynamic Condition="$(PackageJsonDependenciesAngularPlatformBrowserDynamic) == ''">^19.0.0</PackageJsonDependenciesAngularPlatformBrowserDynamic>
     <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^19.0.0</PackageJsonDependenciesAngularRouter>
     <PackageJsonDependenciesAuth0AngularJwt Condition="$(PackageJsonDependenciesAuth0AngularJwt) == ''">^5.2.0</PackageJsonDependenciesAuth0AngularJwt>
+    <PackageJsonDependenciesFileSaver Condition="$(PackageJsonDependenciesFileSaver) == ''">^2.0.5</PackageJsonDependenciesFileSaver>
     <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>
     <PackageJsonDependenciesRunScriptOs Condition="$(PackageJsonDependenciesRunScriptOs) == ''">*</PackageJsonDependenciesRunScriptOs>
     <PackageJsonDependenciesRxjs Condition="$(PackageJsonDependenciesRxjs) == ''">~7.8.0</PackageJsonDependenciesRxjs>
@@ -32,6 +33,7 @@
     <PackageJsonDevdependenciesAngularDevkitBuildAngular Condition="$(PackageJsonDevdependenciesAngularDevkitBuildAngular) == ''">^19.0.1</PackageJsonDevdependenciesAngularDevkitBuildAngular>
     <PackageJsonDevdependenciesAngularCli Condition="$(PackageJsonDevdependenciesAngularCli) == ''">^19.0.1</PackageJsonDevdependenciesAngularCli>
     <PackageJsonDevdependenciesAngularCompilerCli Condition="$(PackageJsonDevdependenciesAngularCompilerCli) == ''">^19.0.0</PackageJsonDevdependenciesAngularCompilerCli>
+    <PackageJsonDevdependenciesTypesFileSaver Condition="$(PackageJsonDevdependenciesTypesFileSaver) == ''">^2.0.7</PackageJsonDevdependenciesTypesFileSaver>
     <PackageJsonDevdependenciesTypesJasmine Condition="$(PackageJsonDevdependenciesTypesJasmine) == ''">~5.1.0</PackageJsonDevdependenciesTypesJasmine>
     <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.16.0</PackageJsonDevdependenciesEslint>
     <PackageJsonDevdependenciesJasmineCore Condition="$(PackageJsonDevdependenciesJasmineCore) == ''">~5.4.0</PackageJsonDevdependenciesJasmineCore>

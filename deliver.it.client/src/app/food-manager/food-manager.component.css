@@ -1,0 +1,15 @@
+.food-manager-container {
+  padding: 20px;
+}
+
+.file-upload-container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}

@@ -14,10 +14,10 @@
     [Route("[controller]")]
     public class AccountController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<UserClass> _userManager;
+        private readonly SignInManager<UserClass> _signInManager;
         private readonly DeliverItDbContext _context;
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, DeliverItDbContext context)
+        public AccountController(UserManager<UserClass> userManager, SignInManager<UserClass> signInManager, DeliverItDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -25,18 +25,43 @@
         }
 
         [HttpPost("/register")]
-        public async Task<IActionResult> Register(string username, string email, string password)
-        {   
-            var user = new UserClass { UserName = username, Email = email , UserRole = 0};
+        public async Task<IActionResult> Register([FromBody] RegistrationModel model)
+        {
+            //var user = new UserClass { UserName = username, Email = email , UserRole = 0};
+            //if (user.UserName == "adminer")
+            //{
+            //    user.UserRole = 1;
+            //}
+            //var result = await _userManager.CreateAsync(user, password);
+
+            //if (result.Succeeded)
+            //{
+            //    return Ok("User registered successfully!");
+            //}
+
+            //foreach (var error in result.Errors)
+            //{
+            //    ModelState.AddModelError("", error.Description);
+            //}
+
+            //return BadRequest(ModelState);
+            var user = new UserClass {
+                UserName = model.Username,
+                Email = model.Email,
+                UserRole = 0,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber
+            };
             if (user.UserName == "adminer")
             {
                 user.UserRole = 1;
             }
-            var result = await _userManager.CreateAsync(user, password);
+            var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                return Ok("User registered successfully!");
+                return Ok(new { message = "User registered successfully!" });
             }
 
             foreach (var error in result.Errors)
@@ -65,56 +90,68 @@
             }
 
             var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.Name, user.UserName),
-        new Claim(ClaimTypes.Role, roleName)
-    };
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.Role, roleName)
+            };
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(1),
+                Issuer = "https://localhost:59038",
+                Audience = "https://localhost:59038",
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-
+            var newKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mySecretKey1234567890abcdef12345678"));
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(new { Token = tokenHandler.WriteToken(token) });
+            var creds = new SigningCredentials(newKey, SecurityAlgorithms.HmacSha256);
+            var new_token = new JwtSecurityToken(issuer: "https://localhost:59038", audience: "https://localhost:59038", claims: claims, expires: DateTime.Now.AddMinutes(30), signingCredentials: creds);
+            //await _signInManager.SignInAsync(user, false);
+            tokenHandler.WriteToken(new_token);
+            return Ok(new { Token = tokenHandler.WriteToken(new_token), Role = user.UserRole });
         }
 
 
         [HttpGet("/getUser")]
-        public async Task<IActionResult> GetUser() { 
-            var user = await _userManager.GetUserAsync(User);
-            return Ok(user.UserName);
-        
+        [Authorize]
+        public async Task<IActionResult> GetUser() {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return NotFound("User ID not found in token.");
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+            return Ok(new { UserName = user.UserName });
+
         }
 
         [HttpGet("/getUsers")]
-        //[Authorize(Policy = "AdminPolicy")]
+        [Authorize(Roles ="1")]
         public async Task<IActionResult> GetUsers()
         {
-            //if (!User.Identity.IsAuthenticated)
-            //{
-            //    return Unauthorized("User not authenticated");
-            //}
+            var user = await _userManager.GetUserAsync(User);
             var role = User.FindFirst(ClaimTypes.Role)?.Value;
-            if (role != "1")
-            {
-                return Forbid("User is not an admin.");
-            }
+            Console.WriteLine($"User role: {role}");
             var users = await _context.Users
-                .Select(u => new
-                {
-                    u.Id,
-                    u.UserName,
-                    u.FirstName,
-                    u.LastName,
-                    u.PhoneNumber,
-                    u.Email,
-                    u.UserRole,
-                    u.PasswordHash
-                })
-                .ToListAsync();
+        .Select(u => new
+        {
+            u.Id,
+            u.UserName,
+            u.FirstName,
+            u.LastName,
+            u.PhoneNumber,
+            u.Email,
+            u.UserRole,
+            u.PasswordHash
+        })
+        .ToListAsync();
 
             if (users == null || users.Count == 0)
             {

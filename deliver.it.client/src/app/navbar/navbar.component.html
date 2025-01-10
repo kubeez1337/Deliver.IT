@@ -2,9 +2,13 @@
   <a mat-button routerLink="">Domov</a>
 
   <a mat-button routerLink="about-page">O projekte</a>
-  <a mat-button routerLink="user-login-page">Prihlásenie</a>
+  <!--<a *ngIf="isAdmin" mat-button routerLink="user-login-page">Prihlásenie</a>-->
   <a mat-button routerLink="list-orders-page">Objednávky</a>
   <a mat-button routerLink="new-order">Nová Objednávka</a>
+  <a *ngIf="isAdmin" mat-button routerLink="food-manager">Foods</a>
+
   <span class="right-spacer"></span>
+  <a *ngIf="!isLoggedIn" mat-button routerLink="user-login-page">Prihlásenie</a>
+  <a *ngIf="isLoggedIn" mat-button (click)="logout()">Logout</a>
   <h1>Deliver.IT</h1>
 </mat-toolbar>

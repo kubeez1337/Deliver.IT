@@ -3,7 +3,8 @@ export interface Order {
   customerName: string;
   customerAddress: string;
   deliveryGuy: string;
-  foodItems: { orderId: number, foodId: number; quantity: number }[];
+  //foodItems: { orderId: number, foodId: number; quantity: number }[];
+  orderFoods: { orderId: number, foodId: number; quantity: number }[];
   
   totalPrice: number;
   selected?: boolean;

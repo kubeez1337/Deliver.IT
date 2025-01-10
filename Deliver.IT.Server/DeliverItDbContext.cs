@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Deliver.IT.Server
 {
-    public class DeliverItDbContext : IdentityDbContext<IdentityUser>
+    public class DeliverItDbContext : IdentityDbContext<UserClass>
     {
         public DeliverItDbContext(DbContextOptions<DeliverItDbContext> options) : base(options)
         { }

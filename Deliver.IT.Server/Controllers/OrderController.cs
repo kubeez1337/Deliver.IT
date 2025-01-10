@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Deliver.IT.Server.Controllers
@@ -142,6 +143,42 @@ namespace Deliver.IT.Server.Controllers
         private bool OrderExists(int id)
         {
             return _context.Orders.Any(e => e.Id == id);
+        }
+        [HttpPut("/updateOrder")]
+        [Authorize(Roles = "1")] // Only allow admins to update orders
+        public async Task<IActionResult> UpdateOrder([FromBody] Order order)
+        {
+            if (order == null || order.Id <= 0)
+            {
+                return BadRequest("Invalid order data.");
+            }
+
+            var existingOrder = await _context.Orders.Include(o => o.OrderFoods).FirstOrDefaultAsync(o => o.Id == order.Id);
+            if (existingOrder == null)
+            {
+                return NotFound("Order not found.");
+            }
+
+            existingOrder.CustomerName = order.CustomerName;
+            existingOrder.CustomerAddress = order.CustomerAddress;
+            existingOrder.DeliveryGuy = order.DeliveryGuy;
+
+            // Update OrderFoods
+            existingOrder.OrderFoods.Clear();
+            foreach (var orderFood in order.OrderFoods)
+            {
+                existingOrder.OrderFoods.Add(new OrderFood
+                {
+                    OrderId = order.Id,
+                    FoodId = orderFood.FoodId,
+                    Quantity = orderFood.Quantity
+                });
+            }
+
+            _context.Orders.Update(existingOrder);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Order updated successfully!" });
         }
     }
 }

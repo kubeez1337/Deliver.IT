@@ -1,0 +1,59 @@
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(100vh - 64px);
+  padding-top: 64px;
+  background-color: #f5f5f5;
+}
+
+.registration-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 800px; /* Adjusted to accommodate two columns */
+}
+
+.form-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  width: 48%; /* Adjusted to fit two columns */
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.login-link {
+  margin-top: 1rem;
+}
+
+h1, h3 {
+  color: #333;
+}
+
+mat-form-field {
+  color: #333;
+}
+
+mat-label {
+  color: #333;
+}
+
+input {
+  color: #333;
+}

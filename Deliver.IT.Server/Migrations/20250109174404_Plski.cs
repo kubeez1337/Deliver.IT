@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class NewFoods : Migration
+    public partial class Plski : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,10 +32,9 @@ namespace Deliver.IT.Server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Discriminator = table.Column<string>(type: "TEXT", maxLength: 13, nullable: false),
-                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
-                    LastName = table.Column<string>(type: "TEXT", nullable: true),
-                    UserRole = table.Column<string>(type: "TEXT", nullable: true),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", nullable: false),
+                    UserRole = table.Column<string>(type: "TEXT", nullable: false),
                     UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -218,12 +217,12 @@ namespace Deliver.IT.Server.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
                 values: new object[,]
                 {
-                    { "16df99bc-eb23-4e3f-890b-ab3d2048f2f9", 0, "edb0f3ae-76a3-4f93-9d3e-953a68f8c8d5", "UserClass", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "3c4747fd-6f7c-47aa-8b4b-12cf895f7718", false, "romanek", "0" },
-                    { "34688722-f3ad-43bb-ba14-8f71200055ce", 0, "fe429ae0-9738-4f89-ad52-75f6d1478fb4", "UserClass", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "25971b67-f0fb-4a56-b468-126ae2a7e88d", false, "cigorigo", "2" },
-                    { "e0f39b03-ae80-4570-969c-8e361d8efeb1", 0, "1a4c5503-429f-4822-b6b9-d284e51dd618", "UserClass", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "646a3f02-9216-4551-afb7-a9198e385e3a", false, "admin", "1" }
+                    { "40ec7a74-6755-40ba-aca3-2fe24b00dd45", 0, "126db9e5-3909-495a-a474-1abf48b2e172", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "ecd2a41b-e0df-4910-a326-43aaeaea3658", false, "romanek", "0" },
+                    { "6dc619e4-ff43-45bf-a324-f24e9e1441e1", 0, "a365df5c-294a-42f7-bc50-afb803b39fd6", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "e0f15e47-17bf-417d-a113-b155f390c5c3", false, "cigorigo", "2" },
+                    { "c216e01c-8689-4272-b298-744caf7f480b", 0, "05a87a23-6cf3-46d4-b3e5-8ed8e1c98703", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "a5c211ee-a957-46ae-9152-c1f5f7c10899", false, "admin", "1" }
                 });
 
             migrationBuilder.InsertData(

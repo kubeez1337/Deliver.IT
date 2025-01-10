@@ -96,9 +96,7 @@ export class OrdersPageComponent implements OnInit {
     const checked = event.checked;
     this.orders.forEach(order => order.selected = checked);
   }
-  editOrder(order: number) {
-
-  }
+  
   isAllSelected(): boolean {
     return this.orders.every(order => order.selected);
   }
@@ -130,8 +128,7 @@ export class OrdersPageComponent implements OnInit {
     return this.orders.some(order => order.selected);
   }
 
-  onPageChange(event: any) {
-  }
+  
   openEditDialog(order: Order, orderId: number): void {
     const dialogRef = this.dialog.open(EditOrderDialogComponent, {
       width: '400px',
@@ -144,7 +141,8 @@ export class OrdersPageComponent implements OnInit {
         const updatedOrder: Order = {
             ...order,
             ...result, 
-            foodItems: order.foodItems 
+          //foodItems: order.foodItems
+          orderFoods: order.orderFoods
         };
         this.orderService.updateOrder(orderId,result).subscribe(
           () => {
@@ -162,5 +160,6 @@ export class OrdersPageComponent implements OnInit {
       this.loadOrders();
 
     });
+    this.loadOrders();
   }
 }

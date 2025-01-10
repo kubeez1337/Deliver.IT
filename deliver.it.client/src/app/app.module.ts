@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +15,6 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { RegistrationComponent } from './registration/registration.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card'
@@ -26,12 +25,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { EditOrderDialogComponent } from './edit-order-dialog/edit-order-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthInterceptor } from './auth.interceptor';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
+import { FoodManagerComponent } from './food-manager/food-manager.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginPageComponent,
     OrdersPageComponent,
     NavbarComponent,
-    RegistrationComponent,
+    RegistrationPageComponent,
     NewOrderComponent,
     EditOrderDialogComponent,
+    RegistrationPageComponent,
+    FoodManagerComponent,
     
   ],
   imports: [
@@ -57,7 +60,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(), { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

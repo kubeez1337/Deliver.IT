@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { User } from '../models/user.model'
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login-page',
   standalone: false,
@@ -15,7 +17,7 @@ export class LoginPageComponent {
   username: string = '';
   password: string = '';
   isAdmin: boolean = false;
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router, private snackBar: MatSnackBar) {
 
   }
 
@@ -27,11 +29,23 @@ export class LoginPageComponent {
     if (this.username && this.password) {
       this.authService.login(this.username, this.password).subscribe(
         (response) => {
-          console.log('Login successful', response);
-          localStorage.setItem('token', response.token);  
+          //console.log('Login successful', response);
+          //alert("Login úspešný");
+          
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('role', response.role);
+          console.log('Token stored in localStorage:', response.token); 
+          console.log('Role stored in localStorage:', response.role);
+          this.isAdmin = response.role === '1';
+          this.authService.updateAdminStatus();
+          this.snackBar.open('Login was successful', 'Close', {
+            duration: 3000,
+          });
+          this.router.navigate(['/new-order']);
         },
         (error) => {
           console.error('Login failed', error);
+          alert("Nepodarilo sa prihlásiť");
         }
       );
     } else {
@@ -39,7 +53,7 @@ export class LoginPageComponent {
     }
   }
   verifyAdmin() {
-    this.authService.isAdmin().subscribe(
+    this.authService.getAllUsers().subscribe(
       (response) => {
         console.log(response);
       },
@@ -48,4 +62,17 @@ export class LoginPageComponent {
       }
     );
   }
+  getUserInfo() {
+    this.authService.getUser().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.error('Error getting user info', error);
+      }
+    );
+
+    }
+    
+
 }

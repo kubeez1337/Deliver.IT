@@ -16,7 +16,14 @@ const PROXY_CONFIG = [
       "/order",
       "/getFoods",
       "/order/",
-      "/create-order"
+      "/create-order",
+      "/register",
+      "/getUser",
+      "/uploadFoods",
+      "/exportFoods",
+      "/updateFood",
+      "/updateOrder",
+      "/deleteFoods",
 
     ],
     target,

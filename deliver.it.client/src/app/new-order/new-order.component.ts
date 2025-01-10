@@ -73,8 +73,8 @@ export class NewOrderComponent {
       });
 
       this.selectedFoods.push(foodGroup);
-      this.selectedFood = null; // Reset selected food
-      this.selectedFoodQuantity = 1; // Reset quantity
+      this.selectedFood = null; 
+      this.selectedFoodQuantity = 1; 
     }
     
   }

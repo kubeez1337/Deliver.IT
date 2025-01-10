@@ -1,0 +1,101 @@
+<!--<div class="food-manager-container">
+  <h1>Food Manager</h1>
+  <table mat-table [dataSource]="foods" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let food">{{ food.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let food">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="food.name" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let food">
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" [(ngModel)]="food.price" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let food">
+        <button mat-raised-button color="primary" (click)="updateFood(food)">Update</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div class="file-upload-container">
+    <input type="file" (change)="onFileSelected($event)" />
+    <button mat-raised-button color="primary" (click)="uploadFoods()">Upload Foods</button>
+    <button mat-raised-button color="accent" (click)="exportFoods()">Export Foods</button>
+  </div>
+</div>-->
+<div class="food-manager-container">
+  <h1>Food Manager</h1>
+  <table mat-table [dataSource]="foods" class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let food">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(food) : null"
+                      [checked]="selection.isSelected(food)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let food">{{ food.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let food">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="food.name" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let food">
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" [(ngModel)]="food.price" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <button mat-raised-button color="primary" (click)="saveAllFoods()">Save</button>
+  <button mat-raised-button color="warn" (click)="deleteSelectedFoods()">Delete Selected</button>
+
+  <div class="file-upload-container">
+    <input type="file" (change)="onFileSelected($event)" />
+    <button mat-raised-button color="primary" (click)="uploadFoods()">Upload Foods</button>
+    <button mat-raised-button color="accent" (click)="exportFoods()">Export Foods</button>
+  </div>
+</div>

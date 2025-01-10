@@ -1,0 +1,52 @@
+<div class="registration-container">
+  <div class="registration-box">
+    <h1>Registrácia</h1>
+    <h3>Vyplňte nasledujúce údaje</h3>
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+      <div class="form-fields">
+        <div class="left-column">
+          <mat-form-field appearance="fill">
+            <mat-label>Používateľské meno</mat-label>
+            <input matInput formControlName="username" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Krstné meno</mat-label>
+            <input matInput formControlName="firstName" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Priezvisko</mat-label>
+            <input matInput formControlName="lastName" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Telefónne číslo</mat-label>
+            <input matInput formControlName="phoneNumber" required>
+          </mat-form-field>
+        </div>
+        <div class="right-column">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Heslo</mat-label>
+            <input matInput type="password" formControlName="password" required>
+            <mat-error *ngIf="registrationForm.get('password')?.hasError('pattern')">
+              Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Potvrďte heslo</mat-label>
+            <input matInput type="password" formControlName="confirmPassword" required>
+            <mat-error *ngIf="registrationForm.hasError('mismatch')">
+              Passwords must match.
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Register</button>
+        </div>
+      </div>
+    </form>
+    <div class="login-link">
+      <p>Už máte účet? <a routerLink="/user-login-page">Prihláste sa</a></p>
+    </div>
+  </div>
+</div>

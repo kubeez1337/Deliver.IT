@@ -1,0 +1,13 @@
+.form-field {
+  width: 100%;
+}
+
+.order-food-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+  .order-food-item mat-form-field {
+    flex: 1;
+  }

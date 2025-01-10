@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Food } from './models/food.model';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private apiUrl = 'https://localhost:59038';  
+  private isAdminSubject = new BehaviorSubject<boolean>(this.checkAdmin());
+  private isLoggedInSubject = new BehaviorSubject<boolean>(this.checkLoggedIn());
 
   constructor(private http: HttpClient) {}
 
@@ -13,8 +16,82 @@ export class AuthService {
     const loginData = { username, password };
     return this.http.post<any>(`${this.apiUrl}/login`, loginData);
   }
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    this.isAdminSubject.next(false);
+    this.isLoggedInSubject.next(false);
+  }
+  //isAdmin(): Observable<any> {
+  //  const token = localStorage.getItem('token');
+  //  console.log('Token from localStorage:', token);
+  //  if (!token) {
+  //    throw new Error('No token found');
+  //  }
 
-  isAdmin(): Observable<any> {
+  //  const headers = new HttpHeaders({
+  //    'Authorization': `Bearer ${token}`
+  //  });
+  //  console.log('Headers:', headers);
+  //  return this.http.get(`${this.apiUrl}/getUsers`, { headers });
+  //}
+  getAllUsers(): Observable<any> {
+    const token = localStorage.getItem('token');
+      console.log('Token from localStorage:', token);
+      if (!token) {
+        throw new Error('No token found');
+      }
+
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      });
+      console.log('Headers:', headers);
+      return this.http.get(`${this.apiUrl}/getUsers`, { headers });
+  }
+  updateAdminStatus(): void {
+    this.isAdminSubject.next(this.checkAdmin());
+    this.isLoggedInSubject.next(this.checkLoggedIn());
+  }
+  isAdmin(): Observable<boolean> {
+    return this.isAdminSubject.asObservable();
+  }
+  isLoggedIn(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
+  }
+  private checkAdmin(): boolean {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return false;
+    }
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === '1';
+  }
+
+  register(username: string, firstName: string, lastName: string, phoneNumber: string, email: string, password: string): Observable<any> {
+    const registerData = { username, firstName, lastName, phoneNumber, email, password };
+    return this.http.post<any>(`${this.apiUrl}/register`, registerData);
+  }
+  private checkLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+  getUser(): Observable<any> {
+    const token = localStorage.getItem('token');
+    console.log('Token from localStorage:', token);
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    console.log('Headers:', headers);
+    return this.http.get(`${this.apiUrl}/getUser`, { headers });
+  }
+  uploadFoods(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('No token found');
@@ -24,6 +101,63 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get(`${this.apiUrl}/getUsers`, { headers });
+    return this.http.post<any>(`${this.apiUrl}/uploadFoods`, formData, { headers });
+  }
+  exportFoods(): Observable<Blob> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get(`${this.apiUrl}/exportFoods`, { headers, responseType: 'blob' });
+  }
+  updateFood(food: Food): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put<any>(`${this.apiUrl}/updateFood`, food, { headers });
+  }
+  getFoods(): Observable<Food[]> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<Food[]>(`${this.apiUrl}/getFoods`, { headers });
+  }
+  updateFoods(foods: Food[]): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put<any>(`${this.apiUrl}/updateFoods`, foods, { headers });
+  }
+
+  deleteFoods(foodIds: number[]): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.request<any>('delete', `${this.apiUrl}/deleteFoods`, { headers, body: foodIds });
   }
 }

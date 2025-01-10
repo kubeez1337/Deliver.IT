@@ -1,16 +1,17 @@
-<p>login-page works!</p>
-<div>
+<!--<div>
 
   <div class="normalized-field">
-    <h3>Zadaj svoje pouzivatelske meno a heslo</h3>
-        <mat-form-field>
-      <mat-label>Username</mat-label>
+    <h1>Prihlásenie</h1>
+
+    <h3>Zadaj svoje používateľské meno a heslo</h3>
+    <mat-form-field>
+      <mat-label>Používateľské meno</mat-label>
       <input matInput [(ngModel)]="username" name="username" required>
     </mat-form-field>
   </div>
   <div class="normalized-field">
     <mat-form-field>
-      <mat-label>Enter your password</mat-label>
+      <mat-label>Zadaj svoje heslo</mat-label>
       <input matInput [(ngModel)]="password" name="password" [type]="hide() ? 'password' : 'text'" />
       <button mat-icon-button
               matSuffix
@@ -22,9 +23,51 @@
     </mat-form-field>
     <div>
       <button mat-stroked-button (click)="tryLogin()">Login</button>
-      <button mat-stroked-button (click) ="verifyAdmin()">PLS</button>
+      <button mat-stroked-button (click)="verifyAdmin()">PLS</button>
+      <button mat-stroked-button (click)="getUserInfo()">User</button>
+
+    </div>
+
+  </div>
+  <div class="registration-link">
+    <p>Nemáte účet? <a routerLink="/registration-page">Zaregistrujte sa</a></p>
+  </div>-->
+  <!--<div>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="uploadFoods()">Upload Foods</button>
+    <button (click)="exportFoods()">Export Foods</button>
+  </div>-->
+  <!--<app-registration></app-registration>-->
+<!--</div>-->
+
+<div class="login-container">
+  <div class="login-box">
+    <h1>Prihlásenie</h1>
+    <h3>Zadaj svoje používateľské meno a heslo</h3>
+    <div class="form-fields">
+      <mat-form-field>
+        <mat-label>Používateľské meno</mat-label>
+        <input matInput [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Zadaj svoje heslo</mat-label>
+        <input matInput [(ngModel)]="password" name="password" [type]="hide() ? 'password' : 'text'" />
+        <button mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()">
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="button-group">
+      <button mat-stroked-button (click)="tryLogin()">Login</button>
+      <button mat-stroked-button (click)="verifyAdmin()">PLS</button>
+      <button mat-stroked-button (click)="getUserInfo()">User</button>
+    </div>
+    <div class="registration-link">
+      <p>Nemáte účet? <a routerLink="/registration-page">Zaregistrujte sa</a></p>
     </div>
   </div>
-  
-  <app-registration></app-registration>
 </div>
