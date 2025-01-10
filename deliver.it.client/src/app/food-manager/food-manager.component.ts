@@ -64,7 +64,7 @@ export class FoodManagerComponent implements OnInit {
       (response) => {
         console.log('Foods deleted successfully', response);
         alert('Foods deleted successfully!');
-        this.getFoods(); // Refresh the list of foods
+        this.getFoods();
       },
       (error) => {
         console.error('Error deleting foods', error);
@@ -89,7 +89,7 @@ export class FoodManagerComponent implements OnInit {
         (response) => {
           console.log('Foods uploaded successfully', response);
           alert('Foods uploaded successfully!');
-          this.getFoods(); // Refresh the list of foods
+          this.getFoods(); 
         },
         (error) => {
           console.error('Error uploading foods', error);

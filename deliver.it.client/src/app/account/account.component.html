@@ -1,0 +1,50 @@
+<div class="account-container">
+  <h2>Account Information</h2>
+  <form [formGroup]="accountForm" (ngSubmit)="saveChanges()">
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber" type="tel" required />
+      <mat-error *ngIf="accountForm.get('phoneNumber')?.hasError('pattern')">
+        Please enter a valid phone number.
+      </mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" type="submit">Save Changes</button>
+
+    </div>
+
+    <div *ngIf="!isAdmin && !isCourier">
+      <mat-checkbox formControlName="applyForCourier" [disabled]="isAdmin || isCourier || hasPendingApplication">Apply for Courier Role</mat-checkbox>
+
+    </div>
+
+    <div *ngIf="showCourierMessageField">
+      <mat-form-field appearance="fill">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="courierMessage"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" (click)="applyForCourier()" [disabled]="hasPendingApplication">Send Application</button>
+    </div>
+
+  </form>
+
+  <div *ngIf="isAdmin" class="applications-container">
+    <h2>Pending Courier Applications</h2>
+    <div *ngFor="let application of applications" class="application-card">
+      <p><strong>User:</strong> {{ application.userName }}</p>
+      <p><strong>Message:</strong> {{ application.message }}</p>
+      <button mat-raised-button color="primary" (click)="processApplication(application.id, true)">Approve</button>
+      <button mat-raised-button color="warn" (click)="processApplication(application.id, false)">Reject</button>
+    </div>
+  </div>
+</div>

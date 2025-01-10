@@ -17,7 +17,6 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Deliver.IT API", Version = "v1" });
 
-    // Add JWT Authentication
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -82,13 +81,12 @@ builder.Services.AddAuthentication(options =>
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, roleClaim.Value));
             }
-            Console.WriteLine($"Token validated for user: {identity?.Name} with role: {roleClaim?.Value}"); // Debugging line
-
+            Console.WriteLine($"Token validated for user: {identity?.Name} with role: {roleClaim?.Value}");
             return Task.CompletedTask;
         },
         OnAuthenticationFailed = context =>
         {
-            Console.WriteLine($"Authentication failed: {context.Exception.Message}"); // Debugging line
+            Console.WriteLine($"Authentication failed: {context.Exception.Message}");
             return Task.CompletedTask;
         }
     };

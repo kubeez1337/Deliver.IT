@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Deliver.IT.Server.Migrations
 {
     [DbContext(typeof(DeliverItDbContext))]
-    [Migration("20250109174404_Plski")]
-    partial class Plski
+    [Migration("20250110224636_Applications")]
+    partial class Applications
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,10 +27,12 @@ namespace Deliver.IT.Server.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "name");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "price");
 
                     b.HasKey("Id");
 
@@ -69,11 +71,41 @@ namespace Deliver.IT.Server.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Deliver.IT.Server.Models.CourierApplication", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CourierApplications");
+                });
+
             modelBuilder.Entity("Deliver.IT.Server.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClaimedBy")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CustomerAddress")
                         .HasColumnType("TEXT");
@@ -81,7 +113,8 @@ namespace Deliver.IT.Server.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("DeliveryGuy")
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -186,45 +219,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c216e01c-8689-4272-b298-744caf7f480b",
+                            Id = "b965e488-c8dd-4c23-92b1-65906f7576fd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "05a87a23-6cf3-46d4-b3e5-8ed8e1c98703",
+                            ConcurrencyStamp = "bd8fc57a-c0e2-43e3-b452-7565114e757d",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5c211ee-a957-46ae-9152-c1f5f7c10899",
+                            SecurityStamp = "14e94438-654c-493b-b40e-ddd08f38c567",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "6dc619e4-ff43-45bf-a324-f24e9e1441e1",
+                            Id = "570c3a51-f12b-4a75-8e08-92f7bc4c7108",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a365df5c-294a-42f7-bc50-afb803b39fd6",
+                            ConcurrencyStamp = "04499e42-37b7-43cd-9bbb-bf7c676df892",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e0f15e47-17bf-417d-a113-b155f390c5c3",
+                            SecurityStamp = "125a7e2f-34ef-4883-bf44-785203640d0e",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "40ec7a74-6755-40ba-aca3-2fe24b00dd45",
+                            Id = "261fc9be-271a-49ff-8bb4-d0e6b8681b74",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "126db9e5-3909-495a-a474-1abf48b2e172",
+                            ConcurrencyStamp = "711184c2-13f5-4512-8e69-189dca3e0c7d",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ecd2a41b-e0df-4910-a326-43aaeaea3658",
+                            SecurityStamp = "5e34bf7d-e970-4ab2-8506-79afdaf92e2f",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"

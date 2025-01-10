@@ -1,0 +1,9 @@
+<div class="applications-container">
+  <h2>Pending Courier Applications</h2>
+  <div *ngFor="let application of applications" class="application-card">
+    <p><strong>User:</strong> {{ application.userName }}</p>
+    <p><strong>Message:</strong> {{ application.message }}</p>
+    <button mat-raised-button color="primary" (click)="processApplication(application.id, true)">Approve</button>
+    <button mat-raised-button color="warn" (click)="processApplication(application.id, false)">Reject</button>
+  </div>
+</div>

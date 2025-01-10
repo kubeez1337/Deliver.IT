@@ -1,31 +1,3 @@
-<!--<h2 mat-dialog-title>Edit objednávky</h2>
-<mat-dialog-content>
-  <form>
-    <mat-form-field appearance="fill" class="form-field">
-      <mat-label>Meno zákazníka</mat-label>
-      <input matInput [(ngModel)]="data.customerName" name="customerName" required/>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill" class="form-field">
-      <mat-label>Adresa zákazníka</mat-label>
-      <input matInput [(ngModel)]="data.customerAddress" name="customerAddress" required/>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill" class="form-field">
-      <mat-label>Telefónne číslo</mat-label>
-      <input matInput [(ngModel)]="data.deliveryGuy" name="deliveryGuy" type="tel" pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" required />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Objednávka jedla / not editable</mat-label>
-      <textarea matInput [value]="data.orderFoods" readonly></textarea>
-    </mat-form-field>
-  </form>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button color="primary" [mat-dialog-close]="data">Save</button>
-</mat-dialog-actions>-->
 
 <h2 mat-dialog-title>Edit Order</h2>
 <mat-dialog-content>
@@ -42,7 +14,10 @@
 
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Phone Number</mat-label>
-      <input matInput formControlName="deliveryGuy" type="tel" pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" required />
+      <input matInput formControlName="phoneNumber" type="tel" required />
+      <mat-error *ngIf="editOrderForm.get('phoneNumber')?.hasError('pattern')">
+        Please enter a valid phone number.
+      </mat-error>
     </mat-form-field>
 
     <div formArrayName="orderFoods">

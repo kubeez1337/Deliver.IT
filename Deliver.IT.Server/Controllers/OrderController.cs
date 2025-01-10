@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,11 +26,13 @@ namespace Deliver.IT.Server.Controllers
         [HttpPost("/create-order")]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderModel model)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
             var order = new Order
             {
                 CustomerName = model.CustomerName,
                 CustomerAddress = model.CustomerAddress,
-                DeliveryGuy = model.DeliveryGuy,
+                PhoneNumber = model.PhoneNumber,
+                CreatedBy = userId,
                 OrderFoods = new List<OrderFood>()
             };
             _context.Orders.Add(order);
@@ -37,7 +40,7 @@ namespace Deliver.IT.Server.Controllers
 
             foreach (var foodItem in model.FoodItems)
             {
-                var food = await _context.Foods.FindAsync(foodItem.FoodId);  // Fetch the Food entity by FoodId
+                var food = await _context.Foods.FindAsync(foodItem.FoodId);
                 if (food == null)
                 {
                     return BadRequest($"Food with ID {foodItem.FoodId} not found.");
@@ -56,11 +59,31 @@ namespace Deliver.IT.Server.Controllers
             await _context.SaveChangesAsync();
             return Ok(order);
         }
+
+        [HttpPut("/claim-order/{id}")]
+        [Authorize(Roles = "2")]
+        public async Task<IActionResult> ClaimOrder(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+            order.ClaimedBy = userId; 
+
+            _context.Orders.Update(order);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Order claimed successfully!" });
+        }
+
         public class CreateOrderModel
         {
             public string CustomerName { get; set; }
             public string CustomerAddress { get; set; }
-            public string DeliveryGuy { get; set; }
+            public string PhoneNumber { get; set; }
             public List<FoodItemModel> FoodItems { get; set; }
         }
 
@@ -92,10 +115,27 @@ namespace Deliver.IT.Server.Controllers
         [HttpGet("/orders")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            var orders = await _context.Orders
-        .Include(o => o.OrderFoods)  
-        .ToListAsync();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userRole = User.FindFirstValue(ClaimTypes.Role);
 
+            IQueryable<Order> ordersQuery = _context.Orders.Include(o => o.OrderFoods);
+
+            if (userRole == "0") 
+            {
+                ordersQuery = ordersQuery.Where(o => o.CreatedBy == userId);
+            }
+            else if (userRole == "2") 
+            {
+                ordersQuery = ordersQuery.Where(o => (o.ClaimedBy == userId) || (o.ClaimedBy == null));
+            }
+            else if (userRole == "1") 
+            {
+            }
+            else
+            {
+                return Unauthorized();
+            }
+            var orders = await ordersQuery.ToListAsync();
             return Ok(orders);
         }
 
@@ -145,7 +185,7 @@ namespace Deliver.IT.Server.Controllers
             return _context.Orders.Any(e => e.Id == id);
         }
         [HttpPut("/updateOrder")]
-        [Authorize(Roles = "1")] // Only allow admins to update orders
+        [Authorize(Roles = "1")] 
         public async Task<IActionResult> UpdateOrder([FromBody] Order order)
         {
             if (order == null || order.Id <= 0)
@@ -161,9 +201,8 @@ namespace Deliver.IT.Server.Controllers
 
             existingOrder.CustomerName = order.CustomerName;
             existingOrder.CustomerAddress = order.CustomerAddress;
-            existingOrder.DeliveryGuy = order.DeliveryGuy;
+            existingOrder.PhoneNumber = order.PhoneNumber;
 
-            // Update OrderFoods
             existingOrder.OrderFoods.Clear();
             foreach (var orderFood in order.OrderFoods)
             {

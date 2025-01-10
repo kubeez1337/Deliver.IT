@@ -29,8 +29,6 @@ export class LoginPageComponent {
     if (this.username && this.password) {
       this.authService.login(this.username, this.password).subscribe(
         (response) => {
-          //console.log('Login successful', response);
-          //alert("Login úspešný");
           
           localStorage.setItem('token', response.token);
           localStorage.setItem('role', response.role);

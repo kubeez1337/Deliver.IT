@@ -2,7 +2,7 @@ export interface Order {
   id: number;
   customerName: string;
   customerAddress: string;
-  deliveryGuy: string;
+  phoneNumber: string;
   //foodItems: { orderId: number, foodId: number; quantity: number }[];
   orderFoods: { orderId: number, foodId: number; quantity: number }[];
   

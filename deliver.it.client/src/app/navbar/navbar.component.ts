@@ -29,6 +29,10 @@ export class NavbarComponent implements OnInit{
       duration: 3000,
     });
   }
+  navigateToAccount(): void {
+    this.router.navigate(['/account-panel']);
+  }
+
   toggleSidenav() {
   }
   

@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSelect} from '@angular/material/select';
 import {MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
+import { AuthService } from '../auth.service';
+import { User } from '../models/user.model';
 @Component({
   selector: 'app-new-order',
   templateUrl: './new-order.component.html',
@@ -25,12 +27,18 @@ export class NewOrderComponent {
   selectedFoodQuantity: number = 1;
   selectedFood: any = null;
   //@ViewChild('foodselect') foodselect!: MatSelect;
-  constructor(private http: HttpClient, private fb: FormBuilder, private orderService: OrderService, private foodService: FoodService, private cdr: ChangeDetectorRef) {
+  constructor(private http: HttpClient,
+    private fb: FormBuilder,
+    private orderService: OrderService,
+    private foodService: FoodService,
+    private cdr: ChangeDetectorRef,
+    private authService: AuthService
+  ) {
     this.selectedFoods = this.fb.array([]);
     this.orderForm = this.fb.group({
       customerName: ['', Validators.required],
       customerAddress: ['', Validators.required],
-      deliveryGuy: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^\+?\d{9,15}$/)]],
       selectedFood: this.selectedFood,
       foodItems: this.selectedFoods,
     });
@@ -41,20 +49,34 @@ export class NewOrderComponent {
     this.foodService.getFoods().subscribe((data: Food[]) => {
       this.availableFoods = data;
     });
+    const role = this.authService.getUserRole();
+    this.authService.getUser().subscribe((user: User) => {
+      console.log(user);
+      if (role === '0') {
+        this.orderForm.patchValue({
+          customerName: user.firstName + ' ' + user.lastName,
+          //customerAddress: user.address, // Assuming the User model has an address field
+          phoneNumber: user.phoneNumber
+        });
+      }
+    });
   }
   submitOrder() {
     const orderData = this.orderForm.value;
-    this.orderService.createOrder(orderData).subscribe({
-      next: (response) => {
-        alert('Objednávka bola vytvorená!');
-        this.orderForm.reset();
-        this.selectedFoods.clear();
-        this.foodSelected = false;
-      },
-      error: (error) => {
-        console.error(error);
-        alert('Nepodarilo sa vytvoriť objednávku.');
-      }
+    this.authService.getUser().subscribe(user => {
+      orderData.createdBy = user.id;
+      this.orderService.createOrder(orderData).subscribe({
+        next: (response) => {
+          alert('Objednávka bola vytvorená!');
+          this.orderForm.reset();
+          this.selectedFoods.clear();
+          this.foodSelected = false;
+        },
+        error: (error) => {
+          console.error(error);
+          alert('Nepodarilo sa vytvoriť objednávku.');
+        }
+      });
     });
   }
   selectFood(food: Food): void {

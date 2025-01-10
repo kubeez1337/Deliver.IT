@@ -8,6 +8,8 @@
   <a *ngIf="isAdmin" mat-button routerLink="food-manager">Foods</a>
 
   <span class="right-spacer"></span>
+  <a *ngIf="isLoggedIn" mat-button (click)="navigateToAccount()">Account</a>
+
   <a *ngIf="!isLoggedIn" mat-button routerLink="user-login-page">Prihlásenie</a>
   <a *ngIf="isLoggedIn" mat-button (click)="logout()">Logout</a>
   <h1>Deliver.IT</h1>

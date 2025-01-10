@@ -128,8 +128,14 @@
             {
                 return NotFound("User not found.");
             }
-            return Ok(new { UserName = user.UserName });
-
+            return Ok(new
+            {
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                PhoneNumber = user.PhoneNumber,
+                UserRole = user.UserRole
+            });
         }
 
         [HttpGet("/getUsers")]
@@ -160,5 +166,125 @@
 
             return Ok(users);
         }
+        //[HttpPost("/applyForCourier")]
+        //[Authorize]
+        //public async Task<IActionResult> ApplyForCourier()
+        //{
+        //    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        //    if (userId == null)
+        //    {
+        //        return NotFound("User ID not found in token.");
+        //    }
+
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    if (user == null)
+        //    {
+        //        return NotFound("User not found.");
+        //    }
+
+        //    return Ok(new { message = "Courier role application submitted successfully!" });
+        //}
+        [HttpPut("/updateUser")]
+        [Authorize]
+        public async Task<IActionResult> UpdateUser([FromBody] UserClass updatedUser)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return NotFound("User ID not found in token.");
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            user.FirstName = updatedUser.FirstName;
+            user.LastName = updatedUser.LastName;
+            user.PhoneNumber = updatedUser.PhoneNumber;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return Ok(new { message = "User information updated successfully!" });
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return BadRequest(ModelState);
+        }
+        [HttpPost("/applyForCourier")]
+        [Authorize]
+        public async Task<IActionResult> ApplyForCourier([FromBody] CourierApplicationModel model)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return NotFound("User ID not found in token.");
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+            var existingApplication = await _context.CourierApplications.FirstOrDefaultAsync(a => a.UserId == userId);
+            if (existingApplication != null)
+            {
+                return BadRequest("You already have a pending application.");
+            }
+
+            var application = new CourierApplication
+            {
+                UserId = userId,
+                UserName = user.UserName,
+                Message = model.Message
+            };
+
+            _context.CourierApplications.Add(application);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Courier role application submitted successfully!" });
+        }
+        [HttpGet("/getCourierApplications")]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> GetCourierApplications()
+        {
+            var applications = await _context.CourierApplications.ToListAsync();
+            return Ok(applications);
+        }
+
+        [HttpPost("/processCourierApplication")]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> ProcessCourierApplication([FromBody] ProcessCourierApplicationModel model)
+        {
+            var application = await _context.CourierApplications.FindAsync(model.ApplicationId);
+            if (application == null)
+            {
+                return NotFound("Application not found.");
+            }
+
+            if (model.Approve)
+            {
+                var user = await _userManager.FindByIdAsync(application.UserId);
+                if (user == null)
+                {
+                    return NotFound("User not found.");
+                }
+
+                user.UserRole = 2;
+                await _userManager.UpdateAsync(user);
+            }
+
+            _context.CourierApplications.Remove(application);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Application processed successfully!" });
+        }
+
     }
 }

@@ -12,7 +12,10 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Tel. číslo</mat-label>
-        <input matInput formControlName="deliveryGuy" placeholder="Zadajte telefónne číslo" type="tel" pattern="[0-9]*"/>
+        <input matInput formControlName="phoneNumber" placeholder="Zadajte telefónne číslo" type="tel" />
+        <mat-error *ngIf="orderForm.get('phoneNumber')?.hasError('pattern')">
+          Zadajte platné telefónne číslo.
+          </mat-error>
       </mat-form-field>
     </div>
 

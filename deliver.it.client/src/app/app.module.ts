@@ -33,6 +33,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from './auth.interceptor';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { FoodManagerComponent } from './food-manager/food-manager.component';
+import { AccountComponent } from './account/account.component';
+import { CourierApplicationsComponent } from './courier-applications/courier-applications.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { FoodManagerComponent } from './food-manager/food-manager.component';
     EditOrderDialogComponent,
     RegistrationPageComponent,
     FoodManagerComponent,
+    AccountComponent,
+    CourierApplicationsComponent,
     
   ],
   imports: [

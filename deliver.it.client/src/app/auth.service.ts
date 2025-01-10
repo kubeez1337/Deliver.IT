@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Food } from './models/food.model';
+import { User } from './models/user.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -67,7 +68,23 @@ export class AuthService {
     const payload = JSON.parse(atob(token.split('.')[1]));
     return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === '1';
   }
+  private checkCustomer(): boolean {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return false;
+    }
 
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === '0';
+  }
+  private checkCourier(): boolean {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return false;
+    }
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === '2';
+  }
   register(username: string, firstName: string, lastName: string, phoneNumber: string, email: string, password: string): Observable<any> {
     const registerData = { username, firstName, lastName, phoneNumber, email, password };
     return this.http.post<any>(`${this.apiUrl}/register`, registerData);
@@ -75,7 +92,21 @@ export class AuthService {
   private checkLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
-  getUser(): Observable<any> {
+  getUserRole(): string {
+    if (this.checkAdmin()) {
+      return '1';
+    }
+    if (this.checkCustomer()) {
+      return '0';
+    }
+    if (this.checkCourier()) {
+      return '2';
+    }
+    else {
+      return '';
+    }
+  }
+  getUser(): Observable<User> {
     const token = localStorage.getItem('token');
     console.log('Token from localStorage:', token);
     if (!token) {
@@ -86,7 +117,7 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
     console.log('Headers:', headers);
-    return this.http.get(`${this.apiUrl}/getUser`, { headers });
+    return this.http.get<User>(`${this.apiUrl}/getUser`, { headers });
   }
   uploadFoods(file: File): Observable<any> {
     const formData = new FormData();
@@ -159,5 +190,51 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
     return this.http.request<any>('delete', `${this.apiUrl}/deleteFoods`, { headers, body: foodIds });
+  }
+  updateUser(user: User): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put<any>(`${this.apiUrl}/updateUser`, user, { headers });
+  }
+
+  applyForCourier(message: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<any>(`${this.apiUrl}/applyForCourier`, {message}, { headers });
+  }
+  getCourierApplications(): Observable<any[]> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any[]>(`${this.apiUrl}/getCourierApplications`, { headers });
+  }
+
+  processCourierApplication(applicationId: string, approve: boolean): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<any>(`${this.apiUrl}/processCourierApplication`, { applicationId, approve }, { headers });
   }
 }

@@ -8,6 +8,7 @@ import { NewOrderComponent } from './new-order/new-order.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { FoodManagerComponent } from './food-manager/food-manager.component';
 import { AdminGuard } from './guards/admin.guard';
+import { AccountComponent } from './account/account.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'list-orders-page', component: OrdersPageComponent },
   { path: 'new-order', component: NewOrderComponent },
   { path: 'registration-page', component: RegistrationPageComponent },
+  { path: 'account-panel', component: AccountComponent },
   { path: 'food-manager', component: FoodManagerComponent, canActivate: [AdminGuard]}
   
 ];

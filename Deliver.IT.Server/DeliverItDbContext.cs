@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Deliver.IT.Server.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -13,6 +14,8 @@ namespace Deliver.IT.Server
         public DbSet<Order> Orders { get; set; }
         public DbSet<Food> Foods { get; set; }
         public DbSet<OrderFood> OrderFoods { get; set; }
+        public DbSet<CourierApplication> CourierApplications { get; set; } 
+
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    base.OnModelCreating(modelBuilder);
@@ -55,8 +58,19 @@ namespace Deliver.IT.Server
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.OrderFoods)  
                 .WithOne()  
-                .HasForeignKey(of => of.OrderId);  
+                .HasForeignKey(of => of.OrderId);
 
+            modelBuilder.Entity<Order>()
+                .Property(o => o.PhoneNumber)
+                .IsRequired();
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.CreatedBy)
+                .IsRequired();
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.ClaimedBy)
+                .IsRequired(false);
             modelBuilder.Entity<OrderFood>()
                 .HasOne<Food>()  
                 .WithMany(f => f.OrderFoods)  

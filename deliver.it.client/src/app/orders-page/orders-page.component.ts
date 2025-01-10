@@ -1,56 +1,3 @@
-//import { Component } from '@angular/core';
-//import { Order } from '../models/order.model';
-//import { OrderService } from '../order.service';
-//import { MatCardModule } from '@angular/material/card';
-
-//@Component({
-//  selector: 'app-orders-page',
-//  standalone: false,
-//  //imports: [MatCardModule],
-//  templateUrl: './orders-page.component.html',
-//  styleUrl: './orders-page.component.css'
-//})
-//export class OrdersPageComponent {
-//  orders: Order[] = [];
-
-//  constructor(private orderService: OrderService) { }
-
-//  ngOnInit(): void {
-//    this.loadOrders();
-//  }
-//  loadOrders(): void {
-//    this.orderService.getOrders().subscribe(
-//      (data: Order[]) => {
-//        this.orders = data;
-//      },
-//      (error) => {
-//        console.error('Error fetching orders:', error);
-//      }
-//    );
-//  }
-//  toggleSelectAll(event: any): void {
-//    const checked = event.target.checked;
-//    this.orders.forEach(order => {
-//      order.selected = checked;
-//    });
-//  }
-//  deleteSelectedOrders(): void {
-//    const selectedOrders = this.orders.filter(order => order.selected);
-
-//    if (selectedOrders.length === 0) {
-//      alert('No orders selected for deletion.');
-//      return;
-//    }
-
-//    selectedOrders.forEach(order => {
-//      if (order.id != null) 
-//      this.orderService.deleteOrder(order.id).subscribe(() => {
-//        this.orders = this.orders.filter(o => o.id !== order.id);
-//      });
-//    });
-//    this.loadOrders();
-//  }
-//}
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -74,7 +21,7 @@ export class OrdersPageComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Order>(this.orders);
   }
   orders: Order[] = [];  
-  displayedColumns: string[] = ['select', 'id', 'customerName', 'customerAddress', 'deliveryGuy', 'foodItems', 'action'];
+  displayedColumns: string[] = ['select', 'id', 'customerName', 'customerAddress', 'phoneNumber', 'foodItems', 'action'];
   
 
   ngOnInit() {
@@ -85,6 +32,7 @@ export class OrdersPageComponent implements OnInit {
       this.orderService.getOrders().subscribe(
         (data: Order[]) => {
           this.orders = data;
+          this.dataSource.data = this.orders;
         },
         (error) => {
           console.error('Error fetching orders:', error);
@@ -142,13 +90,14 @@ export class OrdersPageComponent implements OnInit {
             ...order,
             ...result, 
           //foodItems: order.foodItems
-          orderFoods: order.orderFoods
+          //orderFoods: order.orderFoods
+          orderFoods: result.orderFoods
         };
-        this.orderService.updateOrder(orderId,result).subscribe(
+        this.orderService.updateOrder(orderId,updatedOrder).subscribe(
           () => {
             const index = this.orders.findIndex(o => o.id === result.id);
             if (index > -1) {
-              this.orders[index] = result;
+              this.orders[index] = updatedOrder;
               this.dataSource.data = [...this.orders]; 
             }
           },

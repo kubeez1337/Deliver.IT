@@ -24,6 +24,10 @@ const PROXY_CONFIG = [
       "/updateFood",
       "/updateOrder",
       "/deleteFoods",
+      "/updateUser",
+      "/applyForCourier",
+      "/getCourierApplications",
+      "/processCourierApplication"
 
     ],
     target,
