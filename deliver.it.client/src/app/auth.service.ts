@@ -23,19 +23,6 @@ export class AuthService {
     this.isAdminSubject.next(false);
     this.isLoggedInSubject.next(false);
   }
-  //isAdmin(): Observable<any> {
-  //  const token = localStorage.getItem('token');
-  //  console.log('Token from localStorage:', token);
-  //  if (!token) {
-  //    throw new Error('No token found');
-  //  }
-
-  //  const headers = new HttpHeaders({
-  //    'Authorization': `Bearer ${token}`
-  //  });
-  //  console.log('Headers:', headers);
-  //  return this.http.get(`${this.apiUrl}/getUsers`, { headers });
-  //}
   getAllUsers(): Observable<any> {
     const token = localStorage.getItem('token');
       console.log('Token from localStorage:', token);
@@ -236,5 +223,16 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
     return this.http.post<any>(`${this.apiUrl}/processCourierApplication`, { applicationId, approve }, { headers });
+  }
+  addFoods(foods: Food[]): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<any>(`${this.apiUrl}/addFoods`, foods, { headers });
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registration-page',
@@ -15,7 +16,8 @@ export class RegistrationPageComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
   ) {
     this.registrationForm = this.fb.nonNullable.group({
       username: ['', Validators.required],
@@ -45,7 +47,9 @@ export class RegistrationPageComponent implements OnInit {
       this.authService.register(username, firstName, lastName, phoneNumber, email, password).subscribe({
         next: (response) => {
           console.log('Registration successful', response);
-          alert('Registration successful');
+          this.snackBar.open('Registrácia úspešná!', '', {
+            duration: 3000,
+          });
           this.router.navigate(['/user-login-page']);
         },
         error: (error) => {

@@ -61,13 +61,13 @@ export class AccountComponent {
       const updatedUser = { ...this.user, ...this.accountForm.value };
       this.authService.updateUser(updatedUser).subscribe({
         next: () => {
-          this.snackBar.open('Information updated successfuly', '', {
+          this.snackBar.open('Aktualizácia informácií úspešná', '', {
             duration: 3000,
           });
         },
         error: (error) => {
           console.error('Error updating user information:', error);
-          this.snackBar.open('Error updating your information', '', {
+          this.snackBar.open('Aktualizácia informácií neúspešná', '', {
             duration: 3000,
           });
         }
@@ -80,13 +80,13 @@ export class AccountComponent {
 
       this.authService.applyForCourier(message).subscribe({
         next: () => {
-          this.snackBar.open('Your application was sent successfuly', '', {
+          this.snackBar.open('Vaša žiadosť bola odoslaná', '', {
             duration: 3000,
           });
         },
         error: (error) => {
           console.error('Error applying for courier role:', error);
-          this.snackBar.open('Error applying for courier role', '', {
+          this.snackBar.open('Vaša žiadosť nebola odoslaná', '', {
             duration: 3000,
           });
         }
@@ -96,14 +96,14 @@ export class AccountComponent {
   processApplication(applicationId: string, approve: boolean): void {
     this.authService.processCourierApplication(applicationId, approve).subscribe({
       next: () => {
-        this.snackBar.open(`Application ${approve ? 'approved' : 'rejected'} successfully`, '', {
+        this.snackBar.open(`Žiadosť ${approve ? 'prijatá' : 'odmietnutá'} úspešne`, '', {
           duration: 3000,
         });
         this.loadApplications();
       },
       error: (error) => {
         console.error('Error processing application:', error);
-        this.snackBar.open('Error processing application', '', {
+        this.snackBar.open('Error v spracovaní žiadosti', '', {
           duration: 3000,
         });
       }

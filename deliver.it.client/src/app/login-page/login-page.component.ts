@@ -36,14 +36,16 @@ export class LoginPageComponent {
           console.log('Role stored in localStorage:', response.role);
           this.isAdmin = response.role === '1';
           this.authService.updateAdminStatus();
-          this.snackBar.open('Login was successful', 'Close', {
+          this.snackBar.open('Prihlásenie úspešné', '', {
             duration: 3000,
           });
           this.router.navigate(['/new-order']);
         },
         (error) => {
           console.error('Login failed', error);
-          alert("Nepodarilo sa prihlásiť");
+          this.snackBar.open('Nepodarilo sa prihlásiť', '', {
+            duration: 3000,
+          });
         }
       );
     } else {

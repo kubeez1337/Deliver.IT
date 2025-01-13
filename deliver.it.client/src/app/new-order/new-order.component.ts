@@ -12,6 +12,8 @@ import {MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../auth.service';
 import { User } from '../models/user.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-order',
   templateUrl: './new-order.component.html',
@@ -32,7 +34,9 @@ export class NewOrderComponent {
     private orderService: OrderService,
     private foodService: FoodService,
     private cdr: ChangeDetectorRef,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {
     this.selectedFoods = this.fb.array([]);
     this.orderForm = this.fb.group({
@@ -55,7 +59,7 @@ export class NewOrderComponent {
       if (role === '0') {
         this.orderForm.patchValue({
           customerName: user.firstName + ' ' + user.lastName,
-          //customerAddress: user.address, // Assuming the User model has an address field
+          //customerAddress: user.address,
           phoneNumber: user.phoneNumber
         });
       }
@@ -67,10 +71,14 @@ export class NewOrderComponent {
       orderData.createdBy = user.id;
       this.orderService.createOrder(orderData).subscribe({
         next: (response) => {
-          alert('Objednávka bola vytvorená!');
+          this.snackBar.open('Objednávka bola vytvorená!', '', {
+            duration: 3000,
+          });
+          
           this.orderForm.reset();
           this.selectedFoods.clear();
           this.foodSelected = false;
+          this.router.navigate(['/list-orders-page']);
         },
         error: (error) => {
           console.error(error);

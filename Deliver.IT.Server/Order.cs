@@ -8,11 +8,11 @@ namespace Deliver.IT.Server
     public class Order
     {
         public int Id { get; set; }
-        public string? CustomerName { get; set; }
-        public string? CustomerAddress { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerAddress { get; set; }
 
         [RegularExpression(@"^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$", ErrorMessage = "Invalid format")]
-        public string? PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string CreatedBy { get; set; }
         public string? ClaimedBy { get; set; }
         public string? ClaimedByName { get; set; }

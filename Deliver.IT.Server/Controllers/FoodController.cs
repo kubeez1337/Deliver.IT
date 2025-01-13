@@ -182,6 +182,29 @@ namespace Deliver.IT.Server.Controllers
 
             return Ok(new { message = "Foods deleted successfully!" });
         }
+        [HttpPost("/addFoods")]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> AddFoods([FromBody] Food[] foods)
+        {
+            if (foods == null || !foods.Any())
+            {
+                return BadRequest("Invalid food data.");
+            }
+
+            foreach (var food in foods)
+            {
+                if (string.IsNullOrWhiteSpace(food.Name) || food.Price <= 0)
+                {
+                    return BadRequest($"Invalid data for food with ID {food.Id}.");
+                }
+
+                _context.Foods.Add(food);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Foods added successfully!" });
+        }
     }
 
 }

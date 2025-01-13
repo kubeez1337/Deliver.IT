@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit{
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/']);
-    this.snackBar.open('Logout was successful', 'Close', {
+    this.snackBar.open('Odhlásenie úspešné', '', {
       duration: 3000,
     });
   }

@@ -17,13 +17,6 @@ namespace Deliver.IT.Server.Controllers
             _context = context;
         }
 
-        //[HttpPost("/order")]
-        //public async Task<ActionResult<Order>> CreateOrder(Order order)
-        //{
-        //    _context.Orders.Add(order);
-        //    await _context.SaveChangesAsync();
-        //    return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
-        //}
         [HttpPost("/create-order")]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderModel model)
         {

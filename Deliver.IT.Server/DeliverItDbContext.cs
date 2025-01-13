@@ -15,22 +15,6 @@ namespace Deliver.IT.Server
         public DbSet<Food> Foods { get; set; }
         public DbSet<OrderFood> OrderFoods { get; set; }
         public DbSet<CourierApplication> CourierApplications { get; set; } 
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-
-        //    modelBuilder.Entity<User>()
-        //        .Property(u => u.UserRole)
-        //        .HasConversion<string>();
-
-        //    modelBuilder.Entity<User>().HasData(
-        //        new User { FirstName = "Admin", LastName = "Adminovic", UserRole = Role.Admin },
-        //        new User { FirstName = "Peter", LastName = "Facka", UserRole = Role.Rozvozca },
-        //        new User { FirstName = "Roman", LastName = "Hladny", UserRole = Role.Zakaznik }
-        //    );
-
-        //} 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -24,7 +24,7 @@ import { Food } from '../models/food.model';
 export class OrdersPageComponent implements OnInit {
   dataSource: MatTableDataSource<Order>;
   isCourier: boolean = false;
-  user: User = { id: '', userName: '', firstName: '', lastName: '', phoneNumber: '', email: '', userRole: '' }; // Initialize user
+  user: User = { id: '', userName: '', firstName: '', lastName: '', phoneNumber: '', email: '', userRole: '' };
   foods: Food[] = [];
   constructor(private orderService: OrderService,private authService: AuthService, private dialog: MatDialog, private snackBar: MatSnackBar, private foodService: FoodService) {
     this.dataSource = new MatTableDataSource<Order>(this.orders);
@@ -81,9 +81,6 @@ export class OrdersPageComponent implements OnInit {
   }
 
   deleteSelectedOrders() {
-    //this.orders = this.orders.filter(order => !order.selected);
-    //this.dataSource.data = this.orders;  // Update table data
-
     const selectedOrders = this.orders.filter(order => order.selected);
     selectedOrders.forEach(order => {
       this.orderService.deleteOrder(order.id).subscribe({
@@ -115,8 +112,6 @@ export class OrdersPageComponent implements OnInit {
         const updatedOrder: Order = {
             ...order,
             ...result, 
-          //foodItems: order.foodItems
-          //orderFoods: order.orderFoods
           orderFoods: result.orderFoods
         };
         this.orderService.updateOrder(orderId,updatedOrder).subscribe(
@@ -141,7 +136,7 @@ export class OrdersPageComponent implements OnInit {
   claimOrder(orderId: number): void {
     this.orderService.claimOrder(orderId).subscribe({
       next: () => {
-        this.snackBar.open('Order claimed successfully', '', {
+        this.snackBar.open('Objednávka úspešne potvrdená', '', {
           duration: 3000,
         });
         this.loadOrders();
@@ -157,7 +152,7 @@ export class OrdersPageComponent implements OnInit {
   deliverOrder(orderId: number): void {
     this.orderService.deliverOrder(orderId).subscribe({
       next: () => {
-        this.snackBar.open('Order delivered successfully', '', {
+        this.snackBar.open('Objednávka úspešne doručená', '', {
           duration: 3000,
         });
         this.loadOrders();

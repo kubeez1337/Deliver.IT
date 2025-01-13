@@ -30,5 +30,6 @@ const routeConfig: Routes = [
     component: NewOrderComponent,
     title: 'New Order',
   },
+
 ];
 export default routeConfig;

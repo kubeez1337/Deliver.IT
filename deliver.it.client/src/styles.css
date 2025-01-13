@@ -2,21 +2,37 @@
   --primary-color: #ed9552;
   --accent-color: #f4d136;
   --warn-color: #1139a5;
-  
+  --text-color: #ffffff;
 }
-h2 {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   font-family: 'Trebuchet MS', sans-serif;
 }
 
-h3 {
+h1, h2, h3, p {
   font-family: 'Trebuchet MS', sans-serif;
 }
-h1 {
-  font-family: 'Trebuchet MS', sans-serif;
+
+.mat-button, .mat-raised-button, .mat-stroked-button, .mat-flat-button, .mat-icon-button, .mat-fab, .mat-mini-fab {
+  border: 2px solid #ed9552 !important; /* Orange outline */
+  color: black !important; /* Black text */
 }
-p {
-  font-family: 'Trebuchet MS', sans-serif;
+
+/* Ensure buttons inside mat-toolbar are styled correctly */
+.mat-toolbar .mat-button, .mat-toolbar .mat-raised-button, .mat-toolbar .mat-stroked-button, .mat-toolbar .mat-flat-button, .mat-toolbar .mat-icon-button, .mat-toolbar .mat-fab, .mat-toolbar .mat-mini-fab {
+  border: 2px solid #ed9552 !important; /* Orange outline */
+  color: black !important; /* Black text */
 }
+
+/* Ensure buttons inside mat-table are styled correctly */
+.mat-table .mat-button, .mat-table .mat-raised-button, .mat-table .mat-stroked-button, .mat-table .mat-flat-button, .mat-table .mat-icon-button, .mat-table .mat-fab, .mat-table .mat-mini-fab {
+  border: 2px solid #ed9552 !important; /* Orange outline */
+  color: black !important; /* Black text */
+}
+
 
 /*mat-toolbar {
   background-color: var(--primary-color);

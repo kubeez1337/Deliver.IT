@@ -1,9 +1,18 @@
 .food-manager-container {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh; /* Ensure the container takes the full height of the viewport */
+  box-sizing: border-box;
+}
+
+.table-container {
+  flex: 1; 
+  overflow: auto;
 }
 
 .file-upload-container {
-  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -15,4 +24,12 @@ table {
 
 mat-form-field {
   width: 100%;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
 }

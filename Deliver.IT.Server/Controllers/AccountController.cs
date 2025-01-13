@@ -27,24 +27,6 @@
         [HttpPost("/register")]
         public async Task<IActionResult> Register([FromBody] RegistrationModel model)
         {
-            //var user = new UserClass { UserName = username, Email = email , UserRole = 0};
-            //if (user.UserName == "adminer")
-            //{
-            //    user.UserRole = 1;
-            //}
-            //var result = await _userManager.CreateAsync(user, password);
-
-            //if (result.Succeeded)
-            //{
-            //    return Ok("User registered successfully!");
-            //}
-
-            //foreach (var error in result.Errors)
-            //{
-            //    ModelState.AddModelError("", error.Description);
-            //}
-
-            //return BadRequest(ModelState);
             var user = new UserClass {
                 UserName = model.Username,
                 Email = model.Email,
@@ -166,24 +148,6 @@
 
             return Ok(users);
         }
-        //[HttpPost("/applyForCourier")]
-        //[Authorize]
-        //public async Task<IActionResult> ApplyForCourier()
-        //{
-        //    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //    if (userId == null)
-        //    {
-        //        return NotFound("User ID not found in token.");
-        //    }
-
-        //    var user = await _userManager.FindByIdAsync(userId);
-        //    if (user == null)
-        //    {
-        //        return NotFound("User not found.");
-        //    }
-
-        //    return Ok(new { message = "Courier role application submitted successfully!" });
-        //}
         [HttpPut("/updateUser")]
         [Authorize]
         public async Task<IActionResult> UpdateUser([FromBody] UserClass updatedUser)

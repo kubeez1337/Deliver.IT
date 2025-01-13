@@ -1,0 +1,75 @@
+.order-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+  .order-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customer-details,
+.apply-courier,
+.courier-message {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.apply-courier {
+  align-items: center;
+}
+
+.courier-message {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.application-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+  .application-card p {
+    margin: 5px 0;
+  }
+
+button {
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  align-self: center;
+  width: 200px;
+}
+
+h2 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+h3 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-label {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.nice-font {
+  font-family: 'Trebuchet MS', sans-serif;
+}
