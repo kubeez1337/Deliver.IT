@@ -15,7 +15,11 @@ namespace Deliver.IT.Server
         public string? PhoneNumber { get; set; }
         public string CreatedBy { get; set; }
         public string? ClaimedBy { get; set; }
+        public string? ClaimedByName { get; set; }
+        public string Status { get; set; } = "Waiting for courier";
+        
         public ICollection<OrderFood> OrderFoods { get; set; } = new List<OrderFood>();
+        public decimal TotalPrice { get; set; }
     }
 
     public class OrderFood

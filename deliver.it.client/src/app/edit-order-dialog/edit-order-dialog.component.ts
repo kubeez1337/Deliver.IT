@@ -38,8 +38,10 @@ export class EditOrderDialogComponent {
   save(): void {
     
     if (this.editOrderForm.valid) {
-      console.log('Form is valid, closing dialog with data:', this.editOrderForm.value);
-      this.dialogRef.close(this.editOrderForm.value);
+      const orderData = this.editOrderForm.value;
+      orderData.totalPrice = this.calculateTotalPrice(orderData.orderFoods);
+      this.dialogRef.close(orderData);
+      //this.dialogRef.close(this.editOrderForm.value);
     } else {
       console.log('Form is invalid');
     }
@@ -76,5 +78,15 @@ export class EditOrderDialogComponent {
 
   removeOrderFood(index: number): void {
     this.orderFoods.removeAt(index);
+  }
+  calculateTotalPrice(orderFoods: any[]): number {
+    let totalPrice = 0;
+    orderFoods.forEach(orderFood => {
+      const food = this.foods.find(f => f.id === orderFood.foodId);
+      if (food) {
+        totalPrice += food.price * orderFood.quantity;
+      }
+    });
+    return totalPrice;
   }
 }

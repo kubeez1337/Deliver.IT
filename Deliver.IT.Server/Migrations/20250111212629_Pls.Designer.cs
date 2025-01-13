@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Deliver.IT.Server.Migrations
 {
     [DbContext(typeof(DeliverItDbContext))]
-    [Migration("20250110224636_Applications")]
-    partial class Applications
+    [Migration("20250111212629_Pls")]
+    partial class Pls
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,6 +103,9 @@ namespace Deliver.IT.Server.Migrations
                     b.Property<string>("ClaimedBy")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ClaimedByName")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -115,6 +118,13 @@ namespace Deliver.IT.Server.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("TotalPrice")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -219,45 +229,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b965e488-c8dd-4c23-92b1-65906f7576fd",
+                            Id = "8e14c112-1e82-420d-b357-2bd93a814192",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd8fc57a-c0e2-43e3-b452-7565114e757d",
+                            ConcurrencyStamp = "afd87285-f534-4a77-b230-d9e199af542e",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "14e94438-654c-493b-b40e-ddd08f38c567",
+                            SecurityStamp = "40035cc9-99a2-43e1-9199-c92e9e55dba1",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "570c3a51-f12b-4a75-8e08-92f7bc4c7108",
+                            Id = "4a1153b7-851c-413d-b594-aaece72c2fce",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04499e42-37b7-43cd-9bbb-bf7c676df892",
+                            ConcurrencyStamp = "d380fb3c-9596-4596-ad4c-e9a03440cdf4",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "125a7e2f-34ef-4883-bf44-785203640d0e",
+                            SecurityStamp = "d5ebff60-6fc8-41f3-aeb7-4046bb0c7a96",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "261fc9be-271a-49ff-8bb4-d0e6b8681b74",
+                            Id = "d3d10b52-b270-4195-b07a-3bd85299ece9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "711184c2-13f5-4512-8e69-189dca3e0c7d",
+                            ConcurrencyStamp = "24afae8c-fdb8-41d3-b86d-d4a593c04084",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5e34bf7d-e970-4ab2-8506-79afdaf92e2f",
+                            SecurityStamp = "b6cf93c0-3303-42d9-bb1a-f7b89b0012f4",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"

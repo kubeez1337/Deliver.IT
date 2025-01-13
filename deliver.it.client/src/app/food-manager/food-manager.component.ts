@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Food } from '../models/food.model';
 import { AuthService } from '../auth.service';
 import { saveAs } from 'file-saver';
@@ -16,6 +16,8 @@ export class FoodManagerComponent implements OnInit {
   selectedFile: File | null = null;
   displayedColumns: string[] = ['select','id', 'name', 'price'];
   selection = new SelectionModel<Food>(true, []);
+  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>; // Add reference to file input
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -83,6 +85,9 @@ export class FoodManagerComponent implements OnInit {
       this.selection.clear() :
       this.foods.forEach(row => this.selection.select(row));
   }
+  triggerFileInputClick(): void {
+    this.fileInput.nativeElement.click();
+  }
   uploadFoods(): void {
     if (this.selectedFile) {
       this.authService.uploadFoods(this.selectedFile).subscribe(
@@ -117,6 +122,10 @@ export class FoodManagerComponent implements OnInit {
         alert('Error exporting foods');
       }
     );
+  }
+  addFood(): void {
+    const newFood: Food = { id: 0, name: '', price: 0, quantity: 0 };
+    this.foods.push(newFood);
   }
 
 }

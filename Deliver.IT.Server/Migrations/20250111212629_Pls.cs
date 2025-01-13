@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Applications : Migration
+    public partial class Pls : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,7 +94,10 @@ namespace Deliver.IT.Server.Migrations
                     CustomerAddress = table.Column<string>(type: "TEXT", nullable: true),
                     PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
                     CreatedBy = table.Column<string>(type: "TEXT", nullable: false),
-                    ClaimedBy = table.Column<string>(type: "TEXT", nullable: true)
+                    ClaimedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ClaimedByName = table.Column<string>(type: "TEXT", nullable: true),
+                    Status = table.Column<string>(type: "TEXT", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -237,9 +240,9 @@ namespace Deliver.IT.Server.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
                 values: new object[,]
                 {
-                    { "261fc9be-271a-49ff-8bb4-d0e6b8681b74", 0, "711184c2-13f5-4512-8e69-189dca3e0c7d", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "5e34bf7d-e970-4ab2-8506-79afdaf92e2f", false, "romanek", "0" },
-                    { "570c3a51-f12b-4a75-8e08-92f7bc4c7108", 0, "04499e42-37b7-43cd-9bbb-bf7c676df892", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "125a7e2f-34ef-4883-bf44-785203640d0e", false, "cigorigo", "2" },
-                    { "b965e488-c8dd-4c23-92b1-65906f7576fd", 0, "bd8fc57a-c0e2-43e3-b452-7565114e757d", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "14e94438-654c-493b-b40e-ddd08f38c567", false, "admin", "1" }
+                    { "4a1153b7-851c-413d-b594-aaece72c2fce", 0, "d380fb3c-9596-4596-ad4c-e9a03440cdf4", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "d5ebff60-6fc8-41f3-aeb7-4046bb0c7a96", false, "cigorigo", "2" },
+                    { "8e14c112-1e82-420d-b357-2bd93a814192", 0, "afd87285-f534-4a77-b230-d9e199af542e", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "40035cc9-99a2-43e1-9199-c92e9e55dba1", false, "admin", "1" },
+                    { "d3d10b52-b270-4195-b07a-3bd85299ece9", 0, "24afae8c-fdb8-41d3-b86d-d4a593c04084", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "b6cf93c0-3303-42d9-bb1a-f7b89b0012f4", false, "romanek", "0" }
                 });
 
             migrationBuilder.InsertData(

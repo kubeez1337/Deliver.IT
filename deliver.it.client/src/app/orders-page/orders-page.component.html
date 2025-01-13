@@ -1,4 +1,3 @@
-
 <div class="orders-container">
   <h2>Zoznam objednávok</h2>
 
@@ -37,20 +36,39 @@
         <th mat-header-cell *matHeaderCellDef>Počet položiek</th>
         <td mat-cell *matCellDef="let order">{{ order.orderFoods.length }}</td>
       </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let order">{{ order.status }}</td>
+      </ng-container>
+
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef>Action</th>
         <td mat-cell *matCellDef="let order">
-          <button mat-button color="primary" (click)="openEditDialog(order, order.id)">Edit</button>
+          <button mat-button *ngIf="!isCourier && order.status === 'Waiting for courier'" color="primary" (click)="openEditDialog(order, order.id)">Edit</button>
+          <button mat-button *ngIf="order.status === 'Active' || order.status === 'Delivered'" color="accent" (click)="viewOrder(order)">View</button>
         </td>
       </ng-container>
 
-      
+      <ng-container matColumnDef="claim">
+        <th mat-header-cell *matHeaderCellDef>Delivery</th>
+        <td mat-cell *matCellDef="let order">
+          <div *ngIf="order.claimedBy; else claimButton">
+            <span *ngIf="!isCourier">{{ order.claimedByName }}</span>
+            <button mat-button *ngIf="isCourier && order.claimedByName === user.userName && order.status === 'Active'" (click)="deliverOrder(order.id)">Deliver</button>
+          </div>
+          <ng-template #claimButton>
+            <button mat-button *ngIf="isCourier" (click)="claimOrder(order.id)">Claim</button>
+          </ng-template>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
 
   <div class="delete-button-container">
-    <button mat-raised-button color="warn" (click)="deleteSelectedOrders()" [disabled]="!hasSelectedOrders()">Vymazať zvolené objednávky</button>
+    <button mat-raised-button *ngIf="!isCourier" color="warn" (click)="deleteSelectedOrders()" [disabled]="!hasSelectedOrders()">Vymazať zvolené objednávky</button>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, Observable, switchMap } from 'rxjs';
 import { Order } from './models/order.model';
 import { Food } from './models/food.model';
 
@@ -16,7 +16,7 @@ export class OrderService {
     return this.http.get<Order[]>(`${this.apiUrl}/orders`);
   }
   getAvailableFoods(): Observable<Food[]> {
-    return this.http.get<Food[]>(`${this.apiUrl}/foods`);
+    return this.http.get<Food[]>(`${this.apiUrl}/getFoods`);
   }
   createOrder(orderData: Order): Observable<any> {
     return this.http.post(`${this.apiUrl}/create-order`, orderData);
@@ -25,8 +25,50 @@ export class OrderService {
     return this.http.delete<void>(`${this.apiUrl}/orders/${id}`);
   }
   updateOrder(orderId: number, updatedOrder: Order): Observable<Order> {
-    updatedOrder.id = orderId;
-    //return this.http.put<Order>(`${this.apiUrl}/orders/${orderId}`, updatedOrder);
-    return this.http.put<any>(`${this.apiUrl}/updateOrder`, updatedOrder);
+    return this.calculateTotalPrice(updatedOrder.orderFoods).pipe(
+      switchMap(totalPrice => {
+        updatedOrder.totalPrice = totalPrice;
+        updatedOrder.id = orderId;
+        return this.http.put<any>(`${this.apiUrl}/updateOrder`, updatedOrder);
+      })
+    );
+  }
+  claimOrder(orderId: number): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.put<any>(`${this.apiUrl}/claim-order`, { orderId }, { headers });
+  }
+  deliverOrder(orderId: number): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.put<any>(`${this.apiUrl}/deliver-order`, { orderId }, { headers });
+  }
+  private calculateTotalPrice(orderFoods: any[]): Observable<number> {
+    return this.getAvailableFoods().pipe(
+      map(foods => {
+        let totalPrice = 0;
+        orderFoods.forEach(orderFood => {
+          const food = foods.find(f => f.id === orderFood.foodId);
+          if (food) {
+            totalPrice += food.price * orderFood.quantity;
+          }
+        });
+        return totalPrice;
+      })
+    );
   }
 }

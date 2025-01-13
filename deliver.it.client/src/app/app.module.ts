@@ -35,6 +35,7 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { FoodManagerComponent } from './food-manager/food-manager.component';
 import { AccountComponent } from './account/account.component';
 import { CourierApplicationsComponent } from './courier-applications/courier-applications.component';
+import { ViewOrderDialogComponent } from './view-order-dialog/view-order-dialog.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { CourierApplicationsComponent } from './courier-applications/courier-app
     FoodManagerComponent,
     AccountComponent,
     CourierApplicationsComponent,
+    ViewOrderDialogComponent,
     
   ],
   imports: [

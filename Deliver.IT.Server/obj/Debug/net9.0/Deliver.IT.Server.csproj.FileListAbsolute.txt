@@ -158,4 +158,3 @@ C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net9
 C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

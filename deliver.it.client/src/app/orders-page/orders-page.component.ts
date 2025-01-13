@@ -7,6 +7,12 @@ import { OrderService } from '../order.service';
 import { Order } from '../models/order.model';
 import { EditOrderDialogComponent } from '../edit-order-dialog/edit-order-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../auth.service';
+import { User } from '../models/user.model';
+import { ViewOrderDialogComponent } from '../view-order-dialog/view-order-dialog.component';
+import { FoodService } from '../food.service';
+import { Food } from '../models/food.model';
 
 @Component({
   selector: 'app-orders-page',
@@ -17,15 +23,25 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class OrdersPageComponent implements OnInit {
   dataSource: MatTableDataSource<Order>;
-  constructor(private orderService: OrderService, private dialog: MatDialog) {
+  isCourier: boolean = false;
+  user: User = { id: '', userName: '', firstName: '', lastName: '', phoneNumber: '', email: '', userRole: '' }; // Initialize user
+  foods: Food[] = [];
+  constructor(private orderService: OrderService,private authService: AuthService, private dialog: MatDialog, private snackBar: MatSnackBar, private foodService: FoodService) {
     this.dataSource = new MatTableDataSource<Order>(this.orders);
   }
   orders: Order[] = [];  
-  displayedColumns: string[] = ['select', 'id', 'customerName', 'customerAddress', 'phoneNumber', 'foodItems', 'action'];
-  
+  displayedColumns: string[] = ['select', 'id', 'customerName', 'customerAddress', 'phoneNumber', 'foodItems', 'status', 'action', 'claim'];
+
 
   ngOnInit() {
     this.loadOrders();
+    const roleStatus = this.authService.getUserRole();
+    if (roleStatus === '2') {
+      this.isCourier = true;
+    }
+    this.authService.getUser().subscribe((user: User) => {
+      this.user = user;
+    });
 
   }
   loadOrders(): void {
@@ -39,7 +55,17 @@ export class OrdersPageComponent implements OnInit {
         }
     );
     this.dataSource.data = this.orders;
-    }
+  }
+  loadFoods(): void {
+    this.foodService.getFoods().subscribe(
+      (data: Food[]) => {
+        this.foods = data;
+      },
+      (error) => {
+        console.error('Error fetching foods:', error);
+      }
+    );
+  }
   toggleSelectAll(event: MatCheckboxChange) {
     const checked = event.checked;
     this.orders.forEach(order => order.selected = checked);
@@ -100,6 +126,7 @@ export class OrdersPageComponent implements OnInit {
               this.orders[index] = updatedOrder;
               this.dataSource.data = [...this.orders]; 
             }
+            this.loadOrders();
           },
           (error) => {
             console.error('Error updating order:', error);
@@ -110,5 +137,53 @@ export class OrdersPageComponent implements OnInit {
 
     });
     this.loadOrders();
+  }
+  claimOrder(orderId: number): void {
+    this.orderService.claimOrder(orderId).subscribe({
+      next: () => {
+        this.snackBar.open('Order claimed successfully', '', {
+          duration: 3000,
+        });
+        this.loadOrders();
+      },
+      error: (error) => {
+        console.error('Error claiming order:', error);
+        this.snackBar.open('Error claiming order', '', {
+          duration: 3000,
+        });
+      }
+    });
+  }
+  deliverOrder(orderId: number): void {
+    this.orderService.deliverOrder(orderId).subscribe({
+      next: () => {
+        this.snackBar.open('Order delivered successfully', '', {
+          duration: 3000,
+        });
+        this.loadOrders();
+      },
+      error: (error) => {
+        console.error('Error delivering order:', error);
+        this.snackBar.open('Error delivering order', '', {
+          duration: 3000,
+        });
+      }
+    });
+  }
+  viewOrder(order: Order): void {
+    this.dialog.open(ViewOrderDialogComponent, {
+      width: '400px',
+      data: order
+    });
+  }
+  private calculateTotalPrice(orderFoods: any[]): number {
+    let totalPrice = 0;
+    orderFoods.forEach(orderFood => {
+      const food = this.foods.find(f => f.id === orderFood.foodId);
+      if (food) {
+        totalPrice += food.price * orderFood.quantity;
+      }
+    });
+    return totalPrice;
   }
 }

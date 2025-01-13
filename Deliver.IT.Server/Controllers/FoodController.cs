@@ -51,12 +51,27 @@ namespace Deliver.IT.Server.Controllers
                         return BadRequest(new { message = "Validation errors", errors = validationErrors });
                     }
 
-                    _context.Foods.AddRange(foods);
+                    foreach (var food in foods)
+                    {
+                        var existingFood = await _context.Foods.AsNoTracking().FirstOrDefaultAsync(f => f.Id == food.Id);
+                        if (existingFood != null)
+                        {
+                            _context.Entry(existingFood).State = EntityState.Detached;
+                            _context.Entry(food).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            _context.Foods.Add(food);
+                        }
+                    }
+
                     await _context.SaveChangesAsync();
 
                     return Ok(new { message = "Foods uploaded successfully!" });
+                
                 }
             }
+            
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");

@@ -3,6 +3,102 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\models\\claimordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\models\\claimordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\models\\createordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\models\\createordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\order.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\order.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\orders-page\\orders-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\models\\food.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\food.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\proxy.conf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\proxy.conf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\models\\user.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\user.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\account\\account.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\account\\account.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\account\\account.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\account\\account.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\models\\fooditemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\models\\fooditemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -17,14 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\about-page\\about-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\about-page\\about-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\account\\account.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\account\\account.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\account\\account.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\account\\account.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -43,28 +131,8 @@
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\info-page\\info-page.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -91,18 +159,6 @@
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\login-page\\login-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\models\\food.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\food.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\models\\user.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\user.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\navbar\\navbar.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\navbar\\navbar.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -123,14 +179,6 @@
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\registration-page\\registration-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\orders-page\\orders-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -147,20 +195,8 @@
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\order.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\order.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\food.service.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\food.service.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -169,10 +205,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\deliveritdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -191,14 +223,6 @@
       "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\models\\courierapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -211,16 +235,8 @@
       "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\deliver.it.server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\proxy.conf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\proxy.conf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\new-order\\new-order.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\new-order\\new-order.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\user\\source\\repos\\gitcloned\\deliver.it\\deliver.it.client\\src\\app\\new-order\\new-order.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\new-order\\new-order.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3F0D856-4ABD-4AC4-9E22-8A5B6EBA2D75}|Solution Items{A3F0D856-4ABD-4AC4-9E22-8A5B6EBA2D75}|C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -334,323 +350,232 @@
       "DocumentGroups": [
         {
           "DockedWidth": 371,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "about-page.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T21:10:15.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "about-page.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.html",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-04T21:10:12.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "about-page.component.css",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.css",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.css",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.css",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T21:10:12.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "about-page.component.spec.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T21:10:13.893Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "account.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\account\\account.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.html",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\account\\account.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-10T21:42:35.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "account.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\account\\account.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\account\\account.component.ts",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAQwHwAAAADAAAAAAAAAA==",
+              "Title": "orders-page.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAQwIAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T21:42:34.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:10:59.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "courier-applications.component.css",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-10T23:51:13.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "courier-applications.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T22:12:42.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "edit-order-dialog.component.css",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-10T01:43:52.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "edit-order-dialog.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html*",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-05T01:35:02.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "courier-applications.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-10T23:15:47.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "edit-order-dialog.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-05T01:35:19.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "food-manager.component.css",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-10T01:37:32.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "food-manager.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.html",
               "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.html",
               "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.html",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwGUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwDoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-10T01:23:51.789Z",
+              "WhenOpened": "2025-01-10T01:23:51.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateOrderModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\CreateOrderModel.cs",
+              "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\CreateOrderModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\CreateOrderModel.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Models\\CreateOrderModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T15:20:55.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClaimOrderModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\ClaimOrderModel.cs",
+              "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\ClaimOrderModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\ClaimOrderModel.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Models\\ClaimOrderModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T15:20:10.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Order.cs",
+              "RelativeDocumentMoniker": "Deliver.IT.Server\\Order.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Order.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Order.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T11:56:51.237Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "food-manager.component.spec.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "edit-order-dialog.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.ts",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwC4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T23:50:51.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T01:35:19.757Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "info-page.component.css",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.css",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.css",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.css",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T21:10:16.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "info-page.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.html",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.html",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-04T21:10:17.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "info-page.component.spec.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "order.service.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\order.service.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\order.service.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\order.service.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\order.service.ts",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T21:10:18.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T13:14:47.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 7,
+              "Title": "auth.service.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.service.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\auth.service.ts",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAYwL8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T01:18:13.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "food.service.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food.service.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food.service.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food.service.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\food.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T15:03:30.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\FoodController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Controllers\\FoodController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T21:12:18.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "food-manager.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts*",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAbAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwGMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T01:18:39.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-10T01:18:39.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "info-page.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T21:10:19.362Z",
-              "EditorCaption": ""
+              "DocumentIndex": 11,
+              "Title": "food-manager.component.css",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-10T01:37:32.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "login-page.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.html*",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.html*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-03T19:15:25.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "login-page.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.ts*",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAuwB8AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-05T10:59:46.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "food.model.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\food.model.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\food.model.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\food.model.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\models\\food.model.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T15:07:25.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 12,
               "Title": "order.model.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\order.model.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\order.model.ts",
               "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\order.model.ts",
               "RelativeToolTip": "deliver.it.client\\src\\app\\models\\order.model.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T20:59:49.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-10T20:59:49.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 13,
+              "Title": "view-order-dialog.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.ts",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-11T17:00:53.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "view-order-dialog.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\view-order-dialog\\view-order-dialog.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-11T17:02:06.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "orders-page.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADAAAACGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-04T13:26:57.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "edit-order-dialog.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-05T01:35:02.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "food.model.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\food.model.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\food.model.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\food.model.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\models\\food.model.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T15:07:25.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "user.model.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\models\\user.model.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\user.model.ts",
@@ -658,12 +583,251 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\models\\user.model.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T02:26:46.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T02:26:46.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "proxy.conf.js",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\proxy.conf.js",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\proxy.conf.js",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\proxy.conf.js",
+              "RelativeToolTip": "deliver.it.client\\src\\proxy.conf.js",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-04T01:48:43.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAUwP0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T21:12:21.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "account.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\account\\account.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\account\\account.component.ts",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-10T21:42:34.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "account.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\account\\account.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\account\\account.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-10T21:42:35.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FoodItemModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\FoodItemModel.cs",
+              "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\FoodItemModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\FoodItemModel.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Models\\FoodItemModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T15:21:18.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "about-page.component.spec.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.spec.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T21:10:13.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "about-page.component.css",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.css",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.css",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.css",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-04T21:10:12.168Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
+              "Title": "about-page.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-04T21:10:12.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "about-page.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\about-page\\about-page.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T21:10:15.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "courier-applications.component.css",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-10T23:51:13.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "courier-applications.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-10T22:12:42.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "edit-order-dialog.component.css",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\edit-order-dialog\\edit-order-dialog.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-10T01:43:52.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "courier-applications.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-10T23:15:47.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "food-manager.component.spec.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.spec.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-10T23:50:51.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "info-page.component.css",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.css",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.css",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.css",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-04T21:10:16.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "info-page.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.html",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-04T21:10:17.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "info-page.component.spec.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.spec.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T21:10:18.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "info-page.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\info-page\\info-page.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T21:10:19.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "login-page.component.html",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.html",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.html",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.html",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-03T19:15:25.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "login-page.component.ts",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwB8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-05T10:59:46.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "navbar.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.css",
@@ -671,12 +835,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\navbar\\navbar.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T21:10:35.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:10:35.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 40,
               "Title": "navbar.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.html",
@@ -684,12 +847,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\navbar\\navbar.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-03T16:45:21.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:45:21.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 41,
               "Title": "navbar.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.ts",
@@ -697,25 +859,23 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\navbar\\navbar.component.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T12:45:04.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:45:04.37Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 42,
               "Title": "registration-page.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration-page\\registration-page.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\registration-page\\registration-page.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration-page\\registration-page.component.ts*",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\registration-page\\registration-page.component.ts*",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration-page\\registration-page.component.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\registration-page\\registration-page.component.ts",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwBkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-09T16:25:37.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T16:25:37.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 43,
               "Title": "registration-page.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration-page\\registration-page.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\registration-page\\registration-page.component.html",
@@ -723,38 +883,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\registration-page\\registration-page.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-09T16:34:20.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T16:34:20.931Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "orders-page.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.html",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB4AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-04T13:26:57.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "orders-page.component.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts*",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T21:10:59.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 44,
               "Title": "app.module.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.module.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.module.ts",
@@ -762,12 +895,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\app.module.ts",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-03T19:14:58.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T19:14:58.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 45,
               "Title": "app-routing.module.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app-routing.module.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app-routing.module.ts",
@@ -775,12 +907,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\app-routing.module.ts",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-03T16:47:29.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:47:29.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 46,
               "Title": "app.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.css",
@@ -788,12 +919,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\app.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-03T16:45:29.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:45:29.514Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 47,
               "Title": "routes.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\routes.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\routes.ts",
@@ -801,38 +931,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\routes.ts",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-03T16:47:22.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:47:22.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "food.service.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food.service.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food.service.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food.service.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\food.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T15:03:30.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "order.service.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\order.service.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\order.service.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\order.service.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\order.service.ts",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T13:14:47.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 48,
               "Title": "food.service.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\food.service.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food.service.spec.ts",
@@ -840,25 +943,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\food.service.spec.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T15:36:52.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T15:36:52.449Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "auth.service.ts",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.service.ts",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\auth.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T01:18:13.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 49,
               "Title": "UserClass.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\UserClass.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\UserClass.cs",
@@ -866,38 +955,23 @@
               "RelativeToolTip": "Deliver.IT.Server\\UserClass.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T10:20:23.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T10:20:23.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 50,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Program.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Program.cs*",
-              "RelativeToolTip": "Deliver.IT.Server\\Program.cs*",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Program.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Program.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAAFMAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T10:29:05.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T10:29:05.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Order.cs",
-              "RelativeDocumentMoniker": "Deliver.IT.Server\\Order.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Order.cs",
-              "RelativeToolTip": "Deliver.IT.Server\\Order.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T11:56:51.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 51,
               "Title": "DeliverItDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\DeliverItDbContext.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\DeliverItDbContext.cs",
@@ -910,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 52,
               "Title": "RegistrationModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\RegistrationModel.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\RegistrationModel.cs",
@@ -918,12 +992,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Models\\RegistrationModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T16:29:56.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T16:29:56.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 53,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\LoginModel.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\LoginModel.cs",
@@ -931,12 +1004,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Models\\LoginModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T23:23:49.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T23:23:49.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 54,
               "Title": "CourierApplication.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Models\\CourierApplication.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\CourierApplication.cs",
@@ -944,51 +1016,23 @@
               "RelativeToolTip": "Deliver.IT.Server\\Models\\CourierApplication.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T22:29:44.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-10T22:29:44.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\OrderController.cs*",
-              "RelativeToolTip": "Deliver.IT.Server\\Controllers\\OrderController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:12:21.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "FoodController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\FoodController.cs",
-              "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\FoodController.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\FoodController.cs*",
-              "RelativeToolTip": "Deliver.IT.Server\\Controllers\\FoodController.cs*",
-              "ViewState": "AgIAAJEAAAAAAAAAAAArwJUAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:12:18.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 55,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\AccountController.cs*",
-              "RelativeToolTip": "Deliver.IT.Server\\Controllers\\AccountController.cs*",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Deliver.IT.Server\\Controllers\\AccountController.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAYwLgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:12:12.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:12:12.099Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\appsettings.json",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\appsettings.json",
@@ -996,12 +1040,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-04T02:00:27.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T02:00:27.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "Deliver.IT.Server.http",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.http",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Deliver.IT.Server.http",
@@ -1013,19 +1056,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "proxy.conf.js",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\proxy.conf.js",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\proxy.conf.js",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\proxy.conf.js",
-              "RelativeToolTip": "deliver.it.client\\src\\proxy.conf.js",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-04T01:48:43.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 58,
               "Title": "new-order.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\new-order\\new-order.component.ts",
@@ -1037,19 +1068,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "new-order.component.html",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.html",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\new-order\\new-order.component.html",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.html",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\new-order\\new-order.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-04T12:41:21.816Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 59,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -1061,7 +1080,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 60,
               "Title": "registration-page.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\registration-page\\registration-page.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\registration-page\\registration-page.component.css",
@@ -1073,7 +1092,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 61,
               "Title": "login-page.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.css",
@@ -1085,7 +1104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 62,
               "Title": "admin.guard.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\admin.guard.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\guards\\admin.guard.ts",
@@ -1097,7 +1116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 63,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Properties\\launchSettings.json",
@@ -1109,7 +1128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 64,
               "Title": "auth.interceptor.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\auth.interceptor.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.interceptor.ts",
@@ -1121,7 +1140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 65,
               "Title": "new-order.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\new-order\\new-order.component.css",
@@ -1133,7 +1152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 66,
               "Title": "styles.scss",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\styles.scss",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\styles.scss",
@@ -1145,7 +1164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 67,
               "Title": "app.component.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.ts",
@@ -1157,7 +1176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 68,
               "Title": "karma.conf.js",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\karma.conf.js",
               "RelativeDocumentMoniker": "deliver.it.client\\karma.conf.js",
@@ -1169,7 +1188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 69,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\WeatherForecast.cs",
@@ -1181,7 +1200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 70,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\WeatherForecastController.cs",
@@ -1193,7 +1212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 71,
               "Title": "orders-page.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.spec.ts",
@@ -1205,7 +1224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 72,
               "Title": "app.component.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.html",
@@ -1217,7 +1236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 73,
               "Title": "serviceDependencies.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Properties\\serviceDependencies.json",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Properties\\serviceDependencies.json",
@@ -1229,7 +1248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 74,
               "Title": "main.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\main.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\main.ts",
@@ -1241,7 +1260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 75,
               "Title": "auth.service.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.service.spec.ts",
@@ -1253,7 +1272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 76,
               "Title": "app.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.spec.ts",
@@ -1265,7 +1284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 77,
               "Title": "orders-page.component.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\orders-page\\orders-page.component.css",
@@ -1277,7 +1296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 78,
               "Title": "new-order.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\new-order\\new-order.component.spec.ts",
@@ -1289,7 +1308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 79,
               "Title": "navbar.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.spec.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.spec.ts",
@@ -1301,7 +1320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 80,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\styles.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\styles.css",
@@ -1313,7 +1332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 81,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\deliver.it.client\\src\\index.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\index.html",
@@ -1325,7 +1344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 82,
               "Title": "Deliver.IT.Server.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
@@ -1337,7 +1356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 83,
               "Title": "Deliver.IT.Server",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
@@ -1348,7 +1367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 84,
               "Title": "about.html",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\about.html",
               "RelativeDocumentMoniker": "about.html",
@@ -1361,10 +1380,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }

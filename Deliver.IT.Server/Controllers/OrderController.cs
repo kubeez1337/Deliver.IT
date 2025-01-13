@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using Deliver.IT.Server.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -60,38 +61,38 @@ namespace Deliver.IT.Server.Controllers
             return Ok(order);
         }
 
-        [HttpPut("/claim-order/{id}")]
+        [HttpPut("/claim-order")]
         [Authorize(Roles = "2")]
-        public async Task<IActionResult> ClaimOrder(int id)
+        public async Task<IActionResult> ClaimOrder([FromBody] ClaimOrderModel model)
         {
-            var order = await _context.Orders.FindAsync(id);
-            if (order == null)
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
             {
-                return NotFound();
+                return NotFound("User ID not found in token.");
             }
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
-            order.ClaimedBy = userId; 
+            var order = await _context.Orders.FindAsync(model.OrderId);
+            if (order == null)
+            {
+                return NotFound("Order not found.");
+            }
 
-            _context.Orders.Update(order);
+            if (order.ClaimedBy != null)
+            {
+                return BadRequest("Order is already claimed.");
+            }
+
+            order.ClaimedBy = userId;
+            order.ClaimedByName = User.FindFirst(ClaimTypes.Name)?.Value;
+            order.Status = "Active";
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Order claimed successfully!" });
         }
 
-        public class CreateOrderModel
-        {
-            public string CustomerName { get; set; }
-            public string CustomerAddress { get; set; }
-            public string PhoneNumber { get; set; }
-            public List<FoodItemModel> FoodItems { get; set; }
-        }
+        
 
-        public class FoodItemModel
-        {
-            public int FoodId { get; set; }
-            public int Quantity { get; set; }
-        }
+        
 
         [HttpGet("/order/{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)
@@ -136,6 +137,17 @@ namespace Deliver.IT.Server.Controllers
                 return Unauthorized();
             }
             var orders = await ordersQuery.ToListAsync();
+            foreach (var order in orders)
+            {
+                if (order.ClaimedBy != null)
+                {
+                    var courier = await _context.Users.FindAsync(order.ClaimedBy);
+                    if (courier != null)
+                    {
+                        order.ClaimedByName = courier.UserName;
+                    }
+                }
+            }
             return Ok(orders);
         }
 
@@ -185,7 +197,7 @@ namespace Deliver.IT.Server.Controllers
             return _context.Orders.Any(e => e.Id == id);
         }
         [HttpPut("/updateOrder")]
-        [Authorize(Roles = "1")] 
+        [Authorize] 
         public async Task<IActionResult> UpdateOrder([FromBody] Order order)
         {
             if (order == null || order.Id <= 0)
@@ -218,6 +230,32 @@ namespace Deliver.IT.Server.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Order updated successfully!" });
+        }
+        [HttpPut("/deliver-order")]
+        [Authorize(Roles = "2")]
+        public async Task<IActionResult> DeliverOrder([FromBody] ClaimOrderModel model)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return NotFound("User ID not found in token.");
+            }
+
+            var order = await _context.Orders.FindAsync(model.OrderId);
+            if (order == null)
+            {
+                return NotFound("Order not found.");
+            }
+
+            if (order.ClaimedBy != userId)
+            {
+                return BadRequest("You can only deliver orders you have claimed.");
+            }
+
+            order.Status = "Delivered";
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Order delivered successfully!" });
         }
     }
 }
