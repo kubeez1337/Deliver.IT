@@ -235,4 +235,15 @@ export class AuthService {
     });
     return this.http.post<any>(`${this.apiUrl}/addFoods`, foods, { headers });
   }
+  uploadImage(formData: FormData): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<any>(`${this.apiUrl}/uploadImage`, formData, { headers });
+  }
 }

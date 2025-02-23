@@ -8,16 +8,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-food-manager',
   standalone: false,
-  
+
   templateUrl: './food-manager.component.html',
   styleUrl: './food-manager.component.css'
 })
 export class FoodManagerComponent implements OnInit {
   foods: Food[] = [];
   selectedFile: File | null = null;
-  displayedColumns: string[] = ['select','id', 'name', 'price'];
+  displayedColumns: string[] = ['select', 'id', 'name', 'price', 'picturePath'];
   selection = new SelectionModel<Food>(true, []);
-  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>; 
+  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
 
   constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
 
@@ -131,7 +131,7 @@ export class FoodManagerComponent implements OnInit {
           this.snackBar.open('Upload jedálničku úspešný!', '', {
             duration: 3000,
           });
-          this.getFoods(); 
+          this.getFoods();
         },
         (error) => {
           console.error('Error uploading foods', error);
@@ -163,7 +163,26 @@ export class FoodManagerComponent implements OnInit {
     );
   }
   addFood(): void {
-    const newFood: Food = { id: 0, name: '', price: 0, quantity: 0 };
+    const newFood: Food = { id: 0, name: '', price: 0, quantity: 0, picturePath: "" };
     this.foods = [...this.foods, newFood];
+  }
+  onImageSelected(event: any, food: Food): void {
+    const file = event.target.files[0];
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('foodId', food.id.toString());
+
+      this.authService.uploadImage(formData).subscribe(
+        (response) => {
+          food.picturePath = response.picturePath;
+          this.snackBar.open('Image uploaded successfully!', '', { duration: 3000 });
+        },
+        (error) => {
+          console.error('Error uploading image', error);
+          this.snackBar.open('Error uploading image', '', { duration: 3000 });
+        }
+      );
+    }
   }
 }
