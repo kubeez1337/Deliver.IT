@@ -42,3 +42,6 @@ h1, h2, h3, p {
 /*}*/
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

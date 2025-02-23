@@ -62,11 +62,11 @@ namespace Deliver.IT.Server
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Food>().HasData(
-                new Food { Id = 1, Name = "McRoyal", Price = 20 },
-                new Food { Id = 2, Name = "Banan", Price = 1 },
-                new Food { Id = 3, Name = "Adventny kalendar", Price = 2 },
-                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1 },
-                new Food { Id = 5, Name = "Pivo", Price = 1 }
+                new Food { Id = 1, Name = "McRoyal", Price = 20, PicturePath= "/uploads/mcroyal.jpg"},
+                new Food { Id = 2, Name = "Banan", Price = 1, PicturePath= "/uploads/banan.jpg"},
+                new Food { Id = 3, Name = "Adventny kalendar", Price = 2, PicturePath = "/uploads/kalendar.jpg" },
+                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "/uploads/mikulas.jpg" },
+                new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "/uploads/pivo.jpg" }
             );
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

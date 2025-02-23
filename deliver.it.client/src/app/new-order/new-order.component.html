@@ -20,22 +20,31 @@
     </div>
 
     <div class="food-selection">
-      <mat-form-field appearance="outline">
-        <mat-label>Vyberte jedlo</mat-label>
-        <mat-select [(value)]="selectedFood" (selectionChange)="onFoodSelected($event)">
-          <mat-option *ngFor="let food of availableFoods" [value]="food">
-            {{ food.name }} - {{ food.price | currency }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
+      <!--<mat-form-field appearance="outline">
+    <mat-label>Vyberte jedlo</mat-label>
+    <mat-select [(value)]="selectedFood" (selectionChange)="onFoodSelected($event)">
+      <mat-option *ngFor="let food of availableFoods" [value]="food">
+        {{ food.name }} - {{ food.price | currency }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>-->
+      <h3>Vyberte jedlo</h3>
+      <mat-grid-list cols="3" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let food of availableFoods" (click)="selectFood(food)" [class.selected]="food === selectedFood">
+          <img [src]="food.picturePath" alt="{{ food.name }}" class="food-image" />
+          <mat-grid-tile-footer>
+            <h3>{{ food.name }}</h3>
+            <p>{{ food.price | currency }}</p>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
       <div *ngIf="selectedFood">
-          <mat-label>Množstvo</mat-label>
-          <div class="quantity-container">
-            <button mat-button type="button" (click)="decrementQuantity()">-</button>
-            <span>{{ selectedFoodQuantity }}</span>
-            <button mat-button type="button" (click)="incrementQuantity()">+</button>
-          </div>
+        <mat-label>Množstvo</mat-label>
+        <div class="quantity-container">
+          <button mat-button type="button" (click)="decrementQuantity()">-</button>
+          <span>{{ selectedFoodQuantity }}</span>
+          <button mat-button type="button" (click)="incrementQuantity()">+</button>
+        </div>
         <button mat-raised-button color="primary" type="button" (click)="addFood(selectedFood, selectedFoodQuantity)">
           Pridať jedlo
         </button>

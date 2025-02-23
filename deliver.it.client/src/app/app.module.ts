@@ -38,6 +38,7 @@ import { CourierApplicationsComponent } from './courier-applications/courier-app
 import { ViewOrderDialogComponent } from './view-order-dialog/view-order-dialog.component';
 import { NotLoggedInComponent } from './not-logged-in/not-logged-in.component';
 import { MapViewerComponent } from './map-viewer/map-viewer.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { MapViewerComponent } from './map-viewer/map-viewer.component';
   imports: [
     MatCardModule,
     BrowserModule, HttpClientModule, FormsModule, MatMenuModule, MatTableModule,MatPaginatorModule, MatCheckboxModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, MatGridListModule,
     ReactiveFormsModule,
     MatSelectModule,
     MatOptionModule, MatDialogModule,

@@ -36,5 +36,6 @@ namespace Deliver.IT.Server
         [JsonPropertyName("price")]
         public decimal Price { get; set; }
         public ICollection<OrderFood>? OrderFoods { get; set; }
+        public string? PicturePath {  get; set; }
     }
 }

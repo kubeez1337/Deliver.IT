@@ -13,6 +13,8 @@ namespace Deliver.IT.Server.Controllers
     public class FoodController : ControllerBase
     {
         private readonly DeliverItDbContext _context;
+        private readonly IWebHostEnvironment _env;
+
         public FoodController(DeliverItDbContext context)
         {
             _context = context;
@@ -204,6 +206,41 @@ namespace Deliver.IT.Server.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Foods added successfully!" });
+        }
+
+        [HttpPost("/uploadImage")]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> UploadImage(int foodId, IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No file uploaded.");
+            }
+
+            var food = await _context.Foods.FindAsync(foodId);
+            if (food == null)
+            {
+                return NotFound("Food not found.");
+            }
+
+            var uploadsFolder = Path.Combine(_env.WebRootPath, "uploads");
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            var filePath = Path.Combine(uploadsFolder, file.FileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            food.PicturePath = $"/uploads/{file.FileName}";
+            _context.Foods.Update(food);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { imageUrl = food.PicturePath });
         }
     }
 

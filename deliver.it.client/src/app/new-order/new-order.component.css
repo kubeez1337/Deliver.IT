@@ -79,3 +79,8 @@ mat-label {
 .nice-font  {
   font-family: 'Trebuchet MS', sans-serif;
 }
+.food-image {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
