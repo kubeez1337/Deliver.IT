@@ -37,6 +37,7 @@ import { AccountComponent } from './account/account.component';
 import { CourierApplicationsComponent } from './courier-applications/courier-applications.component';
 import { ViewOrderDialogComponent } from './view-order-dialog/view-order-dialog.component';
 import { NotLoggedInComponent } from './not-logged-in/not-logged-in.component';
+import { MapViewerComponent } from './map-viewer/map-viewer.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { NotLoggedInComponent } from './not-logged-in/not-logged-in.component';
     CourierApplicationsComponent,
     ViewOrderDialogComponent,
     NotLoggedInComponent,
+    MapViewerComponent,
     
   ],
   imports: [
