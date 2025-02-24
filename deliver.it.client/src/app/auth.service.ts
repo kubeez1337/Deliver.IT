@@ -23,9 +23,8 @@ export class AuthService {
     this.isAdminSubject.next(false);
     this.isLoggedInSubject.next(false);
   }
-  getAllUsers(): Observable<any> {
+  getAllUsers(): Observable<User[]> {
     const token = localStorage.getItem('token');
-      console.log('Token from localStorage:', token);
       if (!token) {
         throw new Error('No token found');
       }
@@ -33,8 +32,7 @@ export class AuthService {
       const headers = new HttpHeaders({
         'Authorization': `Bearer ${token}`
       });
-      console.log('Headers:', headers);
-      return this.http.get(`${this.apiUrl}/getUsers`, { headers });
+      return this.http.get<User[]>(`${this.apiUrl}/getUsers`, { headers });
   }
   updateAdminStatus(): void {
     this.isAdminSubject.next(this.checkAdmin());
@@ -234,5 +232,16 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
     return this.http.post<any>(`${this.apiUrl}/addFoods`, foods, { headers });
+  }
+  getUserByUsername(username: string): Observable<User> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<User>(`${this.apiUrl}/getUserByUsername?username=${username}`, { headers });
   }
 }

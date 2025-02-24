@@ -1,2 +1,3 @@
 C:\Users\user\source\repos\Deliver.IT\deliver.it.client\obj\Debug\deliver.it.client.esproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\GitCloned\Deliver.IT\deliver.it.client\obj\Debug\deliver.it.client.esproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\deliver.it.client\obj\Debug\deliver.it.client.esproj.CoreCompileInputs.cache

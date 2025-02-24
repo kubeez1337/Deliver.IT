@@ -1,0 +1,36 @@
+<div class="chat-container mat-elevation-z8">
+  <mat-toolbar color="primary">
+    <span>Chat</span>
+  </mat-toolbar>
+
+  <div *ngIf="isAdmin" class="user-select">
+    <mat-form-field appearance="fill">
+      <mat-label>Select User</mat-label>
+      <mat-select (selectionChange)="onUserSelect($event)">
+        <mat-option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="messages">
+    <div *ngFor="let message of messages" class="message">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ message.senderName }}</mat-card-title>
+          <mat-card-subtitle>{{ message.timeStamp | date:'short' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ message.text }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="message-input">
+    <mat-form-field appearance="fill" class="message-input-field">
+      <mat-label>Type a message...</mat-label>
+      <input matInput [(ngModel)]="newMessage" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+  </div>
+</div>

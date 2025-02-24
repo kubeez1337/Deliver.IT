@@ -15,6 +15,7 @@ namespace Deliver.IT.Server
         public DbSet<Food> Foods { get; set; }
         public DbSet<OrderFood> OrderFoods { get; set; }
         public DbSet<CourierApplication> CourierApplications { get; set; } 
+        public DbSet<Message> Messages { get; set; } 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -62,11 +63,11 @@ namespace Deliver.IT.Server
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Food>().HasData(
-                new Food { Id = 1, Name = "McRoyal", Price = 20 },
-                new Food { Id = 2, Name = "Banan", Price = 1 },
-                new Food { Id = 3, Name = "Adventny kalendar", Price = 2 },
-                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1 },
-                new Food { Id = 5, Name = "Pivo", Price = 1 }
+                new Food { Id = 1, Name = "McRoyal", Price = 20, PicturePath = "mcroyal.jpg" },
+                new Food { Id = 2, Name = "Banan", Price = 1, PicturePath = "banan.jpg" },
+                new Food { Id = 3, Name = "Adventny kalendar", Price = 2, PicturePath = "kalendar.jpg" },
+                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "mikulas.jpg" },
+                new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "pivo.jpg" }
             );
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

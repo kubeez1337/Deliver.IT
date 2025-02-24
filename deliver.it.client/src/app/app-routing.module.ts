@@ -11,6 +11,8 @@ import { AdminGuard } from './guards/admin.guard';
 import { LoggedGuard } from './guards/logged.guard';
 import { AccountComponent } from './account/account.component';
 import { NotLoggedInComponent } from './not-logged-in/not-logged-in.component';
+import { MapViewerComponent } from './map-viewer/map-viewer.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'registration-page', component: RegistrationPageComponent },
   { path: 'account-panel', component: AccountComponent, canActivate: [LoggedGuard] },
   { path: 'food-manager', component: FoodManagerComponent, canActivate: [AdminGuard]},
-  { path: 'not-logged-in', component: NotLoggedInComponent }
+  { path: 'not-logged-in', component: NotLoggedInComponent },
+  { path: 'map-viewer', component: MapViewerComponent, canActivate: [AdminGuard] },
+  { path: 'chat', component: ChatComponent, canActivate: [LoggedGuard] }
 ];
 
 @NgModule({

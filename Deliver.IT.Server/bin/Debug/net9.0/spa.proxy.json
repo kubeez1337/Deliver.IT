@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:59038",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\..\\deliver.it.client",
+"WorkingDirectory": "C:\\Users\\user\\source\\repos\\GitCloned\\Znova\\Deliver.IT\\Deliver.IT.Server\\..\\deliver.it.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

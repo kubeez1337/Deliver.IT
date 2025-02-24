@@ -249,6 +249,81 @@
 
             return Ok(new { message = "Application processed successfully!" });
         }
+        [HttpPost("/sendMessage")]
+        [Authorize]
+        public async Task<IActionResult> SendMessage([FromBody] MessageModel model)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return NotFound("User ID not found in token.");
+            }
 
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            var receiver = await _userManager.FindByIdAsync(model.ReceiverId);
+            if (receiver == null)
+            {
+                return NotFound("Receiver not found.");
+            }
+
+            var message = new Message
+            {
+                SenderId = userId,
+                SenderName = user.UserName,
+                ReceiverId = model.ReceiverId,
+                ReceiverName = receiver.UserName,
+                Text = model.Text,
+                TimeStamp = DateTime.UtcNow
+            };
+
+            _context.Messages.Add(message);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Message sent successfully!" });
+        }
+
+        [HttpGet("/getMessages")]
+        [Authorize]
+        public async Task<IActionResult> GetMessages(string receiverId)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return NotFound("User ID not found in token.");
+            }
+
+            var messages = await _context.Messages
+                .Where(m => (m.SenderId == userId && m.ReceiverId == receiverId) || (m.SenderId == receiverId && m.ReceiverId == userId))
+                .OrderBy(m => m.TimeStamp)
+                .ToListAsync();
+
+            return Ok(messages);
+        }
+        [HttpGet("/getUserByUsername")]
+        [Authorize]
+        public async Task<IActionResult> GetUserByUsername(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            return Ok(new
+            {
+                user.Id,
+                user.UserName,
+                user.FirstName,
+                user.LastName,
+                user.PhoneNumber,
+                user.Email,
+                user.UserRole
+            });
+        }
     }
 }

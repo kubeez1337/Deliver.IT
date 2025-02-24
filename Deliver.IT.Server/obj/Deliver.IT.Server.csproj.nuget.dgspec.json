@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj": {}
+    "C:\\Users\\user\\source\\repos\\GitCloned\\Znova\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj": {
+    "C:\\Users\\user\\source\\repos\\GitCloned\\Znova\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\GitCloned\\Znova\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
         "projectName": "Deliver.IT.Server",
-        "projectPath": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
+        "projectPath": "C:\\Users\\user\\source\\repos\\GitCloned\\Znova\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\GitCloned\\Deliver.IT\\Deliver.IT.Server\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\GitCloned\\Znova\\Deliver.IT\\Deliver.IT.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

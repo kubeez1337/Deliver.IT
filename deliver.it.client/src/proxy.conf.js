@@ -30,7 +30,11 @@ const PROXY_CONFIG = [
       "/processCourierApplication",
       "/claim-order",
       "/deliver-order",
-      "/addFoods"
+      "/addFoods",
+      "/getMessages",
+      "/sendMessage",
+      "/getUsers",
+      "/getUserByUsername"
 
     ],
     target,
