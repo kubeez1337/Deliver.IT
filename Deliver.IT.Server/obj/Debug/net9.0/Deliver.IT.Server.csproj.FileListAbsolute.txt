@@ -319,4 +319,3 @@ C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\obj\Debu
 C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\Deliver.IT.Server.pdb
 C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\Deliver.IT.Server.genruntimeconfig.cache
 C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\ref\Deliver.IT.Server.dll
-C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

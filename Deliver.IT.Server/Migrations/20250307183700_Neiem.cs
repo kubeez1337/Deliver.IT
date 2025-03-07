@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class MamMigrenu : Migration
+    public partial class Neiem : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -259,9 +259,9 @@ namespace Deliver.IT.Server.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
                 values: new object[,]
                 {
-                    { "2ffe57be-1e82-43e3-8e0a-e013dceac84a", 0, "501c2568-bbcd-4b50-aee7-eb997e75fe1d", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "548b5f32-7405-4079-be87-f5b0d666cc92", false, "cigorigo", "2" },
-                    { "40f8a393-96d3-4749-911d-07d019a9e1a7", 0, "39843dd7-fe33-4100-8146-50e2447ed84d", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "721b3883-4112-432f-9197-5d7d798c0697", false, "admin", "1" },
-                    { "a370d766-c276-4d31-a4be-e1c2fc89bc95", 0, "43f1be98-9ebe-48c7-adfa-1132a0b1efeb", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "962b7416-193a-491e-96b8-ce28d2642ca7", false, "romanek", "0" }
+                    { "5f022b8c-7d69-4d81-9d3e-dbd4105a8f1f", 0, "37397a1c-e45a-4001-a309-bee48b5246ba", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "0d908590-8f1e-4a61-9aae-ad8191a369a2", false, "admin", "1" },
+                    { "9f778eee-8b3b-4d4c-8589-71159d42a791", 0, "8c7b8b8c-2879-4498-9472-3a7453be0430", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "796d63f6-1617-4fa8-b14d-bb1f8c466fc7", false, "cigorigo", "2" },
+                    { "bb3becc0-9566-4b64-8915-91a4a733f430", 0, "d53cef55-0f2f-48c7-b112-2ac84d1c5278", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "14fa3850-38e6-4f79-81af-bb5ea2164e32", false, "romanek", "0" }
                 });
 
             migrationBuilder.InsertData(
