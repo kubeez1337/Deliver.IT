@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { User } from '../models/user.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AddressService } from '../address.service';
 
 @Component({
   selector: 'app-account',
@@ -19,7 +20,7 @@ export class AccountComponent {
   isCourier: boolean = false;
   hasPendingApplication: boolean = false;
   applications: any[] = []
-  constructor(private fb: FormBuilder, private authService: AuthService, private snackBar: MatSnackBar) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private snackBar: MatSnackBar, private addressService: AddressService ) {
     this.accountForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -123,5 +124,9 @@ export class AccountComponent {
       }
     });
   }
- 
+  setAddressesFromJson(): void {
+    this.addressService.getAddresses().subscribe((addresses: any[]) => {
+      console.log(addresses);
+    });
+  }
 }

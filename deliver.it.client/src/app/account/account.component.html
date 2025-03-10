@@ -45,4 +45,8 @@
       <button mat-raised-button color="warn" (click)="processApplication(application.id, false)">Odmietnuť</button>
     </div>
   </div>
+  <div *ngIf="isAdmin" class="load-addresses-button">
+    <button mat-raised-button color="primary" (click)="setAddressesFromJson()">Načítaj databázu adries</button>
+
+  </div>
 </div>
