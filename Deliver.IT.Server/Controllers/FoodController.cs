@@ -205,6 +205,14 @@ namespace Deliver.IT.Server.Controllers
 
             return Ok(new { message = "Foods added successfully!" });
         }
+
+        //[HttpPost("/uploadFoodPicture")]
+        //[Authorize(Roles = "1")]
+        //public async Task<IActionResult> UploadFoodPicture(IFormFile file)
+        //{
+            //TODO
+        //}
+
     }
 
 }

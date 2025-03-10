@@ -34,7 +34,8 @@ const PROXY_CONFIG = [
       "/getMessages",
       "/sendMessage",
       "/getUsers",
-      "/getUserByUsername"
+      "/getUserByUsername",
+      "/getAddresses"
 
     ],
     target,

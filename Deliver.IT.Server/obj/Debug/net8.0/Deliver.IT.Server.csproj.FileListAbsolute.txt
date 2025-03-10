@@ -121,3 +121,6 @@ C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net8
 C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\user\source\repos\GitCloned\Deliver.IT\Deliver.IT.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Roman\source\repos\Deliver.IT\Deliver.IT.Server\obj\Debug\net8.0\Deliver.IT.Server.dll
+C:\Users\Roman\source\repos\Deliver.IT\Deliver.IT.Server\obj\Debug\net8.0\refint\Deliver.IT.Server.dll
+C:\Users\Roman\source\repos\Deliver.IT\Deliver.IT.Server\obj\Debug\net8.0\Deliver.IT.Server.pdb

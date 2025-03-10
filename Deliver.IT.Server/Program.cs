@@ -46,13 +46,7 @@ builder.Services.AddDbContext<DeliverItDbContext>(options =>
 builder.Services.AddIdentity<UserClass, IdentityRole>()
     .AddEntityFrameworkStores<DeliverItDbContext>()
     .AddDefaultTokenProviders();
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy("AdminPolicy", policy =>
-//        policy.RequireRole("1"));
-    
 
-//});
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

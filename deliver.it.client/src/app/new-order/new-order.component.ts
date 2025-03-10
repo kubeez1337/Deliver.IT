@@ -14,6 +14,8 @@ import { AuthService } from '../auth.service';
 import { User } from '../models/user.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Address } from '../models/address.model';
+import { AddressService } from '../address.service';
 @Component({
   selector: 'app-new-order',
   templateUrl: './new-order.component.html',
@@ -28,11 +30,17 @@ export class NewOrderComponent {
   foodSelected = false;
   selectedFoodQuantity: number = 1;
   selectedFood: any = null;
+  addresses: Address[] = [];
+  filteredAddresses: Address[] = [];
+  searchQuery: string = '';
+  selectedAddress: Address | null = null;
+  showAddresses: boolean = false;
   //@ViewChild('foodselect') foodselect!: MatSelect;
   constructor(private http: HttpClient,
     private fb: FormBuilder,
     private orderService: OrderService,
     private foodService: FoodService,
+    private addressService: AddressService,
     private cdr: ChangeDetectorRef,
     private authService: AuthService,
     private snackBar: MatSnackBar,
@@ -43,6 +51,7 @@ export class NewOrderComponent {
       customerName: ['', Validators.required],
       customerAddress: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\+?\d{9,15}$/)]],
+      searchQuery: [''],
       selectedFood: this.selectedFood,
       foodItems: this.selectedFoods,
     });
@@ -53,6 +62,7 @@ export class NewOrderComponent {
     this.foodService.getFoods().subscribe((data: Food[]) => {
       this.availableFoods = data;
     });
+    this.fetchAddresses();
     const role = this.authService.getUserRole();
     this.authService.getUser().subscribe((user: User) => {
       console.log(user);
@@ -64,6 +74,37 @@ export class NewOrderComponent {
         });
       }
     });
+  }
+  fetchAddresses(): void {
+    this.addressService.getAddresses().subscribe((data: Address[]) => {
+      this.addresses = data;
+      this.filteredAddresses = data;
+      console.log('Fetched addresses:', this.addresses); // Add this line to log the addresses
+
+    });
+  }
+  filterAddresses(event: any): void {
+    const query = event.target.value.toLowerCase();
+    this.filteredAddresses = this.addresses.filter(address =>
+      `${address.street} ${address.houseNumber}, ${address.city}`.toLowerCase().includes(query)
+    );
+  }
+  selectAddress(address: Address): void {
+    this.selectedAddress = address;
+    this.orderForm.patchValue({
+      searchQuery: `${address.street} ${address.houseNumber}, ${address.city}`,
+      customerAddress: `${address.street} ${address.houseNumber}, ${address.city}`
+    });
+    this.filteredAddresses = [];
+  }
+  showAddressList(): void {
+    this.showAddresses = true;
+  }
+
+  hideAddressList(): void {
+    setTimeout(() => {
+      this.showAddresses = false;
+    }, 200); // Delay to allow click event to register
   }
   submitOrder() {
     const orderData = this.orderForm.value;
@@ -127,5 +168,10 @@ export class NewOrderComponent {
   removeFood(index: number) {
     this.selectedFoods.removeAt(index);
   }
-  
+  onAddressSelected(event: MatSelectChange): void {
+    const selectedAddress = event.value as Address;
+    this.orderForm.patchValue({
+      customerAddress: `${selectedAddress.street} ${selectedAddress.houseNumber}, ${selectedAddress.city}`
+    });
+  }
 }

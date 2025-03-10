@@ -6,16 +6,27 @@
         <mat-label>Meno zákazníka</mat-label>
         <input matInput formControlName="customerName" placeholder="Zadajte meno" />
       </mat-form-field>
+      <!--<mat-form-field appearance="outline">
+    <mat-label>Adresa zákazníka</mat-label>
+    <input matInput formControlName="customerAddress" placeholder="Zadajte adresu" />
+  </mat-form-field>-->
       <mat-form-field appearance="outline">
-        <mat-label>Adresa zákazníka</mat-label>
-        <input matInput formControlName="customerAddress" placeholder="Zadajte adresu" />
+        <mat-label>Vyhľadajte adresu</mat-label>
+        <input matInput (input)="filterAddresses($event)" (focus)="showAddressList()" (blur)="hideAddressList()" placeholder="Zadajte adresu" formControlName="searchQuery" />
       </mat-form-field>
+      <div *ngIf="showAddresses && filteredAddresses.length" class="address-results">
+        <mat-list>
+          <mat-list-item *ngFor="let address of filteredAddresses" (click)="selectAddress(address)">
+            {{ address.street }} {{ address.houseNumber }}, {{ address.city }}
+          </mat-list-item>
+        </mat-list>
+      </div>
       <mat-form-field appearance="outline">
         <mat-label>Tel. číslo</mat-label>
         <input matInput formControlName="phoneNumber" placeholder="Zadajte telefónne číslo" type="tel" />
         <mat-error *ngIf="orderForm.get('phoneNumber')?.hasError('pattern')">
           Zadajte platné telefónne číslo.
-          </mat-error>
+        </mat-error>
       </mat-form-field>
     </div>
 

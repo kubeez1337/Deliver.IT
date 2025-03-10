@@ -17,6 +17,46 @@ namespace Deliver.IT.Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
 
+            modelBuilder.Entity("Deliver.IT.Server.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConscriptionNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("HouseNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Latitude")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Longitude")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Postcode")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Street")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StreetNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Suburb")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Addresses");
+                });
+
             modelBuilder.Entity("Deliver.IT.Server.Food", b =>
                 {
                     b.Property<int>("Id")
@@ -265,45 +305,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5f022b8c-7d69-4d81-9d3e-dbd4105a8f1f",
+                            Id = "7dfdde22-5306-4538-aeba-2a6670f1f6f6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "37397a1c-e45a-4001-a309-bee48b5246ba",
+                            ConcurrencyStamp = "371ef520-cd6f-4f9a-a727-41c36051ff75",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0d908590-8f1e-4a61-9aae-ad8191a369a2",
+                            SecurityStamp = "3f620627-bb29-4c3d-bb58-12448b3d26b6",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "9f778eee-8b3b-4d4c-8589-71159d42a791",
+                            Id = "16cec6b8-d0cd-4d43-afba-6739da67aa6e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8c7b8b8c-2879-4498-9472-3a7453be0430",
+                            ConcurrencyStamp = "c3d3c784-c1b5-461b-8288-5af52309661d",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "796d63f6-1617-4fa8-b14d-bb1f8c466fc7",
+                            SecurityStamp = "6b583ab6-4996-4a8f-b4cd-f441358a7a5c",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "bb3becc0-9566-4b64-8915-91a4a733f430",
+                            Id = "7f69db69-cb45-46dc-b399-73dd763a2773",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d53cef55-0f2f-48c7-b112-2ac84d1c5278",
+                            ConcurrencyStamp = "cb77bfce-cfa9-4dc9-8cba-498a9dc28326",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "14fa3850-38e6-4f79-81af-bb5ea2164e32",
+                            SecurityStamp = "09c1b134-35fe-4a95-887f-db21b6596d09",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"

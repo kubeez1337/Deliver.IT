@@ -79,3 +79,20 @@ mat-label {
 .nice-font  {
   font-family: 'Trebuchet MS', sans-serif;
 }
+
+.address-results {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.address-results mat-list-item {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.address-results mat-list-item:hover {
+  background-color: #f0f0f0;
+}

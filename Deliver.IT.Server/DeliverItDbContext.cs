@@ -15,7 +15,8 @@ namespace Deliver.IT.Server
         public DbSet<Food> Foods { get; set; }
         public DbSet<OrderFood> OrderFoods { get; set; }
         public DbSet<CourierApplication> CourierApplications { get; set; } 
-        public DbSet<Message> Messages { get; set; } 
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Address> Addresses { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -69,6 +70,14 @@ namespace Deliver.IT.Server
                 new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "mikulas.jpg" },
                 new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "pivo.jpg" }
             );
+
+            // Configure Address and NodeTag entities
+            modelBuilder.Entity<Address>(entity =>
+            {
+                entity.HasKey(a => a.Id);
+                entity.Property(a => a.Latitude).IsRequired();
+                entity.Property(a => a.Longitude).IsRequired();
+            });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
