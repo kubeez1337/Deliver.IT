@@ -58,8 +58,8 @@ namespace Deliver.IT.Server
                 .Property(o => o.ClaimedBy)
                 .IsRequired(false);
             modelBuilder.Entity<OrderFood>()
-                .HasOne<Food>()  
-                .WithMany(f => f.OrderFoods)  
+                .HasOne<Food>()
+                .WithMany(f => f.OrderFoods)
                 .HasForeignKey(of => of.FoodId)
                 .OnDelete(DeleteBehavior.Restrict);
 

@@ -4,7 +4,7 @@ namespace Deliver.IT.Server
 {
     public class Address
     {
-        public int Id { get; set; } // Change to int and let EF generate the ID
+        public int Id { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public string? City { get; set; }
@@ -14,7 +14,10 @@ namespace Deliver.IT.Server
         public string? Street { get; set; }
         public string? StreetNumber { get; set; }
         public string? Suburb { get; set; }
-
+        public string? CompleteAddress { get; set; }
+        public void SetAddress() { 
+            CompleteAddress = $"{Street} {HouseNumber}, {City}";
+        }
     }
     public class Node
     {

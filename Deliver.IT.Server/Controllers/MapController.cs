@@ -66,7 +66,7 @@ namespace Deliver.IT.Server.Controllers
                         //RefMinvskAddress = node.Tags.ContainsKey("ref:minvskaddress") ? node.Tags["ref:minvskaddress"] : null,
                         //SourceAddr = node.Tags.ContainsKey("source:addr") ? node.Tags["source:addr"] : null
                     };
-
+                    address.SetAddress();
                     _context.Addresses.Add(address);
                     await _context.SaveChangesAsync(); // Save to get the generated ID
 

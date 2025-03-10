@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Zee : Migration
+    public partial class Ko : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,7 +27,8 @@ namespace Deliver.IT.Server.Migrations
                     Postcode = table.Column<string>(type: "TEXT", nullable: true),
                     Street = table.Column<string>(type: "TEXT", nullable: true),
                     StreetNumber = table.Column<string>(type: "TEXT", nullable: true),
-                    Suburb = table.Column<string>(type: "TEXT", nullable: true)
+                    Suburb = table.Column<string>(type: "TEXT", nullable: true),
+                    CompleteAddress = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -131,7 +132,7 @@ namespace Deliver.IT.Server.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CustomerName = table.Column<string>(type: "TEXT", nullable: false),
-                    CustomerAddress = table.Column<string>(type: "TEXT", nullable: false),
+                    CustomerAddressId = table.Column<int>(type: "INTEGER", nullable: false),
                     PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
                     CreatedBy = table.Column<string>(type: "TEXT", nullable: false),
                     ClaimedBy = table.Column<string>(type: "TEXT", nullable: true),
@@ -142,6 +143,12 @@ namespace Deliver.IT.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Orders_Addresses_CustomerAddressId",
+                        column: x => x.CustomerAddressId,
+                        principalTable: "Addresses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -256,6 +263,8 @@ namespace Deliver.IT.Server.Migrations
                 {
                     OrderId = table.Column<int>(type: "INTEGER", nullable: false),
                     FoodId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FoodName = table.Column<string>(type: "TEXT", nullable: false),
+                    FoodPrice = table.Column<decimal>(type: "TEXT", nullable: false),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -280,9 +289,9 @@ namespace Deliver.IT.Server.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
                 values: new object[,]
                 {
-                    { "16cec6b8-d0cd-4d43-afba-6739da67aa6e", 0, "c3d3c784-c1b5-461b-8288-5af52309661d", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "6b583ab6-4996-4a8f-b4cd-f441358a7a5c", false, "cigorigo", "2" },
-                    { "7dfdde22-5306-4538-aeba-2a6670f1f6f6", 0, "371ef520-cd6f-4f9a-a727-41c36051ff75", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "3f620627-bb29-4c3d-bb58-12448b3d26b6", false, "admin", "1" },
-                    { "7f69db69-cb45-46dc-b399-73dd763a2773", 0, "cb77bfce-cfa9-4dc9-8cba-498a9dc28326", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "09c1b134-35fe-4a95-887f-db21b6596d09", false, "romanek", "0" }
+                    { "473484ae-3b53-494e-a4f7-14f76740db08", 0, "eb919750-6ba5-454b-a266-e6278ecd52ae", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "66e7eea9-50d6-4870-a80c-c891f01d2003", false, "romanek", "0" },
+                    { "7face99a-972a-41ac-8b58-3bef48c5be33", 0, "17473b38-bd40-401d-a934-c5e6f2fd6db8", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "55d1c09f-f059-4cfd-b40c-9046ce57383b", false, "admin", "1" },
+                    { "e53f0425-f465-4024-89a7-69a2934c9bfe", 0, "de84d4f5-867b-407d-8b92-5c972090b432", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "89d22371-2ffb-43e5-8089-a0170d7416a6", false, "cigorigo", "2" }
                 });
 
             migrationBuilder.InsertData(
@@ -338,14 +347,16 @@ namespace Deliver.IT.Server.Migrations
                 name: "IX_OrderFoods_FoodId",
                 table: "OrderFoods",
                 column: "FoodId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_CustomerAddressId",
+                table: "Orders",
+                column: "CustomerAddressId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Addresses");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -381,6 +392,9 @@ namespace Deliver.IT.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Addresses");
         }
     }
 }

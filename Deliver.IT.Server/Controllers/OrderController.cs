@@ -20,11 +20,43 @@ namespace Deliver.IT.Server.Controllers
         [HttpPost("/create-order")]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderModel model)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var existingAddress = await _context.Addresses
+                .FirstOrDefaultAsync(a => a.Latitude == model.CustomerAddress.Latitude &&
+                                          a.Longitude == model.CustomerAddress.Longitude &&
+                                          a.Street == model.CustomerAddress.Street &&
+                                          a.HouseNumber == model.CustomerAddress.HouseNumber &&
+                                          a.City == model.CustomerAddress.City);
+
+            Address address;
+            if (existingAddress != null)
+            {
+                address = existingAddress;
+            }
+            else
+            {
+                address = new Address
+                {
+                    Latitude = model.CustomerAddress.Latitude,
+                    Longitude = model.CustomerAddress.Longitude,
+                    Street = model.CustomerAddress.Street,
+                    HouseNumber = model.CustomerAddress.HouseNumber,
+                    City = model.CustomerAddress.City,
+                    ConscriptionNumber = model.CustomerAddress.ConscriptionNumber,
+                    Postcode = model.CustomerAddress.Postcode,
+                    StreetNumber = model.CustomerAddress.StreetNumber,
+                    Suburb = model.CustomerAddress.Suburb
+                };
+                address.SetAddress();
+                _context.Addresses.Add(address);
+                await _context.SaveChangesAsync();
+            }
+
             var order = new Order
             {
                 CustomerName = model.CustomerName,
-                CustomerAddress = model.CustomerAddress,
+                CustomerAddress = address,
                 PhoneNumber = model.PhoneNumber,
                 CreatedBy = userId,
                 OrderFoods = new List<OrderFood>()
@@ -44,12 +76,14 @@ namespace Deliver.IT.Server.Controllers
                     OrderId = order.Id,
                     FoodId = foodItem.FoodId,
                     Quantity = foodItem.Quantity,
+                    FoodName = food.Name,
+                    FoodPrice = food.Price
                 };
                 _context.OrderFoods.Add(of);
 
                 order.OrderFoods.Add(of);
-
             }
+            order.CalculateTotalPrice();
             await _context.SaveChangesAsync();
             return Ok(order);
         }
@@ -112,7 +146,7 @@ namespace Deliver.IT.Server.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userRole = User.FindFirstValue(ClaimTypes.Role);
 
-            IQueryable<Order> ordersQuery = _context.Orders.Include(o => o.OrderFoods);
+            IQueryable<Order> ordersQuery = _context.Orders.Include(o => o.OrderFoods).Include(o=>o.CustomerAddress);
 
             if (userRole == "0") 
             {

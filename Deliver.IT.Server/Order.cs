@@ -9,7 +9,7 @@ namespace Deliver.IT.Server
     {
         public int Id { get; set; }
         public string CustomerName { get; set; }
-        public string CustomerAddress { get; set; }
+        public Address CustomerAddress { get; set; }
 
         [RegularExpression(@"^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$", ErrorMessage = "Invalid format")]
         public string PhoneNumber { get; set; }
@@ -20,12 +20,18 @@ namespace Deliver.IT.Server
         
         public ICollection<OrderFood> OrderFoods { get; set; } = new List<OrderFood>();
         public decimal TotalPrice { get; set; }
+        public void CalculateTotalPrice()
+        {
+            TotalPrice = OrderFoods.Sum(of => of.FoodPrice * of.Quantity);
+        }
     }
 
     public class OrderFood
     {
         public int OrderId { get; set; }
         public int FoodId { get; set; }
+        public string FoodName { get; set; }
+        public decimal FoodPrice { get; set; }
         public int Quantity { get; set; }
     }
     public class Food

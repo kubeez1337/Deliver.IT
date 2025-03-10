@@ -9,4 +9,5 @@ export interface Address {
   street?: string;
   streetNumber?: string;
   suburb?: string;
+  completeAddress?: string;
 }

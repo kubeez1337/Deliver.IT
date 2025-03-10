@@ -24,7 +24,7 @@
 
       <ng-container matColumnDef="customerAddress">
         <th mat-header-cell *matHeaderCellDef>Adresa zákazníka</th>
-        <td mat-cell *matCellDef="let order">{{ order.customerAddress }}</td>
+        <td mat-cell *matCellDef="let order">{{ order.customerAddress?.completeAddress }}</td>
       </ng-container>
 
       <ng-container matColumnDef="phoneNumber">

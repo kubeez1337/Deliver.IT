@@ -22,7 +22,7 @@ export class EditOrderDialogComponent {
   ) {
     this.editOrderForm = this.fb.group({
       customerName: [data.customerName, Validators.required],
-      customerAddress: [data.customerAddress, Validators.required],
+      customerAddress: [data.customerAddress.completeAddress, Validators.required],
       phoneNumber: [data.phoneNumber, [Validators.required, Validators.pattern(/^\+?\d{9,15}$/)]],
       //orderFoods: [data.orderFoods, Validators.required]
       orderFoods: this.fb.array([])

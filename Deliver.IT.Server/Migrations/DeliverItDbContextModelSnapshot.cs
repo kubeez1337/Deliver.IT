@@ -26,6 +26,9 @@ namespace Deliver.IT.Server.Migrations
                     b.Property<string>("City")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("CompleteAddress")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ConscriptionNumber")
                         .HasColumnType("TEXT");
 
@@ -184,9 +187,8 @@ namespace Deliver.IT.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CustomerAddress")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CustomerAddressId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("CustomerName")
                         .IsRequired()
@@ -205,6 +207,8 @@ namespace Deliver.IT.Server.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CustomerAddressId");
+
                     b.ToTable("Orders");
                 });
 
@@ -215,6 +219,13 @@ namespace Deliver.IT.Server.Migrations
 
                     b.Property<int>("FoodId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("FoodName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("FoodPrice")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
@@ -305,45 +316,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7dfdde22-5306-4538-aeba-2a6670f1f6f6",
+                            Id = "7face99a-972a-41ac-8b58-3bef48c5be33",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "371ef520-cd6f-4f9a-a727-41c36051ff75",
+                            ConcurrencyStamp = "17473b38-bd40-401d-a934-c5e6f2fd6db8",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3f620627-bb29-4c3d-bb58-12448b3d26b6",
+                            SecurityStamp = "55d1c09f-f059-4cfd-b40c-9046ce57383b",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "16cec6b8-d0cd-4d43-afba-6739da67aa6e",
+                            Id = "e53f0425-f465-4024-89a7-69a2934c9bfe",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3d3c784-c1b5-461b-8288-5af52309661d",
+                            ConcurrencyStamp = "de84d4f5-867b-407d-8b92-5c972090b432",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6b583ab6-4996-4a8f-b4cd-f441358a7a5c",
+                            SecurityStamp = "89d22371-2ffb-43e5-8089-a0170d7416a6",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "7f69db69-cb45-46dc-b399-73dd763a2773",
+                            Id = "473484ae-3b53-494e-a4f7-14f76740db08",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb77bfce-cfa9-4dc9-8cba-498a9dc28326",
+                            ConcurrencyStamp = "eb919750-6ba5-454b-a266-e6278ecd52ae",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "09c1b134-35fe-4a95-887f-db21b6596d09",
+                            SecurityStamp = "66e7eea9-50d6-4870-a80c-c891f01d2003",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"
@@ -476,6 +487,17 @@ namespace Deliver.IT.Server.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Order", b =>
+                {
+                    b.HasOne("Deliver.IT.Server.Address", "CustomerAddress")
+                        .WithMany()
+                        .HasForeignKey("CustomerAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomerAddress");
                 });
 
             modelBuilder.Entity("Deliver.IT.Server.OrderFood", b =>

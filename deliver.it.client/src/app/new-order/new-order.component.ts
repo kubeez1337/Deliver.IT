@@ -49,7 +49,7 @@ export class NewOrderComponent {
     this.selectedFoods = this.fb.array([]);
     this.orderForm = this.fb.group({
       customerName: ['', Validators.required],
-      customerAddress: ['', Validators.required],
+      customerAddress: [null, Validators.required],
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\+?\d{9,15}$/)]],
       searchQuery: [''],
       selectedFood: this.selectedFood,
@@ -69,7 +69,6 @@ export class NewOrderComponent {
       if (role === '0') {
         this.orderForm.patchValue({
           customerName: user.firstName + ' ' + user.lastName,
-          //customerAddress: user.address,
           phoneNumber: user.phoneNumber
         });
       }
@@ -93,7 +92,7 @@ export class NewOrderComponent {
     this.selectedAddress = address;
     this.orderForm.patchValue({
       searchQuery: `${address.street} ${address.houseNumber}, ${address.city}`,
-      customerAddress: `${address.street} ${address.houseNumber}, ${address.city}`
+      customerAddress: address
     });
     this.filteredAddresses = [];
   }
@@ -171,7 +170,7 @@ export class NewOrderComponent {
   onAddressSelected(event: MatSelectChange): void {
     const selectedAddress = event.value as Address;
     this.orderForm.patchValue({
-      customerAddress: `${selectedAddress.street} ${selectedAddress.houseNumber}, ${selectedAddress.city}`
+      customerAddress: selectedAddress
     });
   }
 }
