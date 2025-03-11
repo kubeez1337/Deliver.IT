@@ -125,7 +125,7 @@ export class AccountComponent {
     });
   }
   setAddressesFromJson(): void {
-    this.addressService.getAddresses().subscribe((addresses: any[]) => {
+    this.addressService.loadAddresses().subscribe((addresses: any[]) => {
       console.log(addresses);
     });
   }

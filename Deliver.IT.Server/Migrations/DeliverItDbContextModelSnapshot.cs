@@ -86,35 +86,35 @@ namespace Deliver.IT.Server.Migrations
                         {
                             Id = 1,
                             Name = "McRoyal",
-                            PicturePath = "mcroyal.jpg",
+                            PicturePath = "Resources/Images/mcroyal.jpg",
                             Price = 20m
                         },
                         new
                         {
                             Id = 2,
                             Name = "Banan",
-                            PicturePath = "banan.jpg",
+                            PicturePath = "Resources/Images/banan.jpg",
                             Price = 1m
                         },
                         new
                         {
                             Id = 3,
                             Name = "Adventny kalendar",
-                            PicturePath = "kalendar.jpg",
+                            PicturePath = "Resources/Images/kalendar.jpg",
                             Price = 2m
                         },
                         new
                         {
                             Id = 4,
                             Name = "Cokoladovy Mikulas",
-                            PicturePath = "mikulas.jpg",
+                            PicturePath = "Resources/Images/mikulas.jpg",
                             Price = 1m
                         },
                         new
                         {
                             Id = 5,
                             Name = "Pivo",
-                            PicturePath = "pivo.jpg",
+                            PicturePath = "Resources/Images/pivo.jpg",
                             Price = 1m
                         });
                 });
@@ -316,45 +316,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7face99a-972a-41ac-8b58-3bef48c5be33",
+                            Id = "6a742f11-541f-4d50-add6-5ca32355a57f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "17473b38-bd40-401d-a934-c5e6f2fd6db8",
+                            ConcurrencyStamp = "fb51bbef-f7d8-4b07-9396-316f5c1afba9",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "55d1c09f-f059-4cfd-b40c-9046ce57383b",
+                            SecurityStamp = "32a02dca-933e-4e3e-8a90-96596c81c419",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "e53f0425-f465-4024-89a7-69a2934c9bfe",
+                            Id = "83d98d63-d81d-425c-b989-11003438983d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "de84d4f5-867b-407d-8b92-5c972090b432",
+                            ConcurrencyStamp = "e5ffe899-97b6-4e52-b74f-add07f01cb32",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "89d22371-2ffb-43e5-8089-a0170d7416a6",
+                            SecurityStamp = "274a84b3-7238-449d-8a59-5f87bf7924d8",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "473484ae-3b53-494e-a4f7-14f76740db08",
+                            Id = "e31385e9-ff29-4721-afe3-21450cadc97d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eb919750-6ba5-454b-a266-e6278ecd52ae",
+                            ConcurrencyStamp = "c2bd33e2-bd89-47c7-8424-e8f9108a4590",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "66e7eea9-50d6-4870-a80c-c891f01d2003",
+                            SecurityStamp = "c041a4cd-c863-424b-8cf2-682b885f6a73",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"

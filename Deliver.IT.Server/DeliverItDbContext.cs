@@ -64,11 +64,11 @@ namespace Deliver.IT.Server
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Food>().HasData(
-                new Food { Id = 1, Name = "McRoyal", Price = 20, PicturePath = "mcroyal.jpg" },
-                new Food { Id = 2, Name = "Banan", Price = 1, PicturePath = "banan.jpg" },
-                new Food { Id = 3, Name = "Adventny kalendar", Price = 2, PicturePath = "kalendar.jpg" },
-                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "mikulas.jpg" },
-                new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "pivo.jpg" }
+                new Food { Id = 1, Name = "McRoyal", Price = 20, PicturePath = "/Resources/Images/mcroyal.jpg" },
+                new Food { Id = 2, Name = "Banan", Price = 1, PicturePath = "/Resources/Images/banan.jpg" },
+                new Food { Id = 3, Name = "Adventny kalendar", Price = 2, PicturePath = "/Resources/Images/kalendar.jpg" },
+                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "/Resources/Images/mikulas.jpg" },
+                new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "/Resources/Images/pivo.jpg" }
             );
 
             // Configure Address and NodeTag entities

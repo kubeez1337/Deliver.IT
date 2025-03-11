@@ -35,7 +35,8 @@ const PROXY_CONFIG = [
       "/sendMessage",
       "/getUsers",
       "/getUserByUsername",
-      "/getAddresses"
+      "/getAddresses",
+      "/seedDatabaseFromJson"
 
     ],
     target,

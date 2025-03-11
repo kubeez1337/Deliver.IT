@@ -16,6 +16,6 @@ export class AddressService {
     return this.http.get<Address[]>(`${this.apiUrl}/getAddresses`);
   }
   loadAddresses(): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/setAddressesFromJson`,null);
+    return this.http.post<any>(`${this.apiUrl}/seedDatabaseFromJson`,null);
   }
 }

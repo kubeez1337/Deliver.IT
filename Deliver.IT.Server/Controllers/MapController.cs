@@ -70,7 +70,7 @@ namespace Deliver.IT.Server.Controllers
                     _context.Addresses.Add(address);
                     await _context.SaveChangesAsync(); // Save to get the generated ID
 
-                   
+
                 }
 
                 await _context.SaveChangesAsync();
