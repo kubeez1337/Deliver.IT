@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Order } from '../models/order.model';
 import { OrderService } from '../order.service';
+import { AddressService } from '../address.service';
+import { Address } from '../models/address.model';
 
 @Component({
   selector: 'app-map-viewer',
@@ -14,10 +16,12 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
   private map!: L.Map;
   private marker!: L.Marker;
   private orders: Order[] = [];
+  private addresses: Address[] = [];
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, private addressService: AddressService) { }
   ngOnInit(): void {
     this.loadOrders();
+    this.loadAddresses();
   }
   ngAfterViewInit(): void {
     this.initMap();
@@ -41,6 +45,16 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
     }).addTo(this.map);
 
   }
+  private loadAddresses(): void {
+    this.addressService.getAddresses().subscribe(
+      (data: Address[]) => {
+        this.addresses = data;
+      },
+      (error) => {
+        console.error('Error fetching addresses:', error);
+      }
+    );
+  }
   private addMarkers(): void {
     this.orders.forEach(order => {
       if (order.customerAddress && order.customerAddress.latitude && order.customerAddress.longitude) {
@@ -50,5 +64,23 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
       }
     });
   }
-
+  addAll(): void {
+    this.addresses.forEach(address => {
+      if (address.latitude && address.longitude) {
+        const marker = L.marker([parseFloat(address.latitude), parseFloat(address.longitude)])
+          .addTo(this.map)
+          .bindPopup(`<b>${address.completeAddress}</b>`);
+      }
+    });
+  }
+  deleteAll(): void {
+    this.map.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        layer.remove();
+      }
+    });
+    this.addMarkers();
+  }
+      
+  
 }
