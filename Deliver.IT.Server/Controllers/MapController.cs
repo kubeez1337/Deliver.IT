@@ -31,7 +31,7 @@ namespace Deliver.IT.Server.Controllers
 
             try
             {
-                var json = await System.IO.File.ReadAllTextAsync("Resources/filtered_nodes.json");
+                var json = await System.IO.File.ReadAllTextAsync("Resources/filtered_addresses.json");
                 _logger.LogInformation("JSON content: {Json}", json);
 
                 var nodes = JsonSerializer.Deserialize<List<Node>>(json);

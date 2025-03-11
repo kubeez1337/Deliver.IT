@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import 'leaflet.markercluster';
 import { Order } from '../models/order.model';
 import { OrderService } from '../order.service';
 import { AddressService } from '../address.service';
@@ -18,6 +19,7 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
   private orders: Order[] = [];
   private addresses: Address[] = [];
   private markers: L.Marker[] = [];
+  private markerClusterGroup!: L.MarkerClusterGroup;
   constructor(private orderService: OrderService, private addressService: AddressService) { }
   ngOnInit(): void {
     this.loadOrders();
@@ -43,7 +45,11 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© Kubissoft'
     }).addTo(this.map);
-
+    this.markerClusterGroup = L.markerClusterGroup({
+      maxClusterRadius: 40,
+      disableClusteringAtZoom: 18
+    });
+    this.map.addLayer(this.markerClusterGroup);
     this.map.on('moveend', () => {
       this.updateVisibleMarkers();
     });
@@ -62,12 +68,10 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
     this.orders.forEach(order => {
       if (order.customerAddress && order.customerAddress.latitude && order.customerAddress.longitude) {
         const marker = L.marker([parseFloat(order.customerAddress.latitude), parseFloat(order.customerAddress.longitude)])
-          .addTo(this.map)
           .bindPopup(`<b>${order.customerName}</b><br>${order.phoneNumber}</br><br>${order.customerAddress.completeAddress}`);
-        this.markers.push(marker);
+        this.markerClusterGroup.addLayer(marker);
       }
     });
-    this.updateVisibleMarkers();
   }
   private updateVisibleMarkers(): void {
     const bounds = this.map.getBounds();
@@ -88,13 +92,15 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
       if (address.latitude && address.longitude) {
         const marker = L.marker([parseFloat(address.latitude), parseFloat(address.longitude)])
           .bindPopup(`<b>${address.completeAddress}</b>`);
-        this.markers.push(marker);
+        //this.markers.push(marker);
+        this.markerClusterGroup.addLayer(marker);
       }
     });
     this.updateVisibleMarkers();
   }
 
   deleteAll(): void {
+    this.markerClusterGroup.clearLayers();
     this.markers.forEach(marker => {
       if (this.map.hasLayer(marker)) {
         marker.remove();

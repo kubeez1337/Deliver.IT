@@ -24,10 +24,12 @@
     <PackageJsonDependenciesAngularPlatformBrowserDynamic Condition="$(PackageJsonDependenciesAngularPlatformBrowserDynamic) == ''">^19.0.0</PackageJsonDependenciesAngularPlatformBrowserDynamic>
     <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^19.0.0</PackageJsonDependenciesAngularRouter>
     <PackageJsonDependenciesAuth0AngularJwt Condition="$(PackageJsonDependenciesAuth0AngularJwt) == ''">^5.2.0</PackageJsonDependenciesAuth0AngularJwt>
+    <PackageJsonDependenciesTypesLeafletMarkercluster Condition="$(PackageJsonDependenciesTypesLeafletMarkercluster) == ''">^1.5.5</PackageJsonDependenciesTypesLeafletMarkercluster>
     <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.3</PackageJsonDependenciesBootstrap>
     <PackageJsonDependenciesFileSaver Condition="$(PackageJsonDependenciesFileSaver) == ''">^2.0.5</PackageJsonDependenciesFileSaver>
     <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>
     <PackageJsonDependenciesLeaflet Condition="$(PackageJsonDependenciesLeaflet) == ''">^1.9.4</PackageJsonDependenciesLeaflet>
+    <PackageJsonDependenciesLeafletMarkercluster Condition="$(PackageJsonDependenciesLeafletMarkercluster) == ''">^1.5.3</PackageJsonDependenciesLeafletMarkercluster>
     <PackageJsonDependenciesRunScriptOs Condition="$(PackageJsonDependenciesRunScriptOs) == ''">*</PackageJsonDependenciesRunScriptOs>
     <PackageJsonDependenciesRxjs Condition="$(PackageJsonDependenciesRxjs) == ''">~7.8.0</PackageJsonDependenciesRxjs>
     <PackageJsonDependenciesTslib Condition="$(PackageJsonDependenciesTslib) == ''">^2.3.0</PackageJsonDependenciesTslib>
