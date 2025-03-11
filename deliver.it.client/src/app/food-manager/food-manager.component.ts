@@ -100,7 +100,6 @@ export class FoodManagerComponent implements OnInit {
     const selectedFoodIds = this.selection.selected.map(food => food.id);
     this.authService.deleteFoods(selectedFoodIds).subscribe(
       (response) => {
-        //console.log('Foods deleted successfully', response);
         this.snackBar.open('Vymazanie jedál úspešné', '', {
           duration: 3000,
         });
@@ -131,7 +130,6 @@ export class FoodManagerComponent implements OnInit {
     if (this.selectedFile) {
       this.authService.uploadFoods(this.selectedFile).subscribe(
         (response) => {
-          //console.log('Foods uploaded successfully', response);
           this.snackBar.open('Upload jedálničku úspešný!', '', {
             duration: 3000,
           });
@@ -157,7 +155,6 @@ export class FoodManagerComponent implements OnInit {
         const fileName = prompt('Pomenujte exportovaný súbor', 'foods.json');
         if (fileName) {
           saveAs(blob, fileName);
-          //console.log('Foods exported successfully');
         }
       },
       (error) => {

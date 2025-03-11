@@ -17,7 +17,7 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
   private marker!: L.Marker;
   private orders: Order[] = [];
   private addresses: Address[] = [];
-
+  private markers: L.Marker[] = [];
   constructor(private orderService: OrderService, private addressService: AddressService) { }
   ngOnInit(): void {
     this.loadOrders();
@@ -44,6 +44,9 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
       attribution: '© Kubissoft'
     }).addTo(this.map);
 
+    this.map.on('moveend', () => {
+      this.updateVisibleMarkers();
+    });
   }
   private loadAddresses(): void {
     this.addressService.getAddresses().subscribe(
@@ -61,6 +64,22 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
         const marker = L.marker([parseFloat(order.customerAddress.latitude), parseFloat(order.customerAddress.longitude)])
           .addTo(this.map)
           .bindPopup(`<b>${order.customerName}</b><br>${order.phoneNumber}</br><br>${order.customerAddress.completeAddress}`);
+        this.markers.push(marker);
+      }
+    });
+    this.updateVisibleMarkers();
+  }
+  private updateVisibleMarkers(): void {
+    const bounds = this.map.getBounds();
+    this.markers.forEach(marker => {
+      if (bounds.contains(marker.getLatLng())) {
+        if (!this.map.hasLayer(marker)) {
+          marker.addTo(this.map);
+        }
+      } else {
+        if (this.map.hasLayer(marker)) {
+          marker.remove();
+        }
       }
     });
   }
@@ -68,17 +87,20 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
     this.addresses.forEach(address => {
       if (address.latitude && address.longitude) {
         const marker = L.marker([parseFloat(address.latitude), parseFloat(address.longitude)])
-          .addTo(this.map)
           .bindPopup(`<b>${address.completeAddress}</b>`);
+        this.markers.push(marker);
       }
     });
+    this.updateVisibleMarkers();
   }
+
   deleteAll(): void {
-    this.map.eachLayer((layer) => {
-      if (layer instanceof L.Marker) {
-        layer.remove();
+    this.markers.forEach(marker => {
+      if (this.map.hasLayer(marker)) {
+        marker.remove();
       }
     });
+    this.markers = [];
     this.addMarkers();
   }
       

@@ -37,7 +37,7 @@ const PROXY_CONFIG = [
       "/getUserByUsername",
       "/getAddresses",
       "/seedDatabaseFromJson",
-      "/foods/*/upload-picture"
+      "/foods/*/upload-picture",
 
     ],
     target,

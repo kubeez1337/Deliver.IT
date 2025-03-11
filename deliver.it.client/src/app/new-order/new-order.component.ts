@@ -35,7 +35,6 @@ export class NewOrderComponent {
   searchQuery: string = '';
   selectedAddress: Address | null = null;
   showAddresses: boolean = false;
-  //@ViewChild('foodselect') foodselect!: MatSelect;
   constructor(private http: HttpClient,
     private fb: FormBuilder,
     private orderService: OrderService,
@@ -78,7 +77,7 @@ export class NewOrderComponent {
   fetchAddresses(): void {
     this.addressService.getAddresses().subscribe((data: Address[]) => {
       this.addresses = data;
-      this.filteredAddresses = data;
+      //this.filteredAddresses = data;
       this.cdr.detectChanges();
       console.log('Fetched addresses:', this.addresses); // Add this line to log the addresses
 
@@ -86,9 +85,15 @@ export class NewOrderComponent {
   }
   filterAddresses(event: any): void {
     const query = event.target.value.toLowerCase();
-    this.filteredAddresses = this.addresses.filter(address =>
-      `${address.street} ${address.houseNumber}, ${address.city}`.toLowerCase().includes(query)
-    );
+    if (query.length >= 3) {
+      this.filteredAddresses = this.addresses.filter(address =>
+        `${address.street} ${address.houseNumber}, ${address.city}`.toLowerCase().includes(query)
+      );
+      this.cdr.detectChanges();
+    }
+    else {
+      this.filteredAddresses = [];
+    }
   }
   selectAddress(address: Address): void {
     this.selectedAddress = address;
