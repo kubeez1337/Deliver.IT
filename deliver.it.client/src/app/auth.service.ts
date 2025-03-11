@@ -244,4 +244,16 @@ export class AuthService {
     });
     return this.http.get<User>(`${this.apiUrl}/getUserByUsername?username=${username}`, { headers });
   }
+  uploadFoodPicture(foodId: number, formData: FormData): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.post<any>(`${this.apiUrl}/foods/${foodId}/upload-picture`, formData, { headers });
+  }
 }

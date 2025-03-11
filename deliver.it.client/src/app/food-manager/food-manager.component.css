@@ -8,7 +8,7 @@
 }
 
 .table-container {
-  flex: 1; 
+  flex: 1;
   overflow: auto;
 }
 
@@ -32,4 +32,11 @@ mat-form-field {
   gap: 10px;
   align-items: center;
   justify-content: flex-start;
+}
+
+.food-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
 }

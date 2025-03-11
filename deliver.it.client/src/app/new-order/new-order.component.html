@@ -7,9 +7,9 @@
         <input matInput formControlName="customerName" placeholder="Zadajte meno" />
       </mat-form-field>
       <!--<mat-form-field appearance="outline">
-    <mat-label>Adresa zákazníka</mat-label>
-    <input matInput formControlName="customerAddress" placeholder="Zadajte adresu" />
-  </mat-form-field>-->
+      <mat-label>Adresa zákazníka</mat-label>
+      <input matInput formControlName="customerAddress" placeholder="Zadajte adresu" />
+    </mat-form-field>-->
       <mat-form-field appearance="outline">
         <mat-label>Vyhľadajte adresu</mat-label>
         <input matInput (input)="filterAddresses($event)" (focus)="showAddressList()" (blur)="hideAddressList()" placeholder="Zadajte adresu" formControlName="searchQuery" />
@@ -31,26 +31,34 @@
     </div>
 
     <div class="food-selection">
-      <mat-form-field appearance="outline">
-        <mat-label>Vyberte jedlo</mat-label>
-        <mat-select [(value)]="selectedFood" (selectionChange)="onFoodSelected($event)">
-          <mat-option *ngFor="let food of availableFoods" [value]="food">
-            <img [src]="food.picturePath" alt="{{ food.name }}" width="50" height="50" style="margin-right: 10px;">
-            {{ food.name }} - {{ food.price | currency }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <h3>Vyberte jedlo</h3>
+      <div class="food-cards">
+        <div *ngFor="let food of availableFoods" class="food-card" (click)="selectFood(food)">
+          <img [src]="food.picturePath" alt="{{ food.name }}" class="food-image">
+          <div class="food-details">
+            <h4>{{ food.name }}</h4>
+            <p>{{ food.price | currency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div *ngIf="selectedFood">
-          <mat-label>Množstvo</mat-label>
+    <div *ngIf="selectedFood" class="selected-food">
+      <h3>Vybrané jedlo</h3>
+      <div class="selected-food-details">
+        <img [src]="selectedFood.picturePath" alt="{{ selectedFood.name }}" class="selected-food-image">
+        <div class="selected-food-info">
+          <h4>{{ selectedFood.name }}</h4>
+          <p>{{ selectedFood.price | currency }}</p>
           <div class="quantity-container">
             <button mat-button type="button" (click)="decrementQuantity()">-</button>
             <span>{{ selectedFoodQuantity }}</span>
             <button mat-button type="button" (click)="incrementQuantity()">+</button>
           </div>
-        <button mat-raised-button color="primary" type="button" (click)="addFood(selectedFood, selectedFoodQuantity)">
-          Pridať jedlo
-        </button>
+          <button mat-raised-button color="primary" type="button" (click)="addFood(selectedFood, selectedFoodQuantity)">
+            Pridať jedlo
+          </button>
+        </div>
       </div>
     </div>
 

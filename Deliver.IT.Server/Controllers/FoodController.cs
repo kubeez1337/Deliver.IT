@@ -13,9 +13,11 @@ namespace Deliver.IT.Server.Controllers
     public class FoodController : ControllerBase
     {
         private readonly DeliverItDbContext _context;
-        public FoodController(DeliverItDbContext context)
+        private readonly IWebHostEnvironment _env;
+        public FoodController(DeliverItDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         [HttpGet("/getFoods")]
@@ -206,12 +208,33 @@ namespace Deliver.IT.Server.Controllers
             return Ok(new { message = "Foods added successfully!" });
         }
 
-        //[HttpPost("/uploadFoodPicture")]
-        //[Authorize(Roles = "1")]
-        //public async Task<IActionResult> UploadFoodPicture(IFormFile file)
-        //{
-            //TODO
-        //}
+        [HttpPost("/foods/{id}/upload-picture")]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> UploadPicture(int id, IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("No file uploaded.");
+
+            var food = await _context.Foods.FindAsync(id);
+            if (food == null)
+                return NotFound("Food not found.");
+
+            var clientAssetsFolder = Path.Combine(_env.ContentRootPath, "..", "deliver.it.client", "src", "assets");
+            if (!Directory.Exists(clientAssetsFolder))
+                Directory.CreateDirectory(clientAssetsFolder);
+
+            var filePath = Path.Combine(clientAssetsFolder, file.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            food.PicturePath = $"assets/{file.FileName}";
+            _context.Foods.Update(food);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { picturePath = food.PicturePath });
+        }
 
     }
 

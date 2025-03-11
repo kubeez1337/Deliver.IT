@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Food } from '../models/food.model';
 import { AuthService } from '../auth.service';
 import { saveAs } from 'file-saver';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observer } from 'rxjs';
 
 @Component({
   selector: 'app-food-manager',
@@ -15,24 +16,27 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class FoodManagerComponent implements OnInit {
   foods: Food[] = [];
   selectedFile: File | null = null;
-  displayedColumns: string[] = ['select','id', 'name', 'price'];
+  displayedColumns: string[] = ['select','id', 'name', 'price','picture'];
   selection = new SelectionModel<Food>(true, []);
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>; 
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.getFoods();
   }
   getFoods(): void {
-    this.authService.getFoods().subscribe(
-      (response) => {
+    const observer: Observer<Food[]> = {
+      next: (response) => {
         this.foods = response;
+        this.cdr.detectChanges(); // Trigger change detection
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching foods', error);
-      }
-    );
+      },
+      complete: () => { }
+    };
+    this.authService.getFoods().subscribe(observer);
   }
   toggleRow(food: Food) {
     this.selection.toggle(food);
@@ -165,5 +169,27 @@ export class FoodManagerComponent implements OnInit {
   addFood(): void {
     const newFood: Food = { id: 0, name: '', price: 0, quantity: 0 };
     this.foods = [...this.foods, newFood];
+  }
+  onPictureSelected(event: any, food: Food): void {
+    const file = event.target.files[0];
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      const observer: Observer<any> = {
+        next: (response: any) => {
+          food.picturePath = response.picturePath;
+          this.updateFood(food);
+          this.getFoods(); // Refresh the list of foods
+        },
+        error: (error) => {
+          console.error('Error uploading picture', error);
+          this.snackBar.open('Nastal error v nahrávaní obrázka', '', {
+            duration: 3000,
+          });
+        },
+        complete: () => { }
+      };
+      this.authService.uploadFoodPicture(food.id, formData).subscribe(observer);
+    }
   }
 }

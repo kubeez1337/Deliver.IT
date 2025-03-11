@@ -34,6 +34,7 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Resources\" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
 
 </Project>

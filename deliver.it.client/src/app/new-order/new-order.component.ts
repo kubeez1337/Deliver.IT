@@ -61,6 +61,7 @@ export class NewOrderComponent {
   ngOnInit(): void {
     this.foodService.getFoods().subscribe((data: Food[]) => {
       this.availableFoods = data;
+      this.cdr.detectChanges();
     });
     this.fetchAddresses();
     const role = this.authService.getUserRole();
@@ -78,6 +79,7 @@ export class NewOrderComponent {
     this.addressService.getAddresses().subscribe((data: Address[]) => {
       this.addresses = data;
       this.filteredAddresses = data;
+      this.cdr.detectChanges();
       console.log('Fetched addresses:', this.addresses); // Add this line to log the addresses
 
     });

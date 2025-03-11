@@ -54,29 +54,34 @@
   margin: 5px 0;
   font-family: 'Trebuchet MS', sans-serif;
 }
-.selected-item button {
-  font-size: 0.9rem;
-}
+
+  .selected-item button {
+    font-size: 0.9rem;
+  }
 
 .submit-button {
   align-self: center;
   width: 200px;
 }
+
 ::ng-deep .mat-select-panel {
   position: absolute !important;
   z-index: 1000 !important;
 }
+
 h2 {
-  font-family: 'Trebuchet MS', sans-serif; 
-  
+  font-family: 'Trebuchet MS', sans-serif;
 }
+
 h3 {
   font-family: 'Trebuchet MS', sans-serif;
 }
+
 mat-label {
   font-family: 'Trebuchet MS', sans-serif;
 }
-.nice-font  {
+
+.nice-font {
   font-family: 'Trebuchet MS', sans-serif;
 }
 
@@ -88,11 +93,73 @@ mat-label {
   margin-top: 5px;
 }
 
-.address-results mat-list-item {
-  cursor: pointer;
-  padding: 10px;
+  .address-results mat-list-item {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+    .address-results mat-list-item:hover {
+      background-color: #f0f0f0;
+    }
+
+.food-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center; /* Center the food cards */
 }
 
-.address-results mat-list-item:hover {
-  background-color: #f0f0f0;
+.food-card {
+  width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+  .food-card:hover {
+    transform: scale(1.05);
+  }
+
+.food-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.food-details {
+  padding: 8px;
+  text-align: center;
+}
+
+.selected-food {
+  margin-top: 16px;
+}
+
+.selected-food-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.selected-food-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.selected-food-info {
+  flex: 1;
+  text-align: center;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
 }
