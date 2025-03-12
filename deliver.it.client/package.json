@@ -31,6 +31,7 @@
     "jest-editor-support": "*",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
+    "polyline": "^0.2.0",
     "run-script-os": "*",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

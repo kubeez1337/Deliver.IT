@@ -30,6 +30,7 @@
     <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>
     <PackageJsonDependenciesLeaflet Condition="$(PackageJsonDependenciesLeaflet) == ''">^1.9.4</PackageJsonDependenciesLeaflet>
     <PackageJsonDependenciesLeafletMarkercluster Condition="$(PackageJsonDependenciesLeafletMarkercluster) == ''">^1.5.3</PackageJsonDependenciesLeafletMarkercluster>
+    <PackageJsonDependenciesPolyline Condition="$(PackageJsonDependenciesPolyline) == ''">^0.2.0</PackageJsonDependenciesPolyline>
     <PackageJsonDependenciesRunScriptOs Condition="$(PackageJsonDependenciesRunScriptOs) == ''">*</PackageJsonDependenciesRunScriptOs>
     <PackageJsonDependenciesRxjs Condition="$(PackageJsonDependenciesRxjs) == ''">~7.8.0</PackageJsonDependenciesRxjs>
     <PackageJsonDependenciesTslib Condition="$(PackageJsonDependenciesTslib) == ''">^2.3.0</PackageJsonDependenciesTslib>

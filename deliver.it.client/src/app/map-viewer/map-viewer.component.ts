@@ -5,6 +5,7 @@ import { Order } from '../models/order.model';
 import { OrderService } from '../order.service';
 import { AddressService } from '../address.service';
 import { Address } from '../models/address.model';
+import { OsrmService } from '../osrm.service';
 
 @Component({
   selector: 'app-map-viewer',
@@ -20,7 +21,8 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
   private addresses: Address[] = [];
   private markers: L.Marker[] = [];
   private markerClusterGroup!: L.MarkerClusterGroup;
-  constructor(private orderService: OrderService, private addressService: AddressService) { }
+  private routeLayer!: L.GeoJSON;
+  constructor(private orderService: OrderService, private addressService: AddressService, private osrmService: OsrmService) { }
   ngOnInit(): void {
     this.loadOrders();
     this.loadAddresses();
@@ -86,6 +88,22 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
         }
       }
     });
+  }
+  calculateRoute(): void {
+    const coordinates = this.orders.map(order => `${order.customerAddress.longitude},${order.customerAddress.latitude}`).join(';');
+    this.osrmService.getRoute(coordinates).subscribe(
+      (data) => {
+        if (this.routeLayer) {
+          this.map.removeLayer(this.routeLayer);
+        }
+        this.routeLayer = L.geoJSON(data.routes[0].geometry).addTo(this.map);
+        this.map.fitBounds(this.routeLayer.getBounds());
+      },
+      (error) => {
+        console.error('Error fetching route:', error);
+        alert(`Error fetching route: ${error.message}`);
+      }
+    );
   }
   addAll(): void {
     this.addresses.forEach(address => {

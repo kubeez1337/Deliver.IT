@@ -38,11 +38,22 @@ const PROXY_CONFIG = [
       "/getAddresses",
       "/seedDatabaseFromJson",
       "/foods/*/upload-picture",
-
+      "/route/v1/driving",
     ],
     target,
-    secure: false
-  }
+    secure: false,
+    changeOrigin: true,
+  },
+  {
+    // Proxy requests to your local OSRM Docker instance
+    context: ["/osrm"],
+    target: "http://localhost:5000",
+    secure: false,
+    changeOrigin: true,
+    pathRewrite: {
+      "^/osrm": "", // Ensure no prefix is sent to OSRM
+    },
+  },
 ]
 
 module.exports = PROXY_CONFIG;
