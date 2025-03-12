@@ -25,13 +25,13 @@ v prípade že by sa frontendová aplikácia nepustila je treba sa navigovať do
 ### OSRM
 #### Windows
 
-Nainstalujte Rancher Desktop alebo docker, spustite aplikaciu. \ 
+Nainstalujte Rancher Desktop alebo docker, spustite aplikaciu. \
 Stiahnite backend `docker pull osrm/osrm-backend` \
 Vytvorte adresar pre stiahnutie osrm datovych suborov. \
-Stiahnite datovy subor `curl -o slovakia-latest.osm.pbf https://download.geofabrik.de/europe/slovakia-latest.osm.pbf` \
-1. extract `docker run -t -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-extract -p /opt/car.lua /data/slovakia-latest.osm.pbf` \
-2. partition `docker run -t -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-partition /data/slovakia-latest.osrm`
-3. customize `docker run -t -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-customize /data/slovakia-latest.osrm`
+Stiahnite datovy subor `curl -o slovakia-latest.osm.pbf https://download.geofabrik.de/europe/slovakia-latest.osm.pbf` 
+1. extract `docker run -t -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-extract -p /opt/car.lua /data/slovakia-latest.osm.pbf` 
+2. partition `docker run -t -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-partition /data/slovakia-latest.osrm` 
+3. customize `docker run -t -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-customize /data/slovakia-latest.osrm` 
 4. `start docker run -t -i -p 5000:5000 -v [ABSOLUTNA CESTA K PRIECINKU]:/data osrm/osrm-backend osrm-routed --algorithm mld /data/slovakia-latest.osrm --max-table-size 1000 --max-viaroute-size 1000`
 
 
