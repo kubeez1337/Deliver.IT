@@ -430,15 +430,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 371,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -452,7 +448,7 @@
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\osrm.service.ts",
               "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\osrm.service.ts",
               "RelativeToolTip": "deliver.it.client\\src\\app\\osrm.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-03-11T21:47:02.876Z",
               "EditorCaption": ""

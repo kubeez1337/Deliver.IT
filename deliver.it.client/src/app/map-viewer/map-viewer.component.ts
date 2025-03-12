@@ -6,6 +6,7 @@ import { OrderService } from '../order.service';
 import { AddressService } from '../address.service';
 import { Address } from '../models/address.model';
 import { OsrmService } from '../osrm.service';
+import * as polyline from '@mapbox/polyline';
 
 @Component({
   selector: 'app-map-viewer',
@@ -98,6 +99,28 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
         }
         this.routeLayer = L.geoJSON(data.routes[0].geometry).addTo(this.map);
         this.map.fitBounds(this.routeLayer.getBounds());
+      },
+      (error) => {
+        console.error('Error fetching route:', error);
+        alert(`Error fetching route: ${error.message}`);
+      }
+    );
+  }
+  calculateTrip(): void {
+    const coordinates = this.orders.map(order => `${order.customerAddress.longitude},${order.customerAddress.latitude}`).join(';');
+    this.osrmService.getOptimizedRoute(coordinates).subscribe(
+      (data) => {
+        if (this.routeLayer) {
+          this.map.removeLayer(this.routeLayer);
+        }
+        if (data.trips && data.trips.length > 0) {
+          const decodedGeometry = polyline.toGeoJSON(data.trips[0].geometry);
+          this.routeLayer = L.geoJSON(decodedGeometry).addTo(this.map);
+          this.map.fitBounds(this.routeLayer.getBounds());
+        } else {
+          console.error('No trips found in the response');
+          alert('No trips found in the response');
+        }
       },
       (error) => {
         console.error('Error fetching route:', error);
