@@ -47,6 +47,7 @@ const PROXY_CONFIG = [
       "/getRestaurants",
       "/add-manager",
       "/managed-restaurants",
+      "/courier/active-orders",
       
     ],
     target,

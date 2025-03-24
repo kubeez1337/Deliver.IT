@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit{
   isAdmin: boolean = false;
   isLoggedIn: boolean = false;
   isManager: boolean = false;
+  isCourier: boolean = false;
 
   constructor(private authService: AuthService, private router: Router, private snackBar: MatSnackBar ) { }
   ngOnInit(): void {
@@ -24,6 +25,9 @@ export class NavbarComponent implements OnInit{
     });
     this.authService.isManager().subscribe(isManager => {
       this.isManager = isManager;
+    });
+    this.authService.isCourier().subscribe(isCourier => {
+      this.isCourier = isCourier;
     });
   }
   logout(): void {

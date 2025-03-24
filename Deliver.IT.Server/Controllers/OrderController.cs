@@ -296,5 +296,22 @@ namespace Deliver.IT.Server.Controllers
 
             return Ok(new { message = "Order delivered successfully!" });
         }
+        [HttpGet("/courier/active-orders")]
+        [Authorize(Roles = "2")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetActiveOrders()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return Unauthorized("User ID not found in token.");
+            }
+
+            var orders = await _context.Orders
+                .Include(o => o.CustomerAddress)
+                .Where(o => o.ClaimedBy == userId && o.Status == "Active")
+                .ToListAsync();
+
+            return Ok(orders);
+        }
     }
 }

@@ -28,6 +28,7 @@
     <a *ngIf="isLoggedIn"mat-button routerLink="list-orders-page">Objednávky</a>
     <a *ngIf="isLoggedIn" mat-button routerLink="new-order">Nová Objednávka</a>
     <a *ngIf="isLoggedIn" mat-button routerLink="chat">Chat</a>
+    <a *ngIf="isCourier" mat-button routerLink="courier-orders">Courier</a>
     <a *ngIf="isAdmin || isManager" mat-button routerLink="food-manager">Ponuka jedál</a>
     <a *ngIf="isAdmin" mat-button routerLink="map-viewer">MapDev</a>
     <a *ngIf="isAdmin" mat-button routerLink="pending-requests">Requests</a>

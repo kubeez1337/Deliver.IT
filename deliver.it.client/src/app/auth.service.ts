@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Food } from './models/food.model';
 import { User } from './models/user.model';
+import { Order } from './models/order.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class AuthService {
   private isAdminSubject = new BehaviorSubject<boolean>(this.checkAdmin());
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.checkLoggedIn());
   private isManagerSubject = new BehaviorSubject<boolean>(this.checkManager());
+  private isCourierSubject = new BehaviorSubject<boolean>(this.checkCourier());
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {
@@ -23,6 +25,7 @@ export class AuthService {
     this.isAdminSubject.next(false);
     this.isLoggedInSubject.next(false);
     this.isManagerSubject.next(false);
+    this.isCourierSubject.next(false);
   }
   getAllUsers(): Observable<User[]> {
     const token = localStorage.getItem('token');
@@ -43,6 +46,11 @@ export class AuthService {
     this.isManagerSubject.next(this.checkManager());
     this.isLoggedInSubject.next(this.checkLoggedIn());
   }
+  updateCourierStatus(): void {
+    this.isCourierSubject.next(this.checkCourier());
+    this.isLoggedInSubject.next(this.checkLoggedIn());
+
+  }
   isAdmin(): Observable<boolean> {
     return this.isAdminSubject.asObservable();
   }
@@ -57,6 +65,9 @@ export class AuthService {
       return this.isAdminSubject.asObservable();
     }
     return this.isManagerSubject.asObservable();
+  }
+  isCourier(): Observable<boolean> {
+    return this.isCourierSubject.asObservable();
   }
   private checkAdmin(): boolean {
     const token = localStorage.getItem('token');
@@ -292,5 +303,17 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
     return this.http.get<Food[]>(`${this.apiUrl}/getFoods/${restaurantId}`, { headers });
+  }
+  getActiveOrders(): Observable<Order[]> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get<Order[]>(`${this.apiUrl}/courier/active-orders`, { headers });
   }
 }

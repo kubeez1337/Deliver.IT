@@ -16,6 +16,8 @@ import { ChatComponent } from './chat/chat.component';
 import { PendingRequestsComponent } from './pending-requests/pending-requests.component';
 import { RestaurantManagerComponent } from './restaurant-manager/restaurant-manager.component';
 import { ManagerGuard } from './guards/manager.guard';
+import { CourierOrdersComponent } from './courier-orders/courier-orders.component';
+import { CourierGuard } from './guards/courier.guard';
 
 
 const routes: Routes = [
@@ -32,7 +34,8 @@ const routes: Routes = [
   { path: 'map-viewer', component: MapViewerComponent, canActivate: [AdminGuard] },
   { path: 'chat', component: ChatComponent, canActivate: [LoggedGuard] },
   { path: 'pending-requests', component: PendingRequestsComponent, canActivate: [AdminGuard] },
-  { path: 'restaurant-manager', component: RestaurantManagerComponent, canActivate: [AdminGuard] }
+  { path: 'restaurant-manager', component: RestaurantManagerComponent, canActivate: [AdminGuard] },
+  { path: 'courier-orders', component: CourierOrdersComponent, canActivate: [CourierGuard] },
 ];
 
 @NgModule({

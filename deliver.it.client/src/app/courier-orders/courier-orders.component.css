@@ -1,0 +1,26 @@
+.courier-orders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.order-list {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 16px;
+}
+
+.order-card {
+  margin-bottom: 8px;
+}
+
+.button-group {
+  margin-bottom: 16px;
+}
+
+.map-container {
+  width: 100%;
+  height: 600px;
+  margin-top: 16px;
+}

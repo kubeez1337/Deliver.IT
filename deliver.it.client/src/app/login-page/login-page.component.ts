@@ -37,6 +37,7 @@ export class LoginPageComponent {
           this.isAdmin = response.role === '1';
           this.authService.updateAdminStatus();
           this.authService.updateManagerStatus();
+          this.authService.updateCourierStatus();
           this.snackBar.open('Prihlásenie úspešné', '', {
             duration: 3000,
           });

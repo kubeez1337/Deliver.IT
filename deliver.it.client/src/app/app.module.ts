@@ -1,7 +1,7 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InfoPageComponent } from './info-page/info-page.component';
@@ -43,6 +43,7 @@ import { RestaurantRequestComponent } from './restaurant-request/restaurant-requ
 import { PendingRequestsComponent } from './pending-requests/pending-requests.component';
 import { RequestsComponent } from './requests/requests.component';
 import { RestaurantManagerComponent } from './restaurant-manager/restaurant-manager.component';
+import { CourierOrdersComponent } from './courier-orders/courier-orders.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { RestaurantManagerComponent } from './restaurant-manager/restaurant-mana
     PendingRequestsComponent,
     RequestsComponent,
     RestaurantManagerComponent,
+    CourierOrdersComponent,
     
   ],
   imports: [
@@ -77,7 +79,7 @@ import { RestaurantManagerComponent } from './restaurant-manager/restaurant-mana
     MatSelectModule,
     MatOptionModule, MatDialogModule,
     MatFormFieldModule, MatInputModule, MatSelectModule,
-    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule
+    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, DragDropModule
   ],
   providers: [
     provideAnimationsAsync(), { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
