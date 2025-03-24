@@ -15,6 +15,7 @@ const PROXY_CONFIG = [
       "/getUsers",
       "/order",
       "/getFoods",
+      "/getFoods/*",
       "/order/",
       "/create-order",
       "/register",
@@ -45,7 +46,8 @@ const PROXY_CONFIG = [
       "/pending-restaurant",
       "/getRestaurants",
       "/add-manager",
-      "/managed-restaurants"
+      "/managed-restaurants",
+      
     ],
     target,
     secure: false,

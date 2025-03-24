@@ -46,7 +46,7 @@ namespace Deliver.IT.Server
         public ICollection<OrderFood>? OrderFoods { get; set; }
         public string? PicturePath { get; set; }
         public int RestaurantId { get; set; }
-        public Restaurant Restaurant { get; set; }
+        public Restaurant? Restaurant { get; set; }
     }
     public class Restaurant
     {

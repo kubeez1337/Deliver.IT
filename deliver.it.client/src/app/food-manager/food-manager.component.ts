@@ -23,6 +23,7 @@ export class FoodManagerComponent implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>; 
   managedRestaurants: Restaurant[] = [];
   selectedRestaurant: Restaurant | null = null;
+  selectedRestaurantId: number | null = null;
   constructor(private authService: AuthService, private snackBar: MatSnackBar, private cdr: ChangeDetectorRef, private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
@@ -42,6 +43,7 @@ export class FoodManagerComponent implements OnInit {
   }
   onRestaurantSelected(restaurant: Restaurant): void {
     this.selectedRestaurant = restaurant;
+    this.selectedRestaurantId = restaurant.id;
     this.getFoods();
   }
   getFoods(): void {
@@ -67,11 +69,10 @@ export class FoodManagerComponent implements OnInit {
   updateFood(food: Food): void {
     this.authService.updateFood(food).subscribe(
       (response) => {
-        //console.log('Food updated successfully', response);
-        //alert('Food updated successfully!');
-        //this.snackBar.open('Jedlá sa úspešne obnovili', '', {
-        //  duration: 3000,
-        //});
+        this.snackBar.open('Jedla uspesne obnovene!', '', {
+          duration: 3000,
+        });
+        this.getFoods();
       },
       (error) => {
         console.error('Error updating food', error);
@@ -86,7 +87,7 @@ export class FoodManagerComponent implements OnInit {
     const existingFoods = this.foods.filter(food => food.id !== 0);
 
     if (newFoods.length > 0) {
-      this.authService.addFoods(newFoods).subscribe(
+      this.authService.addFoods(newFoods, this.selectedRestaurantId).subscribe(
         (response) => {
           //console.log('New foods added successfully', response);
           this.snackBar.open('Pridanie jedla úspešné!', '', {
@@ -102,7 +103,7 @@ export class FoodManagerComponent implements OnInit {
     }
 
     if (existingFoods.length > 0) {
-      this.authService.updateFoods(existingFoods).subscribe(
+      this.authService.updateFoods(existingFoods, this.selectedRestaurantId).subscribe(
         (response) => {
           this.snackBar.open('Update jedálničku úspešný!', '', {
             duration: 3000,
@@ -187,7 +188,11 @@ export class FoodManagerComponent implements OnInit {
     );
   }
   addFood(): void {
-    const newFood: Food = { id: 0 , name: '', price: 0, quantity: 0, restaurantId: 0 };
+    var newId = 0;
+    if (this.selectedRestaurant) {
+      newId = this.selectedRestaurant.id;
+    }
+    const newFood: Food = { id: 0 , name: '', price: 0, quantity: 0, restaurantId:  newId};
     this.foods = [...this.foods, newFood];
   }
   onPictureSelected(event: any, food: Food): void {

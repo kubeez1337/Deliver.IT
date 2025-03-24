@@ -375,45 +375,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c86ebd8a-3a17-47a0-964f-0d4a11d58eef",
+                            Id = "5778ccd4-1005-492c-8c31-65eb482777d1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "37481550-558d-449d-b25a-ee8d506c9ff7",
+                            ConcurrencyStamp = "cb201750-6cb2-401a-a142-6759d531804e",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "580ef893-263c-4b3b-b564-035defabf9e9",
+                            SecurityStamp = "36125c76-b68b-403e-bf7f-b53ab7fa9b01",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "b1ae6d49-3793-4eac-8000-bc366140c907",
+                            Id = "3bd0e20b-b681-4e08-8fab-434dec6d9772",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b86f2a3a-7907-44e0-b994-8c411c29a310",
+                            ConcurrencyStamp = "f51b2fad-6945-48b7-a650-5b2a6d14906a",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4053148f-bf61-4ff2-b59f-6867d9a5dd1f",
+                            SecurityStamp = "a920396d-5248-4837-89e5-caec62f75c71",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "6a5f492e-07d5-4370-8c29-6ad203040639",
+                            Id = "29538c7e-2d46-4d33-ae64-fef7174376c6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1d8db668-ff29-4d44-8854-8d34b01a2441",
+                            ConcurrencyStamp = "046d9e4d-c4b5-4f89-a7bd-1289f3153650",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "00f1cb69-0da6-412f-a491-9ebf0b39e94c",
+                            SecurityStamp = "8cce39af-6c26-4251-a08a-973a784a3315",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"

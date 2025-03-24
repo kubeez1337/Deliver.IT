@@ -30,10 +30,12 @@
       <h3>Vyberte reštauráciu</h3>
       <div class="restaurant-cards">
         <mat-card *ngFor="let restaurant of availableRestaurants" class="restaurant-card" (click)="selectRestaurant(restaurant)">
+
           <mat-card-header>
             <mat-card-title>{{ restaurant.name }}</mat-card-title>
             <mat-card-subtitle>{{ restaurant.address.street }} {{ restaurant.address.houseNumber }}, {{ restaurant.address.city }}</mat-card-subtitle>
           </mat-card-header>
+          <br />
         </mat-card>
       </div>
     </div>

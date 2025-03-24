@@ -26,6 +26,11 @@ namespace Deliver.IT.Server.Controllers
             return await _context.Foods.ToListAsync();
         }
 
+        [HttpGet("/getFoods/{id}")]
+        public async Task<ActionResult<IEnumerable<Food>>> GetFoodsOfRestaurant(int id)
+        {
+            return await _context.Foods.Where(f => f.RestaurantId == id).ToListAsync();
+        }
         [HttpPost("/uploadFoods")]
         [Authorize(Roles = "1, 3")] 
         public async Task<IActionResult> UploadFoods(IFormFile file)
@@ -114,7 +119,7 @@ namespace Deliver.IT.Server.Controllers
 
         [HttpPut("/updateFood")]
         [Authorize(Roles = "1, 3")]
-        public async Task<IActionResult> UpdateFood([FromBody] Food food)
+        public async Task<IActionResult> UpdateFood([FromBody] Food food, [FromQuery] int restaurantId)
         {
             if (food == null || food.Id <= 0)
             {
@@ -129,7 +134,7 @@ namespace Deliver.IT.Server.Controllers
 
             existingFood.Name = food.Name;
             existingFood.Price = food.Price;
-
+            existingFood.RestaurantId = restaurantId;
             _context.Foods.Update(existingFood);
             await _context.SaveChangesAsync();
 
@@ -138,11 +143,16 @@ namespace Deliver.IT.Server.Controllers
 
         [HttpPut("/updateFoods")]
         [Authorize(Roles = "1, 3")]
-        public async Task<IActionResult> UpdateFoods([FromBody] List<Food> foods)
+        public async Task<IActionResult> UpdateFoods([FromBody] List<Food> foods, [FromQuery] int restaurantId)
         {
             if (foods == null || !foods.Any())
             {
                 return BadRequest("Invalid food data.");
+            }
+            var restaurant = await _context.Restaurants.FindAsync(restaurantId);
+            if (restaurant == null)
+            {
+                return BadRequest("Invalid restaurant ID.");
             }
 
             foreach (var food in foods)
@@ -152,7 +162,7 @@ namespace Deliver.IT.Server.Controllers
                 {
                     return NotFound($"Food with ID {food.Id} not found.");
                 }
-
+                existingFood.RestaurantId = restaurantId;
                 existingFood.Name = food.Name;
                 existingFood.Price = food.Price;
 
@@ -186,20 +196,24 @@ namespace Deliver.IT.Server.Controllers
         }
         [HttpPost("/addFoods")]
         [Authorize(Roles = "1, 3")]
-        public async Task<IActionResult> AddFoods([FromBody] Food[] foods)
+        public async Task<IActionResult> AddFoods([FromBody] Food[] foods, [FromQuery] int restaurantId)
         {
             if (foods == null || !foods.Any())
             {
                 return BadRequest("Invalid food data.");
             }
-
+            var restaurant = await _context.Restaurants.FindAsync(restaurantId);
+            if (restaurant == null)
+            {
+                return BadRequest("Invalid restaurant ID.");
+            }
             foreach (var food in foods)
             {
                 if (string.IsNullOrWhiteSpace(food.Name) || food.Price <= 0)
                 {
                     return BadRequest($"Invalid data for food with ID {food.Id}.");
                 }
-
+                food.RestaurantId = restaurantId;
                 _context.Foods.Add(food);
             }
 

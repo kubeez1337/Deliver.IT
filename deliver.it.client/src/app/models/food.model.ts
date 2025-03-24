@@ -1,3 +1,5 @@
+import { Restaurant } from "./restaurant.model";
+
 export interface Food {
   id: number;
   name: string;
@@ -5,4 +7,5 @@ export interface Food {
   quantity: number;
   picturePath?: string;
   restaurantId: number;
+  restaurant?: Restaurant;
 }

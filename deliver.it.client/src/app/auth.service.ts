@@ -179,7 +179,7 @@ export class AuthService {
     });
     return this.http.get<Food[]>(`${this.apiUrl}/getFoods`, { headers });
   }
-  updateFoods(foods: Food[]): Observable<any> {
+  updateFoods(foods: Food[], restaurantId: number | null): Observable<any> {
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('No token found');
@@ -188,7 +188,7 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.put<any>(`${this.apiUrl}/updateFoods`, foods, { headers });
+    return this.http.put<any>(`${this.apiUrl}/updateFoods?restaurantId=${restaurantId}`, foods, { headers });
   }
 
   deleteFoods(foodIds: number[]): Observable<any> {
@@ -248,7 +248,7 @@ export class AuthService {
     });
     return this.http.post<any>(`${this.apiUrl}/processCourierApplication`, { applicationId, approve }, { headers });
   }
-  addFoods(foods: Food[]): Observable<any> {
+  addFoods(foods: Food[], restaurantId: number | null): Observable<any> {
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('No token found');
@@ -257,7 +257,7 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.post<any>(`${this.apiUrl}/addFoods`, foods, { headers });
+    return this.http.post<any>(`${this.apiUrl}/addFoods?restaurantId=${restaurantId}`, foods, { headers });
   }
   getUserByUsername(username: string): Observable<User> {
     const token = localStorage.getItem('token');
@@ -291,6 +291,6 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.get<Food[]>(`${this.apiUrl}/restaurants/${restaurantId}/foods`, { headers });
+    return this.http.get<Food[]>(`${this.apiUrl}/getFoods/${restaurantId}`, { headers });
   }
 }
