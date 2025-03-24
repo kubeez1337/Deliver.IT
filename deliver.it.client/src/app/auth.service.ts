@@ -10,7 +10,7 @@ export class AuthService {
   private apiUrl = 'https://localhost:59038';  
   private isAdminSubject = new BehaviorSubject<boolean>(this.checkAdmin());
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.checkLoggedIn());
-
+  private isManagerSubject = new BehaviorSubject<boolean>(this.checkManager());
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {
@@ -22,6 +22,7 @@ export class AuthService {
     localStorage.removeItem('role');
     this.isAdminSubject.next(false);
     this.isLoggedInSubject.next(false);
+    this.isManagerSubject.next(false);
   }
   getAllUsers(): Observable<User[]> {
     const token = localStorage.getItem('token');
@@ -38,11 +39,24 @@ export class AuthService {
     this.isAdminSubject.next(this.checkAdmin());
     this.isLoggedInSubject.next(this.checkLoggedIn());
   }
+  updateManagerStatus(): void {
+    this.isManagerSubject.next(this.checkManager());
+    this.isLoggedInSubject.next(this.checkLoggedIn());
+  }
   isAdmin(): Observable<boolean> {
     return this.isAdminSubject.asObservable();
   }
   isLoggedIn(): Observable<boolean> {
     return this.isLoggedInSubject.asObservable();
+  }
+  isManager(): Observable<boolean> {
+    if (this.isManagerSubject.value === true) {
+      return this.isManagerSubject.asObservable();
+    }
+    if (this.isAdminSubject.value === true) {
+      return this.isAdminSubject.asObservable();
+    }
+    return this.isManagerSubject.asObservable();
   }
   private checkAdmin(): boolean {
     const token = localStorage.getItem('token');
@@ -70,6 +84,15 @@ export class AuthService {
     const payload = JSON.parse(atob(token.split('.')[1]));
     return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === '2';
   }
+  private checkManager(): boolean {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return false;
+    }
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === '3';
+  }
   register(username: string, firstName: string, lastName: string, phoneNumber: string, email: string, password: string): Observable<any> {
     const registerData = { username, firstName, lastName, phoneNumber, email, password };
     return this.http.post<any>(`${this.apiUrl}/register`, registerData);
@@ -86,6 +109,9 @@ export class AuthService {
     }
     if (this.checkCourier()) {
       return '2';
+    }
+    if (this.checkManager()) {
+      return '3';
     }
     else {
       return '';
@@ -255,5 +281,16 @@ export class AuthService {
     });
 
     return this.http.post<any>(`${this.apiUrl}/foods/${foodId}/upload-picture`, formData, { headers });
+  }
+  getFoodsByRestaurant(restaurantId: number): Observable<Food[]> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<Food[]>(`${this.apiUrl}/restaurants/${restaurantId}/foods`, { headers });
   }
 }

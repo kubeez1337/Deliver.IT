@@ -129,7 +129,6 @@ export class OrdersPageComponent implements OnInit {
         );
       }
       this.loadOrders();
-
     });
     this.loadOrders();
   }

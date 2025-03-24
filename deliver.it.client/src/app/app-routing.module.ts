@@ -13,6 +13,9 @@ import { AccountComponent } from './account/account.component';
 import { NotLoggedInComponent } from './not-logged-in/not-logged-in.component';
 import { MapViewerComponent } from './map-viewer/map-viewer.component';
 import { ChatComponent } from './chat/chat.component';
+import { PendingRequestsComponent } from './pending-requests/pending-requests.component';
+import { RestaurantManagerComponent } from './restaurant-manager/restaurant-manager.component';
+import { ManagerGuard } from './guards/manager.guard';
 
 
 const routes: Routes = [
@@ -24,10 +27,12 @@ const routes: Routes = [
   { path: 'new-order', component: NewOrderComponent, canActivate: [LoggedGuard] },
   { path: 'registration-page', component: RegistrationPageComponent },
   { path: 'account-panel', component: AccountComponent, canActivate: [LoggedGuard] },
-  { path: 'food-manager', component: FoodManagerComponent, canActivate: [AdminGuard]},
+  { path: 'food-manager', component: FoodManagerComponent, canActivate: [ManagerGuard]},
   { path: 'not-logged-in', component: NotLoggedInComponent },
   { path: 'map-viewer', component: MapViewerComponent, canActivate: [AdminGuard] },
-  { path: 'chat', component: ChatComponent, canActivate: [LoggedGuard] }
+  { path: 'chat', component: ChatComponent, canActivate: [LoggedGuard] },
+  { path: 'pending-requests', component: PendingRequestsComponent, canActivate: [AdminGuard] },
+  { path: 'restaurant-manager', component: RestaurantManagerComponent, canActivate: [AdminGuard] }
 ];
 
 @NgModule({

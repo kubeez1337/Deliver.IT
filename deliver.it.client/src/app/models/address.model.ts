@@ -1,8 +1,8 @@
 export interface Address {
-  id: number;
+  id?: number;
   latitude: string;
   longitude: string;
-  city: string;
+  city?: string;
   conscriptionNumber?: string;
   houseNumber?: string;
   postcode?: string;

@@ -1,69 +1,80 @@
 <div class="food-manager-container">
-  <h1>Správca ponuky jedál</h1>
+  <h1>Food Manager</h1>
 
-  <div class="button-group">
-    <button mat-raised-button color="primary" (click)="saveAllFoods()">Uložiť</button>
-    <button mat-raised-button color="warn" (click)="deleteSelectedFoods()">Vymazať zvolené jedlá</button>
-    <button mat-raised-button color="accent" (click)="addFood()">Pridať jedlo</button>
-    <input type="file" #fileInput (change)="onFileSelected($event)" hidden />
-    <button mat-raised-button color="primary" (click)="triggerFileInputClick()">Zvoliť súbor jedálnička</button>
-    <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
-    <button mat-raised-button color="primary" (click)="uploadFoods()" [disabled]="!selectedFile">Upload jedálnička</button>
-    <button mat-raised-button color="accent" (click)="exportFoods()">Export jedálnička</button>
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Select Restaurant</mat-label>
+    <mat-select (selectionChange)="onRestaurantSelected($event.value)">
+      <mat-option *ngFor="let restaurant of managedRestaurants" [value]="restaurant">
+        {{ restaurant.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <div class="table-container">
-    <table mat-table [dataSource]="foods" class="mat-elevation-z8">
-      <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef>
-          <mat-checkbox (change)="$event ? masterToggle() : null"
-                        [checked]="selection.hasValue() && isAllSelected()"
-                        [indeterminate]="selection.hasValue() && !isAllSelected()">
-          </mat-checkbox>
-        </th>
-        <td mat-cell *matCellDef="let food">
-          <mat-checkbox (click)="$event.stopPropagation()"
-                        (change)="$event ? toggleRow(food) : null"
-                        [checked]="selection.isSelected(food)">
-          </mat-checkbox>
-        </td>
-      </ng-container>
+  <div *ngIf="selectedRestaurant">
+    <div class="button-group">
+      <button mat-raised-button color="primary" (click)="saveAllFoods()">Save</button>
+      <button mat-raised-button color="warn" (click)="deleteSelectedFoods()">Delete Selected Foods</button>
+      <button mat-raised-button color="accent" (click)="addFood()">Add Food</button>
+      <input type="file" #fileInput (change)="onFileSelected($event)" hidden />
+      <button mat-raised-button color="primary" (click)="triggerFileInputClick()">Select Food File</button>
+      <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
+      <button mat-raised-button color="primary" (click)="uploadFoods()" [disabled]="!selectedFile">Upload Foods</button>
+      <button mat-raised-button color="accent" (click)="exportFoods()">Export Foods</button>
+    </div>
 
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let food">{{ food.id }}</td>
-      </ng-container>
+    <div class="table-container">
+      <table mat-table [dataSource]="foods" class="mat-elevation-z8">
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let food">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? toggleRow(food) : null"
+                          [checked]="selection.isSelected(food)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Meno</th>
-        <td mat-cell *matCellDef="let food">
-          <mat-form-field appearance="fill">
-            <mat-label>Meno</mat-label>
-            <input matInput [(ngModel)]="food.name" />
-          </mat-form-field>
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let food">{{ food.id }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef>Cena</th>
-        <td mat-cell *matCellDef="let food">
-          <mat-form-field appearance="fill">
-            <mat-label>Cena</mat-label>
-            <input matInput type="number" [(ngModel)]="food.price" />
-          </mat-form-field>
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let food">
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput [(ngModel)]="food.name" />
+            </mat-form-field>
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="picture">
-        <th mat-header-cell *matHeaderCellDef>Obrázok</th>
-        <td mat-cell *matCellDef="let food">
-          <img *ngIf="food.picturePath" [src]="food.picturePath" alt="{{ food.name }}" class="food-image">
-          <input type="file" (change)="onPictureSelected($event, food)" />
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let food">
+            <mat-form-field appearance="fill">
+              <mat-label>Price</mat-label>
+              <input matInput type="number" [(ngModel)]="food.price" />
+            </mat-form-field>
+          </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+        <ng-container matColumnDef="picture">
+          <th mat-header-cell *matHeaderCellDef>Picture</th>
+          <td mat-cell *matCellDef="let food">
+            <img *ngIf="food.picturePath" [src]="food.picturePath" alt="{{ food.name }}" class="food-image">
+            <input type="file" (change)="onPictureSelected($event, food)" />
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
   </div>
 </div>

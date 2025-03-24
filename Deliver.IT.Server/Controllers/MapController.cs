@@ -26,12 +26,12 @@ namespace Deliver.IT.Server.Controllers
         {
             if (await _context.Addresses.AnyAsync())
             {
-                return BadRequest("Database has already been seeded.");
+                //return BadRequest("Database has already been seeded.");
             }
 
             try
             {
-                var json = await System.IO.File.ReadAllTextAsync("Resources/filtered_addresses.json");
+                var json = await System.IO.File.ReadAllTextAsync("Resources/filtered_nodes.json");
                 _logger.LogInformation("JSON content: {Json}", json);
 
                 var nodes = JsonSerializer.Deserialize<List<Node>>(json);

@@ -16,6 +16,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Address } from '../models/address.model';
 import { AddressService } from '../address.service';
+import { Restaurant } from '../models/restaurant.model';
+import { RestaurantService } from '../restaurant.service';
 @Component({
   selector: 'app-new-order',
   templateUrl: './new-order.component.html',
@@ -35,6 +37,9 @@ export class NewOrderComponent {
   searchQuery: string = '';
   selectedAddress: Address | null = null;
   showAddresses: boolean = false;
+  availableRestaurants: Restaurant[] = [];
+  selectedRestaurant: Restaurant | null = null;
+
   constructor(private http: HttpClient,
     private fb: FormBuilder,
     private orderService: OrderService,
@@ -43,9 +48,10 @@ export class NewOrderComponent {
     private cdr: ChangeDetectorRef,
     private authService: AuthService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private restaurantService: RestaurantService
   ) {
-    this.selectedFoods = this.fb.array([]);
+    this.selectedFoods = this.fb.array([],Validators.minLength(1));
     this.orderForm = this.fb.group({
       customerName: ['', Validators.required],
       customerAddress: [null, Validators.required],
@@ -79,7 +85,7 @@ export class NewOrderComponent {
       this.addresses = data;
       //this.filteredAddresses = data;
       this.cdr.detectChanges();
-      console.log('Fetched addresses:', this.addresses); // Add this line to log the addresses
+      //console.log('Fetched addresses:', this.addresses); // Add this line to log the addresses
 
     });
   }
@@ -102,6 +108,23 @@ export class NewOrderComponent {
       customerAddress: address
     });
     this.filteredAddresses = [];
+    this.fetchRestaurants();
+  }
+  fetchRestaurants(): void {
+    this.restaurantService.getRestaurants().subscribe((data: Restaurant[]) => {
+      this.availableRestaurants = data.filter(restaurant => restaurant.address.city === this.selectedAddress?.city);
+      this.cdr.detectChanges();
+    });
+  }
+  selectRestaurant(restaurant: Restaurant): void {
+    this.selectedRestaurant = restaurant;
+    this.fetchFoods();
+  }
+  fetchFoods(): void {
+    this.foodService.getFoods().subscribe((data: Food[]) => {
+      this.availableFoods = data.filter(food => food.restaurantId === this.selectedRestaurant?.id);
+      this.cdr.detectChanges();
+    });
   }
   showAddressList(): void {
     this.showAddresses = true;
@@ -113,15 +136,20 @@ export class NewOrderComponent {
     }, 200); // Delay to allow click event to register
   }
   submitOrder() {
+    if (this.selectedFoods.length === 0) {
+      this.snackBar.open('Vyberte jedlo!', '', { duration: 3000 });
+      return;
+    }
     const orderData = this.orderForm.value;
-    this.authService.getUser().subscribe(user => {
+    this.authService.getUser().subscribe((user) => {
       orderData.createdBy = user.id;
+      orderData.restaurantId = this.selectedRestaurant?.id;
       this.orderService.createOrder(orderData).subscribe({
         next: (response) => {
           this.snackBar.open('Objednávka bola vytvorená!', '', {
             duration: 3000,
           });
-          
+
           this.orderForm.reset();
           this.selectedFoods.clear();
           this.foodSelected = false;
@@ -130,7 +158,7 @@ export class NewOrderComponent {
         error: (error) => {
           console.error(error);
           alert('Nepodarilo sa vytvoriť objednávku.');
-        }
+        },
       });
     });
   }

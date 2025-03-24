@@ -483,3 +483,4 @@ C:\Users\Roman\source\repos\Deliver.IT\Deliver.IT.Server\bin\Debug\net9.0\Resour
 C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\bin\Debug\net9.0\Resources\filtered_nodes.json
 C:\Users\user\source\repos\GitCloned\Znova\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Roman\source\repos\Deliver.IT\Deliver.IT.Server\bin\Debug\net9.0\Resources\filtered_addresses.json
+C:\Users\Roman\source\repos\Deliver.IT\Deliver.IT.Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

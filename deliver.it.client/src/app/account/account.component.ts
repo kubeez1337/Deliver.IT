@@ -4,6 +4,9 @@ import { AuthService } from '../auth.service';
 import { User } from '../models/user.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddressService } from '../address.service';
+import { Router } from '@angular/router';
+import { RestaurantService } from '../restaurant.service';
+import { Restaurant } from '../models/restaurant.model';
 
 @Component({
   selector: 'app-account',
@@ -20,7 +23,8 @@ export class AccountComponent {
   isCourier: boolean = false;
   hasPendingApplication: boolean = false;
   applications: any[] = []
-  constructor(private fb: FormBuilder, private authService: AuthService, private snackBar: MatSnackBar, private addressService: AddressService ) {
+  managedRestaurants: Restaurant[] = [];
+  constructor(private fb: FormBuilder, private authService: AuthService, private snackBar: MatSnackBar, private addressService: AddressService, private router: Router, private restaurantService: RestaurantService) {
     this.accountForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -56,6 +60,7 @@ export class AccountComponent {
     this.accountForm.get('applyForCourier')?.valueChanges.subscribe(value => {
       this.showCourierMessageField = value;
     });
+    this.loadManagedRestaurants();
   }
   saveChanges(): void {
     if (this.accountForm.valid) {
@@ -128,5 +133,18 @@ export class AccountComponent {
     this.addressService.loadAddresses().subscribe((addresses: any[]) => {
       console.log(addresses);
     });
+  }
+  manageRestaurants(): void {
+    this.router.navigate(['/restaurant-manager']);
+  }
+  loadManagedRestaurants(): void {
+    this.restaurantService.getManagedRestaurants().subscribe(
+      (data: Restaurant[]) => {
+        this.managedRestaurants = data;
+      },
+      (error) => {
+        console.error('Error fetching managed restaurants:', error);
+      }
+    );
   }
 }

@@ -5,6 +5,8 @@ import { saveAs } from 'file-saver';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observer } from 'rxjs';
+import { Restaurant } from '../models/restaurant.model';
+import { RestaurantService } from '../restaurant.service';
 
 @Component({
   selector: 'app-food-manager',
@@ -19,13 +21,34 @@ export class FoodManagerComponent implements OnInit {
   displayedColumns: string[] = ['select','id', 'name', 'price','picture'];
   selection = new SelectionModel<Food>(true, []);
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>; 
-
-  constructor(private authService: AuthService, private snackBar: MatSnackBar, private cdr: ChangeDetectorRef) { }
+  managedRestaurants: Restaurant[] = [];
+  selectedRestaurant: Restaurant | null = null;
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private cdr: ChangeDetectorRef, private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
+    this.loadManagedRestaurants();
+    //this.getFoods();
+  }
+  loadManagedRestaurants(): void {
+    this.restaurantService.getManagedRestaurants().subscribe(
+      (data: Restaurant[]) => {
+        this.managedRestaurants = data;
+        this.cdr.detectChanges();
+      },
+      (error) => {
+        console.error('Error fetching managed restaurants:', error);
+      }
+    );
+  }
+  onRestaurantSelected(restaurant: Restaurant): void {
+    this.selectedRestaurant = restaurant;
     this.getFoods();
   }
   getFoods(): void {
+    if (!this.selectedRestaurant) {
+      return;
+    }
+
     const observer: Observer<Food[]> = {
       next: (response) => {
         this.foods = response;
@@ -36,7 +59,7 @@ export class FoodManagerComponent implements OnInit {
       },
       complete: () => { }
     };
-    this.authService.getFoods().subscribe(observer);
+    this.authService.getFoodsByRestaurant(this.selectedRestaurant.id).subscribe(observer);
   }
   toggleRow(food: Food) {
     this.selection.toggle(food);
@@ -164,7 +187,7 @@ export class FoodManagerComponent implements OnInit {
     );
   }
   addFood(): void {
-    const newFood: Food = { id: 0, name: '', price: 0, quantity: 0 };
+    const newFood: Food = { id: 0 , name: '', price: 0, quantity: 0, restaurantId: 0 };
     this.foods = [...this.foods, newFood];
   }
   onPictureSelected(event: any, food: Food): void {

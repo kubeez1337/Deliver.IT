@@ -17,7 +17,9 @@ namespace Deliver.IT.Server
         public string? ClaimedBy { get; set; }
         public string? ClaimedByName { get; set; }
         public string Status { get; set; } = "Waiting for courier";
-        
+        public int RestaurantId { get; set; }
+        [JsonIgnore]
+        public Restaurant Restaurant { get; set; }
         public ICollection<OrderFood> OrderFoods { get; set; } = new List<OrderFood>();
         public decimal TotalPrice { get; set; }
         public void CalculateTotalPrice()
@@ -43,5 +45,19 @@ namespace Deliver.IT.Server
         public decimal Price { get; set; }
         public ICollection<OrderFood>? OrderFoods { get; set; }
         public string? PicturePath { get; set; }
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
+    }
+    public class Restaurant
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Address Address { get; set; }
+        public int AddressId { get; set; }
+        [JsonIgnore]
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        [JsonIgnore]
+        public ICollection<UserClass> Managers { get; set; } = new List<UserClass>();
+        public ICollection<Food> Foods { get; set; } = new List<Food>();
     }
 }

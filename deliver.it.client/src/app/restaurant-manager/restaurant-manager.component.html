@@ -1,0 +1,24 @@
+<div class="restaurant-manager-container">
+    <h2>Manage Restaurant Managers</h2>
+    <form [formGroup]="managerForm" (ngSubmit)="addManager()">
+        <mat-form-field appearance="outline">
+            <mat-label>Select User</mat-label>
+            <mat-select formControlName="userId">
+                <mat-option *ngFor="let user of users" [value]="user.id">
+                    {{ user.firstName }} {{ user.lastName }} ({{ user.userName }})
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Select Restaurant</mat-label>
+            <mat-select formControlName="restaurantId">
+                <mat-option *ngFor="let restaurant of restaurants" [value]="restaurant.id">
+                    {{ restaurant.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="managerForm.invalid">
+            Add Manager
+        </button>
+    </form>
+</div>

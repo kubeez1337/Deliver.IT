@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Deliver.IT.Server.Migrations
 {
     [DbContext(typeof(DeliverItDbContext))]
-    [Migration("20250311184403_Jozo")]
-    partial class Jozo
+    [Migration("20250323220614_Pssdass")]
+    partial class Pssdass
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,6 +61,22 @@ namespace Deliver.IT.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Addresses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Sample City",
+                            CompleteAddress = "Sample Street 1, Sample City",
+                            ConscriptionNumber = "123",
+                            HouseNumber = "456",
+                            Latitude = "0.0",
+                            Longitude = "0.0",
+                            Postcode = "78910",
+                            Street = "Sample Street",
+                            StreetNumber = "1",
+                            Suburb = "Sample Suburb"
+                        });
                 });
 
             modelBuilder.Entity("Deliver.IT.Server.Food", b =>
@@ -80,7 +96,12 @@ namespace Deliver.IT.Server.Migrations
                         .HasColumnType("TEXT")
                         .HasAnnotation("Relational:JsonPropertyName", "price");
 
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Foods");
 
@@ -90,35 +111,40 @@ namespace Deliver.IT.Server.Migrations
                             Id = 1,
                             Name = "McRoyal",
                             PicturePath = "assets/mcroyal.jpg",
-                            Price = 20m
+                            Price = 20m,
+                            RestaurantId = 1
                         },
                         new
                         {
                             Id = 2,
                             Name = "Banan",
                             PicturePath = "assets/banan.jpg",
-                            Price = 1m
+                            Price = 1m,
+                            RestaurantId = 1
                         },
                         new
                         {
                             Id = 3,
                             Name = "Adventny kalendar",
                             PicturePath = "assets/kalendar.jpg",
-                            Price = 2m
+                            Price = 2m,
+                            RestaurantId = 1
                         },
                         new
                         {
                             Id = 4,
                             Name = "Cokoladovy Mikulas",
                             PicturePath = "assets/mikulas.jpg",
-                            Price = 1m
+                            Price = 1m,
+                            RestaurantId = 1
                         },
                         new
                         {
                             Id = 5,
                             Name = "Pivo",
                             PicturePath = "assets/pivo.jpg",
-                            Price = 1m
+                            Price = 1m,
+                            RestaurantId = 1
                         });
                 });
 
@@ -201,6 +227,9 @@ namespace Deliver.IT.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -211,6 +240,8 @@ namespace Deliver.IT.Server.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerAddressId");
+
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Orders");
                 });
@@ -238,6 +269,34 @@ namespace Deliver.IT.Server.Migrations
                     b.HasIndex("FoodId");
 
                     b.ToTable("OrderFoods");
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Restaurant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AddressId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
+
+                    b.ToTable("Restaurants");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressId = 1,
+                            Name = "Sample Restaurant"
+                        });
                 });
 
             modelBuilder.Entity("Deliver.IT.Server.UserClass", b =>
@@ -319,45 +378,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "69f3a75f-5a94-4576-b33b-10822a34c0a9",
+                            Id = "c86ebd8a-3a17-47a0-964f-0d4a11d58eef",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0b02929f-69d9-4921-9d93-01e77ab11dd7",
+                            ConcurrencyStamp = "37481550-558d-449d-b25a-ee8d506c9ff7",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1f6bca09-f4bd-4677-b753-3cb177f6b683",
+                            SecurityStamp = "580ef893-263c-4b3b-b564-035defabf9e9",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "121b2e71-be92-4ec8-b72b-78fb217a46a8",
+                            Id = "b1ae6d49-3793-4eac-8000-bc366140c907",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "98b83998-122e-4524-9863-510d3be33833",
+                            ConcurrencyStamp = "b86f2a3a-7907-44e0-b994-8c411c29a310",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "584d5489-d4a1-4ae6-8d84-0ebb7a06c770",
+                            SecurityStamp = "4053148f-bf61-4ff2-b59f-6867d9a5dd1f",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "84bf484f-0914-4ca4-891f-9ddff4ba3b07",
+                            Id = "6a5f492e-07d5-4370-8c29-6ad203040639",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fb544cb5-3234-4b35-89ab-0a778abac616",
+                            ConcurrencyStamp = "1d8db668-ff29-4d44-8854-8d34b01a2441",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a6760682-5981-4d42-9834-35eff6c1589e",
+                            SecurityStamp = "00f1cb69-0da6-412f-a491-9ebf0b39e94c",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"
@@ -492,6 +551,59 @@ namespace Deliver.IT.Server.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("RestaurantRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AddressId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RequestedBy")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
+
+                    b.ToTable("RestaurantRequests");
+                });
+
+            modelBuilder.Entity("RestaurantUserClass", b =>
+                {
+                    b.Property<int>("ManagedRestaurantsId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ManagersId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ManagedRestaurantsId", "ManagersId");
+
+                    b.HasIndex("ManagersId");
+
+                    b.ToTable("RestaurantUserClass");
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Food", b =>
+                {
+                    b.HasOne("Deliver.IT.Server.Restaurant", "Restaurant")
+                        .WithMany("Foods")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+                });
+
             modelBuilder.Entity("Deliver.IT.Server.Order", b =>
                 {
                     b.HasOne("Deliver.IT.Server.Address", "CustomerAddress")
@@ -500,7 +612,15 @@ namespace Deliver.IT.Server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Deliver.IT.Server.Restaurant", "Restaurant")
+                        .WithMany("Orders")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CustomerAddress");
+
+                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Deliver.IT.Server.OrderFood", b =>
@@ -516,6 +636,17 @@ namespace Deliver.IT.Server.Migrations
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Restaurant", b =>
+                {
+                    b.HasOne("Deliver.IT.Server.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -569,6 +700,32 @@ namespace Deliver.IT.Server.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("RestaurantRequest", b =>
+                {
+                    b.HasOne("Deliver.IT.Server.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+                });
+
+            modelBuilder.Entity("RestaurantUserClass", b =>
+                {
+                    b.HasOne("Deliver.IT.Server.Restaurant", null)
+                        .WithMany()
+                        .HasForeignKey("ManagedRestaurantsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Deliver.IT.Server.UserClass", null)
+                        .WithMany()
+                        .HasForeignKey("ManagersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Deliver.IT.Server.Food", b =>
                 {
                     b.Navigation("OrderFoods");
@@ -577,6 +734,13 @@ namespace Deliver.IT.Server.Migrations
             modelBuilder.Entity("Deliver.IT.Server.Order", b =>
                 {
                     b.Navigation("OrderFoods");
+                });
+
+            modelBuilder.Entity("Deliver.IT.Server.Restaurant", b =>
+                {
+                    b.Navigation("Foods");
+
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

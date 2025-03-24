@@ -37,6 +37,8 @@
   </form>
 
   <div *ngIf="isAdmin" class="applications-container">
+    <h2>Restauracie req:</h2>
+    <app-restaurant-request></app-restaurant-request>
     <h2>Kuriérske žiadosti</h2>
     <div *ngFor="let application of applications" class="application-card">
       <p><strong>Používateľ:</strong> {{ application.userName }}</p>
@@ -47,6 +49,15 @@
   </div>
   <div *ngIf="isAdmin" class="load-addresses-button">
     <button mat-raised-button color="primary" (click)="setAddressesFromJson()">Načítaj databázu adries</button>
-
+    <button mat-raised-button color="primary" (click)="manageRestaurants()">Manazer restauracii</button>
+  </div>
+  <div *ngIf="managedRestaurants.length > 0" class="managed-restaurants">
+    <h3>Managed Restaurants</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let restaurant of managedRestaurants">
+        <h4 mat-line>{{ restaurant.name }}</h4>
+        <p mat-line>{{ restaurant.address?.completeAddress }}</p>
+      </mat-list-item>
+    </mat-list>
   </div>
 </div>

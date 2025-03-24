@@ -12,7 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NavbarComponent implements OnInit{
   isAdmin: boolean = false;
   isLoggedIn: boolean = false;
-  
+  isManager: boolean = false;
+
   constructor(private authService: AuthService, private router: Router, private snackBar: MatSnackBar ) { }
   ngOnInit(): void {
     this.authService.isAdmin().subscribe(isAdmin => {
@@ -20,6 +21,9 @@ export class NavbarComponent implements OnInit{
     });
     this.authService.isLoggedIn().subscribe(isLoggedIn => {
       this.isLoggedIn = isLoggedIn;
+    });
+    this.authService.isManager().subscribe(isManager => {
+      this.isManager = isManager;
     });
   }
   logout(): void {

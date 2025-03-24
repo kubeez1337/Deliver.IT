@@ -4,4 +4,5 @@ export interface Food {
   price: number;
   quantity: number;
   picturePath?: string;
+  restaurantId: number;
 }

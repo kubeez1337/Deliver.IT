@@ -17,6 +17,8 @@ namespace Deliver.IT.Server
         public DbSet<CourierApplication> CourierApplications { get; set; } 
         public DbSet<Message> Messages { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<RestaurantRequest> RestaurantRequests { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -63,12 +65,37 @@ namespace Deliver.IT.Server
                 .HasForeignKey(of => of.FoodId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Address>().HasData(
+                new Address
+                {
+                    Id = 1,
+                    Latitude = "0.0",
+                    Longitude = "0.0",
+                    City = "Sample City",
+                    ConscriptionNumber = "123",
+                    HouseNumber = "456",
+                    Postcode = "78910",
+                    Street = "Sample Street",
+                    StreetNumber = "1",
+                    Suburb = "Sample Suburb",
+                    CompleteAddress = "Sample Street 1, Sample City"
+                }
+            );
+            modelBuilder.Entity<Restaurant>().HasData(
+                new Restaurant
+                {
+                    Id = 1,
+                    Name = "Sample Restaurant",
+                    AddressId = 1 // Reference the Address entity
+                }
+            );
+
             modelBuilder.Entity<Food>().HasData(
-                new Food { Id = 1, Name = "McRoyal", Price = 20, PicturePath = "assets/mcroyal.jpg" },
-                new Food { Id = 2, Name = "Banan", Price = 1, PicturePath = "assets/banan.jpg" },
-                new Food { Id = 3, Name = "Adventny kalendar", Price = 2, PicturePath = "assets/kalendar.jpg" },
-                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "assets/mikulas.jpg" },
-                new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "assets/pivo.jpg" }
+                new Food { Id = 1, Name = "McRoyal", Price = 20, PicturePath = "assets/mcroyal.jpg", RestaurantId = 1 },
+                new Food { Id = 2, Name = "Banan", Price = 1, PicturePath = "assets/banan.jpg", RestaurantId = 1 },
+                new Food { Id = 3, Name = "Adventny kalendar", Price = 2, PicturePath = "assets/kalendar.jpg", RestaurantId = 1 },
+                new Food { Id = 4, Name = "Cokoladovy Mikulas", Price = 1, PicturePath = "assets/mikulas.jpg", RestaurantId = 1 },
+                new Food { Id = 5, Name = "Pivo", Price = 1, PicturePath = "assets/pivo.jpg", RestaurantId = 1 }
             );
 
             // Configure Address and NodeTag entities
@@ -77,6 +104,21 @@ namespace Deliver.IT.Server
                 entity.HasKey(a => a.Id);
                 entity.Property(a => a.Latitude).IsRequired();
                 entity.Property(a => a.Longitude).IsRequired();
+            });
+            modelBuilder.Entity<Restaurant>(entity =>
+            {
+                entity.HasKey(r => r.Id);
+                entity.Property(r => r.Name).IsRequired();
+                entity.HasOne(r => r.Address)
+                      .WithMany()
+                      .HasForeignKey("AddressId")
+                      .OnDelete(DeleteBehavior.Cascade);
+                entity.HasMany(r => r.Orders)
+                      .WithOne(o => o.Restaurant)
+                      .HasForeignKey(o => o.RestaurantId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                entity.HasMany(r => r.Managers)
+                      .WithMany(u => u.ManagedRestaurants);
             });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

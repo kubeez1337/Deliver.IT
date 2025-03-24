@@ -53,12 +53,19 @@ namespace Deliver.IT.Server.Controllers
                 await _context.SaveChangesAsync();
             }
 
+            var restaurant = await _context.Restaurants.FindAsync(model.RestaurantId);
+            if (restaurant == null)
+            {
+                return BadRequest($"Restaurant with ID {model.RestaurantId} not found.");
+            }
+
             var order = new Order
             {
                 CustomerName = model.CustomerName,
                 CustomerAddress = address,
                 PhoneNumber = model.PhoneNumber,
                 CreatedBy = userId,
+                RestaurantId = restaurant.Id,
                 OrderFoods = new List<OrderFood>()
             };
             _context.Orders.Add(order);
@@ -141,6 +148,7 @@ namespace Deliver.IT.Server.Controllers
             return await _context.OrderFoods.ToListAsync();
         }
         [HttpGet("/orders")]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -158,6 +166,10 @@ namespace Deliver.IT.Server.Controllers
             }
             else if (userRole == "1") 
             {
+            }
+            else if (userRole == "3")
+            {
+                ordersQuery = ordersQuery.Where(o => o.Restaurant.Managers.Any(m => m.Id == userId));
             }
             else
             {

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Deliver.IT.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Jozo : Migration
+    public partial class Pssdass : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -93,21 +93,6 @@ namespace Deliver.IT.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Foods",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
-                    PicturePath = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Foods", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Messages",
                 columns: table => new
                 {
@@ -126,26 +111,42 @@ namespace Deliver.IT.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
+                name: "RestaurantRequests",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CustomerName = table.Column<string>(type: "TEXT", nullable: false),
-                    CustomerAddressId = table.Column<int>(type: "INTEGER", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    CreatedBy = table.Column<string>(type: "TEXT", nullable: false),
-                    ClaimedBy = table.Column<string>(type: "TEXT", nullable: true),
-                    ClaimedByName = table.Column<string>(type: "TEXT", nullable: true),
-                    Status = table.Column<string>(type: "TEXT", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    AddressId = table.Column<int>(type: "INTEGER", nullable: false),
+                    RequestedBy = table.Column<string>(type: "TEXT", nullable: false),
+                    IsApproved = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.PrimaryKey("PK_RestaurantRequests", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Addresses_CustomerAddressId",
-                        column: x => x.CustomerAddressId,
+                        name: "FK_RestaurantRequests_Addresses_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Addresses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Restaurants",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    AddressId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Restaurants", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Restaurants_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -258,6 +259,85 @@ namespace Deliver.IT.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Foods",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    PicturePath = table.Column<string>(type: "TEXT", nullable: true),
+                    RestaurantId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Foods", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Foods_Restaurants_RestaurantId",
+                        column: x => x.RestaurantId,
+                        principalTable: "Restaurants",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    CustomerName = table.Column<string>(type: "TEXT", nullable: false),
+                    CustomerAddressId = table.Column<int>(type: "INTEGER", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: false),
+                    ClaimedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    ClaimedByName = table.Column<string>(type: "TEXT", nullable: true),
+                    Status = table.Column<string>(type: "TEXT", nullable: false),
+                    RestaurantId = table.Column<int>(type: "INTEGER", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Orders_Addresses_CustomerAddressId",
+                        column: x => x.CustomerAddressId,
+                        principalTable: "Addresses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_Restaurants_RestaurantId",
+                        column: x => x.RestaurantId,
+                        principalTable: "Restaurants",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RestaurantUserClass",
+                columns: table => new
+                {
+                    ManagedRestaurantsId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ManagersId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RestaurantUserClass", x => new { x.ManagedRestaurantsId, x.ManagersId });
+                    table.ForeignKey(
+                        name: "FK_RestaurantUserClass_AspNetUsers_ManagersId",
+                        column: x => x.ManagersId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RestaurantUserClass_Restaurants_ManagedRestaurantsId",
+                        column: x => x.ManagedRestaurantsId,
+                        principalTable: "Restaurants",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OrderFoods",
                 columns: table => new
                 {
@@ -285,25 +365,35 @@ namespace Deliver.IT.Server.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Addresses",
+                columns: new[] { "Id", "City", "CompleteAddress", "ConscriptionNumber", "HouseNumber", "Latitude", "Longitude", "Postcode", "Street", "StreetNumber", "Suburb" },
+                values: new object[] { 1, "Sample City", "Sample Street 1, Sample City", "123", "456", "0.0", "0.0", "78910", "Sample Street", "1", "Sample Suburb" });
+
+            migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserRole" },
                 values: new object[,]
                 {
-                    { "121b2e71-be92-4ec8-b72b-78fb217a46a8", 0, "98b83998-122e-4524-9863-510d3be33833", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "584d5489-d4a1-4ae6-8d84-0ebb7a06c770", false, "cigorigo", "2" },
-                    { "69f3a75f-5a94-4576-b33b-10822a34c0a9", 0, "0b02929f-69d9-4921-9d93-01e77ab11dd7", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "1f6bca09-f4bd-4677-b753-3cb177f6b683", false, "admin", "1" },
-                    { "84bf484f-0914-4ca4-891f-9ddff4ba3b07", 0, "fb544cb5-3234-4b35-89ab-0a778abac616", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "a6760682-5981-4d42-9834-35eff6c1589e", false, "romanek", "0" }
+                    { "6a5f492e-07d5-4370-8c29-6ad203040639", 0, "1d8db668-ff29-4d44-8854-8d34b01a2441", null, false, "Roman", "Hladny", false, null, null, null, null, null, false, "00f1cb69-0da6-412f-a491-9ebf0b39e94c", false, "romanek", "0" },
+                    { "b1ae6d49-3793-4eac-8000-bc366140c907", 0, "b86f2a3a-7907-44e0-b994-8c411c29a310", null, false, "Peter", "Facka", false, null, null, null, null, null, false, "4053148f-bf61-4ff2-b59f-6867d9a5dd1f", false, "cigorigo", "2" },
+                    { "c86ebd8a-3a17-47a0-964f-0d4a11d58eef", 0, "37481550-558d-449d-b25a-ee8d506c9ff7", null, false, "Admin", "Adminovic", false, null, null, null, null, null, false, "580ef893-263c-4b3b-b564-035defabf9e9", false, "admin", "1" }
                 });
 
             migrationBuilder.InsertData(
+                table: "Restaurants",
+                columns: new[] { "Id", "AddressId", "Name" },
+                values: new object[] { 1, 1, "Sample Restaurant" });
+
+            migrationBuilder.InsertData(
                 table: "Foods",
-                columns: new[] { "Id", "Name", "PicturePath", "Price" },
+                columns: new[] { "Id", "Name", "PicturePath", "Price", "RestaurantId" },
                 values: new object[,]
                 {
-                    { 1, "McRoyal", "assets/mcroyal.jpg", 20m },
-                    { 2, "Banan", "assets/banan.jpg", 1m },
-                    { 3, "Adventny kalendar", "assets/kalendar.jpg", 2m },
-                    { 4, "Cokoladovy Mikulas", "assets/mikulas.jpg", 1m },
-                    { 5, "Pivo", "assets/pivo.jpg", 1m }
+                    { 1, "McRoyal", "assets/mcroyal.jpg", 20m, 1 },
+                    { 2, "Banan", "assets/banan.jpg", 1m, 1 },
+                    { 3, "Adventny kalendar", "assets/kalendar.jpg", 2m, 1 },
+                    { 4, "Cokoladovy Mikulas", "assets/mikulas.jpg", 1m, 1 },
+                    { 5, "Pivo", "assets/pivo.jpg", 1m, 1 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -344,6 +434,11 @@ namespace Deliver.IT.Server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Foods_RestaurantId",
+                table: "Foods",
+                column: "RestaurantId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_OrderFoods_FoodId",
                 table: "OrderFoods",
                 column: "FoodId");
@@ -352,6 +447,26 @@ namespace Deliver.IT.Server.Migrations
                 name: "IX_Orders_CustomerAddressId",
                 table: "Orders",
                 column: "CustomerAddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_RestaurantId",
+                table: "Orders",
+                column: "RestaurantId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RestaurantRequests_AddressId",
+                table: "RestaurantRequests",
+                column: "AddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Restaurants_AddressId",
+                table: "Restaurants",
+                column: "AddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RestaurantUserClass_ManagersId",
+                table: "RestaurantUserClass",
+                column: "ManagersId");
         }
 
         /// <inheritdoc />
@@ -382,16 +497,25 @@ namespace Deliver.IT.Server.Migrations
                 name: "OrderFoods");
 
             migrationBuilder.DropTable(
-                name: "AspNetRoles");
+                name: "RestaurantRequests");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "RestaurantUserClass");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "Foods");
 
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Restaurants");
 
             migrationBuilder.DropTable(
                 name: "Addresses");

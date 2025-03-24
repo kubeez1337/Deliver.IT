@@ -39,6 +39,13 @@ const PROXY_CONFIG = [
       "/seedDatabaseFromJson",
       "/foods/*/upload-picture",
       "/route/v1/driving",
+      "/request-restaurant",
+      "/approve-restaurant",
+      "/reject-restaurant",
+      "/pending-restaurant",
+      "/getRestaurants",
+      "/add-manager",
+      "/managed-restaurants"
     ],
     target,
     secure: false,

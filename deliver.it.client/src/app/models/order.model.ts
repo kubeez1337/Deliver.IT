@@ -6,6 +6,7 @@ export interface Order {
   customerAddress: Address;
   phoneNumber: string;
   //foodItems: { orderId: number, foodId: number; quantity: number }[];
+  restaurantId: number;
   orderFoods: { orderId: number, foodId: number; foodName: string; foodPrice: number; quantity: number, name?: string }[];
   claimedByName?: string;
   claimedBy?: string;

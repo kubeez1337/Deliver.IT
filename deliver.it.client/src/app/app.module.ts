@@ -39,6 +39,10 @@ import { ViewOrderDialogComponent } from './view-order-dialog/view-order-dialog.
 import { NotLoggedInComponent } from './not-logged-in/not-logged-in.component';
 import { MapViewerComponent } from './map-viewer/map-viewer.component';
 import { ChatComponent } from './chat/chat.component';
+import { RestaurantRequestComponent } from './restaurant-request/restaurant-request.component';
+import { PendingRequestsComponent } from './pending-requests/pending-requests.component';
+import { RequestsComponent } from './requests/requests.component';
+import { RestaurantManagerComponent } from './restaurant-manager/restaurant-manager.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +63,10 @@ import { ChatComponent } from './chat/chat.component';
     NotLoggedInComponent,
     MapViewerComponent,
     ChatComponent,
+    RestaurantRequestComponent,
+    PendingRequestsComponent,
+    RequestsComponent,
+    RestaurantManagerComponent,
     
   ],
   imports: [

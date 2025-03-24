@@ -27,7 +27,7 @@ namespace Deliver.IT.Server.Controllers
         }
 
         [HttpPost("/uploadFoods")]
-        [Authorize(Roles = "1")] 
+        [Authorize(Roles = "1, 3")] 
         public async Task<IActionResult> UploadFoods(IFormFile file)
         {
             if (file == null || file.Length == 0)
@@ -100,7 +100,7 @@ namespace Deliver.IT.Server.Controllers
             return errors;
         }
         [HttpGet("/exportFoods")]
-        [Authorize(Roles = "1")] 
+        [Authorize(Roles = "1, 3")] 
         public async Task<IActionResult> ExportFoods()
         {
             var foods = await _context.Foods.ToListAsync();
@@ -113,7 +113,7 @@ namespace Deliver.IT.Server.Controllers
         }
 
         [HttpPut("/updateFood")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1, 3")]
         public async Task<IActionResult> UpdateFood([FromBody] Food food)
         {
             if (food == null || food.Id <= 0)
@@ -137,7 +137,7 @@ namespace Deliver.IT.Server.Controllers
         }
 
         [HttpPut("/updateFoods")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1, 3")]
         public async Task<IActionResult> UpdateFoods([FromBody] List<Food> foods)
         {
             if (foods == null || !foods.Any())
@@ -164,7 +164,7 @@ namespace Deliver.IT.Server.Controllers
             return Ok(new { message = "Foods updated successfully!" });
         }
         [HttpDelete("/deleteFoods")]
-        [Authorize(Roles = "1")] 
+        [Authorize(Roles = "1, 3")] 
         public async Task<IActionResult> DeleteFoods([FromBody] List<int> foodIds)
         {
             if (foodIds == null || !foodIds.Any())
@@ -185,7 +185,7 @@ namespace Deliver.IT.Server.Controllers
             return Ok(new { message = "Foods deleted successfully!" });
         }
         [HttpPost("/addFoods")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1, 3")]
         public async Task<IActionResult> AddFoods([FromBody] Food[] foods)
         {
             if (foods == null || !foods.Any())
@@ -209,7 +209,7 @@ namespace Deliver.IT.Server.Controllers
         }
 
         [HttpPost("/foods/{id}/upload-picture")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1, 3")]
         public async Task<IActionResult> UploadPicture(int id, IFormFile file)
         {
             if (file == null || file.Length == 0)

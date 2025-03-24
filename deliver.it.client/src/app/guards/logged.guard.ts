@@ -11,8 +11,8 @@ export class LoggedGuard implements CanActivate {
 
   canActivate(): Observable<boolean> {
     return this.authService.isLoggedIn().pipe(
-      map(isAdmin => {
-        if (isAdmin) {
+      map(isLoggedIn => {
+        if (isLoggedIn) {
           return true;
         } else {
           this.router.navigate(['/not-logged-in']);

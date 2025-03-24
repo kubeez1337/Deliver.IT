@@ -6,10 +6,6 @@
         <mat-label>Meno zákazníka</mat-label>
         <input matInput formControlName="customerName" placeholder="Zadajte meno" />
       </mat-form-field>
-      <!--<mat-form-field appearance="outline">
-      <mat-label>Adresa zákazníka</mat-label>
-      <input matInput formControlName="customerAddress" placeholder="Zadajte adresu" />
-    </mat-form-field>-->
       <mat-form-field appearance="outline">
         <mat-label>Vyhľadajte adresu</mat-label>
         <input matInput (input)="filterAddresses($event)" (focus)="showAddressList()" (blur)="hideAddressList()" placeholder="Zadajte adresu" formControlName="searchQuery" />
@@ -30,7 +26,19 @@
       </mat-form-field>
     </div>
 
-    <div class="food-selection">
+    <div *ngIf="selectedAddress" class="restaurant-selection">
+      <h3>Vyberte reštauráciu</h3>
+      <div class="restaurant-cards">
+        <mat-card *ngFor="let restaurant of availableRestaurants" class="restaurant-card" (click)="selectRestaurant(restaurant)">
+          <mat-card-header>
+            <mat-card-title>{{ restaurant.name }}</mat-card-title>
+            <mat-card-subtitle>{{ restaurant.address.street }} {{ restaurant.address.houseNumber }}, {{ restaurant.address.city }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+
+    <div *ngIf="selectedRestaurant" class="food-selection">
       <h3>Vyberte jedlo</h3>
       <div class="food-cards">
         <div *ngFor="let food of availableFoods" class="food-card" (click)="selectFood(food)">
@@ -70,7 +78,7 @@
       </div>
     </div>
 
-    <button mat-raised-button color="accent" type="submit" [disabled]="orderForm.invalid">
+    <button mat-raised-button color="accent" type="submit" [disabled]="orderForm.invalid || selectedFoods.length === 0">
       Potvrdiť objednávku
     </button>
   </form>

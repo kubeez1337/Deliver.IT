@@ -36,6 +36,7 @@ export class LoginPageComponent {
           console.log('Role stored in localStorage:', response.role);
           this.isAdmin = response.role === '1';
           this.authService.updateAdminStatus();
+          this.authService.updateManagerStatus();
           this.snackBar.open('Prihlásenie úspešné', '', {
             duration: 3000,
           });
