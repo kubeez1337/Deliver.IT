@@ -13,4 +13,5 @@ export interface Order {
   status: string;
   totalPrice: number;
   selected?: boolean;
+  distance?: number;
 }

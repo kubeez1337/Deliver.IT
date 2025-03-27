@@ -7,8 +7,20 @@
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\order-sorting.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\order-sorting.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\osrm.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\osrm.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -47,10 +59,6 @@
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -65,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\osrm.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\osrm.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.server\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -197,10 +201,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.server\\models\\fooditemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0E68AB7-816D-4DD2-9B6B-DC916A87B6D6}|Deliver.IT.Server\\Deliver.IT.Server.csproj|solutionrelative:deliver.it.server\\models\\fooditemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|solutionrelative:deliver.it.client\\src\\app\\models\\order.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17493046-E239-45DE-BFEF-ABFDC65665C3}|deliver.it.client\\deliver.it.client.esproj|c:\\users\\roman\\source\\repos\\deliver.it\\deliver.it.client\\src\\app\\orders-page\\orders-page.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -525,8 +525,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 371,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 432,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -538,28 +538,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "courier.guard.ts",
-              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\courier.guard.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\guards\\courier.guard.ts",
-              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\courier.guard.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\guards\\courier.guard.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "order-sorting.service.ts",
+              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\order-sorting.service.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\order-sorting.service.ts",
+              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\order-sorting.service.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\order-sorting.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-24T23:13:17.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "auth.service.ts",
-              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.service.ts",
-              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\auth.service.ts",
-              "ViewState": "AgIAABQAAAAAAAAAAADgvygAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T01:18:13.605Z",
+              "WhenOpened": "2025-03-27T19:12:43.024Z",
               "EditorCaption": ""
             },
             {
@@ -570,14 +557,27 @@
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.ts",
               "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.ts",
               "RelativeToolTip": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.ts",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAQwFUAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAAIwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-03-24T21:49:15.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "courier-orders.component.css",
+              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
+              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-24T22:48:10.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "navbar.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.ts",
@@ -585,12 +585,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\navbar\\navbar.component.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T12:45:04.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:45:04.37Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "logged.guard.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\logged.guard.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\guards\\logged.guard.ts",
@@ -598,12 +597,61 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\guards\\logged.guard.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-13T17:49:17.521Z",
+              "WhenOpened": "2025-01-13T17:49:17.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "osrm.service.ts",
+              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\osrm.service.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\osrm.service.ts",
+              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\osrm.service.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\osrm.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-11T21:47:02.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "order.model.ts",
+              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\order.model.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\order.model.ts",
+              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\order.model.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\models\\order.model.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-10T20:59:49.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "courier.guard.ts",
+              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\courier.guard.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\guards\\courier.guard.ts",
+              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\courier.guard.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\guards\\courier.guard.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-24T23:13:17.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "auth.service.ts",
+              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
+              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.service.ts",
+              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\auth.service.ts",
+              "RelativeToolTip": "deliver.it.client\\src\\app\\auth.service.ts",
+              "ViewState": "AgIAABQAAAAAAAAAAADgvygAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-04T01:18:13.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "app-routing.module.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\app-routing.module.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app-routing.module.ts",
@@ -611,12 +659,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\app-routing.module.ts",
               "ViewState": "AgIAAAcAAAAAAAAAAAAswCUAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-03T16:47:29.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:47:29.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "navbar.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\navbar\\navbar.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\navbar\\navbar.component.html",
@@ -624,12 +671,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\navbar\\navbar.component.html",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-03T16:45:21.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:45:21.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "login-page.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
@@ -637,12 +683,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\login-page\\login-page.component.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-05T10:59:46.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T10:59:46.851Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "courier-orders.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.html",
@@ -650,12 +695,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-24T21:50:07.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T21:50:07.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "admin.guard.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\admin.guard.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\guards\\admin.guard.ts",
@@ -663,29 +707,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\guards\\admin.guard.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T16:53:57.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2088629290:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+              "WhenOpened": "2025-01-10T16:53:57.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "courier-orders.component.css",
-              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
-              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\courier-orders\\courier-orders.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-24T22:48:10.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "map-viewer.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.html",
@@ -693,12 +719,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-24T13:53:32.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T13:53:32.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "map-viewer.component.css",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.css",
@@ -706,12 +731,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-24T13:58:22.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T13:58:22.098Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "proxy.conf.js",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\proxy.conf.js",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\proxy.conf.js",
@@ -719,12 +743,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\proxy.conf.js",
               "ViewState": "AgIAABsAAAAAAAAAAAAAADEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-04T01:48:43.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T01:48:43.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "app.module.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\app.module.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.module.ts",
@@ -732,25 +755,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\app.module.ts",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAFEAAAB3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-03T19:14:58.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T19:14:58.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "osrm.service.ts",
-              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\osrm.service.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\osrm.service.ts",
-              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\osrm.service.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\osrm.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-11T21:47:02.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\OrderController.cs",
@@ -758,12 +767,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Controllers\\OrderController.cs",
               "ViewState": "AgIAACEBAAAAAAAAAAAmwDkBAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:12:21.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:12:21.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "FoodController.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Controllers\\FoodController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\FoodController.cs",
@@ -771,12 +779,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Controllers\\FoodController.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAADwv4oAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:12:18.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:12:18.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "food-manager.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
@@ -784,16 +791,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.ts",
               "ViewState": "AgIAABsAAAAAAAAAAAAAwEcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T01:18:39.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:65561903:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+              "WhenOpened": "2025-01-10T01:18:39.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "food.model.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\food.model.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\food.model.ts",
@@ -801,12 +803,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\models\\food.model.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-04T15:07:25.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T15:07:25.808Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Order.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Order.cs",
@@ -814,12 +815,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Order.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAcwDAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T11:56:51.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T11:56:51.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "courier-applications.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
@@ -827,16 +827,11 @@
               "RelativeToolTip": "deliver.it.client\\src\\app\\courier-applications\\courier-applications.component.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T22:12:42.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1513908728:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+              "WhenOpened": "2025-01-10T22:12:42.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "CreateOrderModel.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Models\\CreateOrderModel.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\CreateOrderModel.cs",
@@ -844,12 +839,11 @@
               "RelativeToolTip": "Deliver.IT.Server\\Models\\CreateOrderModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T15:20:55.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T15:20:55.988Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "MapController.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Controllers\\MapController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\MapController.cs",
@@ -861,7 +855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "RestaurantRequest.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Models\\RestaurantRequest.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\RestaurantRequest.cs",
@@ -873,7 +867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "new-order.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\new-order\\new-order.component.html",
@@ -885,7 +879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "aspnetcore-https.js",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\aspnetcore-https.js",
               "RelativeDocumentMoniker": "deliver.it.client\\aspnetcore-https.js",
@@ -897,7 +891,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "manager.guard.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\guards\\manager.guard.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\guards\\manager.guard.ts",
@@ -909,7 +903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "app.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\app.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\app.component.ts",
@@ -921,7 +915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "new-order.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\new-order\\new-order.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\new-order\\new-order.component.ts",
@@ -933,7 +927,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "auth.interceptor.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\auth.interceptor.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\auth.interceptor.ts",
@@ -945,7 +939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "routes.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\routes.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\routes.ts",
@@ -957,7 +951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "restaurant.service.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\restaurant.service.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\restaurant.service.ts",
@@ -969,7 +963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "food-manager.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\food-manager\\food-manager.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\food-manager\\food-manager.component.html",
@@ -981,7 +975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\AccountController.cs",
@@ -993,7 +987,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "account.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\account\\account.component.html",
@@ -1005,7 +999,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "RestaurantController.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Controllers\\RestaurantController.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Controllers\\RestaurantController.cs",
@@ -1017,7 +1011,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "address.model.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\address.model.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\address.model.ts",
@@ -1029,7 +1023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "UserClass.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\UserClass.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\UserClass.cs",
@@ -1041,7 +1035,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "account.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\account\\account.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\account\\account.component.ts",
@@ -1053,7 +1047,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "restaurant.model.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\restaurant.model.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\restaurant.model.ts",
@@ -1065,7 +1059,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "restaurant-manager.component.ts",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\restaurant-manager\\restaurant-manager.component.ts",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\restaurant-manager\\restaurant-manager.component.ts",
@@ -1077,7 +1071,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Deliver.IT.Server.csproj",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Deliver.IT.Server.csproj",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Deliver.IT.Server.csproj",
@@ -1089,7 +1083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "restaurant-manager.component.html",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\restaurant-manager\\restaurant-manager.component.html",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\restaurant-manager\\restaurant-manager.component.html",
@@ -1101,7 +1095,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "AddManagerModel.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Models\\AddManagerModel.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\AddManagerModel.cs",
@@ -1113,7 +1107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "restaurant-manager.component.css",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\restaurant-manager\\restaurant-manager.component.css",
               "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\restaurant-manager\\restaurant-manager.component.css",
@@ -1125,7 +1119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "FoodItemModel.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Models\\FoodItemModel.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\FoodItemModel.cs",
@@ -1137,7 +1131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "CourierApplication.cs",
               "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\Deliver.IT.Server\\Models\\CourierApplication.cs",
               "RelativeDocumentMoniker": "Deliver.IT.Server\\Models\\CourierApplication.cs",
@@ -1146,18 +1140,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:57:45.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "order.model.ts",
-              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\order.model.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\models\\order.model.ts",
-              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\models\\order.model.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\models\\order.model.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-10T20:59:49.117Z"
             },
             {
               "$type": "Document",
@@ -2105,25 +2087,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-11-25T09:45:42.762Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 371,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "map-viewer.component.ts",
-              "DocumentMoniker": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.ts",
-              "RelativeDocumentMoniker": "deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.ts",
-              "ToolTip": "C:\\Users\\Roman\\source\\repos\\Deliver.IT\\deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.ts",
-              "RelativeToolTip": "deliver.it.client\\src\\app\\map-viewer\\map-viewer.component.ts",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAmwBYAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-02-24T13:53:31.433Z",
-              "EditorCaption": ""
             }
           ]
         }

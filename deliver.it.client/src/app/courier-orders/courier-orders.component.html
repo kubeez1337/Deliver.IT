@@ -21,8 +21,14 @@
       </mat-card>
     </div>
   </div>
+  <!--<div class="button-group">
+    <button mat-raised-button color="primary" (click)="computeOptimalRoute()">Compute Optimal Route</button>
+  </div>-->
   <div class="button-group">
     <button mat-raised-button color="primary" (click)="computeOptimalRoute()">Compute Optimal Route</button>
+    <button mat-raised-button color="accent" (click)="loadCurrentPosition()">Load Current Position</button>
+    <button mat-raised-button color="warn" (click)="sortOrdersByFurthest()">Sort by Furthest</button>
   </div>
-  <div id="map" class="map-container"></div>
+  <!--<div id="map" style="height: 600px;"></div>-->
 </div>
+<div id="map" style="height: 600px;"></div>
