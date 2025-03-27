@@ -23,6 +23,9 @@ pre spustenie samotného backendu je potreba v tomto istom adresári spustiť `d
 v prípade že by sa frontendová aplikácia nepustila je treba sa navigovať do adresára `./deliver.it.client/` kde treba spustiť `ng serve` alebo `npm start`
 
 ### OSRM
+#### Node.js
+`npm install @mapbox/polyline` \
+`npm install leaflet`
 #### Windows
 
 Nainstalujte Rancher Desktop alebo docker, spustite aplikaciu. \
