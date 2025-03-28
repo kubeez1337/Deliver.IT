@@ -8,6 +8,8 @@ import * as polyline from '@mapbox/polyline';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 import { OrderSortingService } from '../order-sorting.service';
+import {ViewOrderDialogComponent} from '../view-order-dialog/view-order-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-courier-orders',
@@ -31,6 +33,7 @@ export class CourierOrdersComponent implements OnInit, AfterViewInit {
     private snackBar: MatSnackBar,
     private osrmService: OsrmService,
     private orderSortingService: OrderSortingService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -54,9 +57,13 @@ export class CourierOrdersComponent implements OnInit, AfterViewInit {
     );
   }
   private initMap(): void {
-    this.map = L.map('map').setView([49.2231, 18.7394], 13);
+    this.map = L.map('map').setView([49.2231, 18.7394], 13).whenReady(() => {
+      setTimeout(() => {
+        this.map.invalidateSize();
+      }, 100);
+    });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© Kubissoft'
     }).addTo(this.map);
     this.markerClusterGroup = L.markerClusterGroup({
@@ -188,6 +195,31 @@ export class CourierOrdersComponent implements OnInit, AfterViewInit {
     } else {
       alert('Current location is not available.');
     }
+  }
+  viewOrderInfo(order: Order): void {
+    if (order.customerAddress.latitude && order.customerAddress.longitude) {
+      const lat = parseFloat(order.customerAddress.latitude);
+      const lon = parseFloat(order.customerAddress.longitude);
+
+      // Center the map on the order's location
+      this.map.setView([lat, lon], 15);
+
+      // Find the marker for this order and open its popup
+      const orderMarker = this.markers.find(marker => {
+        const markerLatLng = marker.getLatLng();
+        return markerLatLng.lat === lat && markerLatLng.lng === lon;
+      });
+
+      if (orderMarker) {
+        orderMarker.openPopup();
+      }
+    }
+  }
+  viewOrderDetails(order: Order): void {
+    this.dialog.open(ViewOrderDialogComponent, {
+      width: '400px',
+      data: order
+    });
   }
   
 }

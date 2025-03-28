@@ -2,25 +2,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh; /* Full viewport height */
   padding: 16px;
-}
-
-.order-list {
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 16px;
-}
-
-.order-card {
-  margin-bottom: 8px;
+  background-color: #f4f4f4; /* Light background for the page */
 }
 
 .button-group {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 16px;
+  background-color: #fff;
+  padding: 8px 0;
+  width: 100%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to the button group */
+}
+
+.orders-container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 16px;
+}
+
+.order-list {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 128px); /* Set max height to screen height minus toolbar and buttons */
+  background-color: #fff; /* White background for order list */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to make it stand out */
+  padding: 16px; /* Add padding inside the list */
+}
+
+.order-card {
   margin-bottom: 16px;
 }
 
 .map-container {
+  flex: 2;
+  height: calc(100vh - 128px); /* Height of the map container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Background for map section */
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to map container */
+}
+
+#map {
+  height: 100%;
   width: 100%;
-  height: 800px;
-  margin-top: 16px;
+  border-radius: 8px; /* Rounded corners for the map */
 }

@@ -308,6 +308,7 @@ namespace Deliver.IT.Server.Controllers
 
             var orders = await _context.Orders
                 .Include(o => o.CustomerAddress)
+                .Include(o => o.OrderFoods)
                 .Where(o => o.ClaimedBy == userId && o.Status == "Active")
                 .ToListAsync();
 
