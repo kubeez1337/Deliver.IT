@@ -4,16 +4,20 @@
   </mat-toolbar>
 
   <div *ngIf="isAdmin" class="user-select">
-    <mat-form-field appearance="fill">
-      <mat-label>Select User</mat-label>
+    <mat-form-field appearance="fill" class="user-select-field">
+      <mat-label>Zvoliť príjemcu</mat-label>
       <mat-select (selectionChange)="onUserSelect($event)">
-        <mat-option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</mat-option>
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          <div class="user-option">
+            <span>{{ user.userName }}</span>
+          </div>
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <div class="messages">
-    <div *ngFor="let message of messages" class="message">
+    <div *ngFor="let message of messages" class="message" [ngClass]="{'sent': message.senderId === currentUserId, 'received': message.senderId !== currentUserId}">
       <mat-card>
         <mat-card-header>
           <mat-card-title>{{ message.senderName }}</mat-card-title>
@@ -28,9 +32,11 @@
 
   <div class="message-input">
     <mat-form-field appearance="fill" class="message-input-field">
-      <mat-label>Type a message...</mat-label>
-      <input matInput [(ngModel)]="newMessage" />
+      <mat-label>Napíšte správu...</mat-label>
+      <input matInput [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" />
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+    <button mat-icon-button color="primary" (click)="sendMessage()">
+      <mat-icon>send</mat-icon>
+    </button>
   </div>
 </div>

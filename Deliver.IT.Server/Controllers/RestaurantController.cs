@@ -16,7 +16,6 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpPost("/request-restaurant")]
-    [Authorize]
     public async Task<IActionResult> RequestRestaurant([FromBody] RestaurantRequest request)
     {
         if (request == null)
@@ -102,7 +101,7 @@ public class RestaurantController : ControllerBase
     public async Task<IActionResult> GetRestaurants()
     {
         var restaurants = await _context.Restaurants
-            .Include(r => r.Address) // Include the Address data
+            .Include(r => r.Address)
             .ToListAsync();
         return Ok(restaurants);
     }
@@ -127,6 +126,25 @@ public class RestaurantController : ControllerBase
         await _context.SaveChangesAsync();
 
         return Ok(new { message = "Manager added successfully!" });
+    }
+    [HttpPut("/revoke-manager")]
+    [Authorize(Roles = "1")]
+    public async Task<IActionResult> RevokeManager([FromBody] AddManagerModel model)
+    {
+        var user = await _context.Users.FindAsync(model.UserId);
+        if (user == null)
+        {
+            return NotFound("User not found.");
+        }
+        var restaurant = await _context.Restaurants.FindAsync(model.RestaurantId);
+        if (restaurant == null)
+        {
+            return NotFound("Restaurant not found.");
+        }
+        user.UserRole = 0;
+        restaurant.Managers.Remove(user);
+        await _context.SaveChangesAsync();
+        return Ok(new { message = "Manager revoked successfully!" });
     }
     [HttpGet("/managed-restaurants")]
     [Authorize(Roles = "1, 3")]

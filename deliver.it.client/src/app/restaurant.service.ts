@@ -36,5 +36,7 @@ export class RestaurantService {
   getManagedRestaurants(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(`${this.apiUrl}/managed-restaurants`);
   }
-
+  revokeManager(restaurantId: number, managerId: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/revoke-manager`, { restaurantId, managerId });
+  }
 }

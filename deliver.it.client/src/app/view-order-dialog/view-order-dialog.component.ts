@@ -15,6 +15,8 @@ import { AuthService } from '../auth.service';
 export class ViewOrderDialogComponent implements OnInit {
   foods: Food[] = [];
   isAdmin: boolean = false;
+  timecl: boolean = false;
+  timede: boolean = false;
   constructor(
     public dialogRef: MatDialogRef<ViewOrderDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public order: Order,
@@ -22,6 +24,12 @@ export class ViewOrderDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.order.timeClaimed) {
+      this.timecl = true
+    }
+    if (this.order.timeDelivered) {
+      this.timede = true
+    }
     this.loadFoods();
     const role = this.authService.getUserRole();
     if (role == '1') {

@@ -5,6 +5,7 @@ import { RestaurantRequest } from '../models/restaurant-request.model';
 import { AddressService } from '../address.service';
 import { Address } from '../models/address.model';
 import { AuthService } from '../auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-restaurant-request',
@@ -34,11 +35,13 @@ export class RestaurantRequestComponent implements OnInit {
   filteredAddresses: Address[] = [];
   searchQuery: string = '';
   showAddresses: boolean = false;
+  mapVisible: boolean = false;
 
   constructor(
     private restaurantService: RestaurantService,
     private addressService: AddressService,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -71,19 +74,27 @@ export class RestaurantRequestComponent implements OnInit {
   showAddressList(): void {
     this.showAddresses = true;
   }
-
+  showMap(): void {
+    this.mapVisible = true;
+  }
   hideAddressList(): void {
     setTimeout(() => {
       this.showAddresses = false;
-    }, 200); // Delay to allow click event to register
+    }, 200);
   }
-
+  onAddressSelected(selectedAddress: Address) {
+    this.searchQuery = `${selectedAddress.completeAddress}`;
+    this.restaurant.address = selectedAddress;
+    this.mapVisible = false;
+  }
   onSubmit() {
     this.authService.getUser().subscribe(user => {
       this.restaurant.requestedBy = user.userName;
       this.restaurantService.requestRestaurant(this.restaurant).subscribe(
         response => {
-          alert('Restaurant request submitted successfully!');
+          this.snackBar.open('Žiadosť o vytvorenie reštaurácie bola poslaná', '', {
+            duration: 3000
+          });
           this.restaurant = {
             name: '',
             address: {
@@ -104,8 +115,9 @@ export class RestaurantRequestComponent implements OnInit {
           this.searchQuery = '';
         },
         error => {
-          console.error('Error submitting restaurant request:', error);
-          alert('Error submitting restaurant request.');
+          this.snackBar.open('Error vo vytváraní reštaurácie', '', {
+            duration: 3000
+          });
         }
       );
     });

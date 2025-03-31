@@ -174,37 +174,93 @@ export class CourierOrdersComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
   sortOrdersByFurthest(): void {
     if (this.currentLat !== null && this.currentLon !== null) {
       const currentPosition = `${this.currentLon},${this.currentLat}`;
-      const coordinates = this.activeOrders.map(order => `${order.customerAddress.longitude},${order.customerAddress.latitude}`).join(';');
+      const coordinates = this.activeOrders
+        .map(order => `${order.customerAddress.longitude},${order.customerAddress.latitude}`)
+        .join(';');
+
       const fullCoordinates = `${currentPosition};${coordinates}`;
 
-      this.osrmService.getRoute(fullCoordinates).subscribe(
+      this.osrmService.getDistanceMatrix(fullCoordinates).subscribe(
         (data) => {
-          this.calculateDistancesFromRoute(data.routes[0].legs);
+          const distances = data.distances[0];
+
+          this.activeOrders.forEach((order, index) => {
+            order.distance = distances[index + 1] / 1000; 
+          });
+
           this.activeOrders.sort((a, b) => (b.distance ?? 0) - (a.distance ?? 0));
-          //this.addMarkers();
+
+          console.log('Sorted Orders:', this.activeOrders);
         },
         (error) => {
-          console.error('Error fetching route:', error);
-          alert(`Error fetching route: ${error.message}`);
+          console.error('Error fetching distance matrix:', error);
+          alert(`Error fetching distance matrix: ${error.message}`);
         }
       );
     } else {
       alert('Current location is not available.');
     }
   }
+  sortOrdersByClosest(): void {
+    if (this.currentLat !== null && this.currentLon !== null) {
+      const currentPosition = `${this.currentLon},${this.currentLat}`;
+      const coordinates = this.activeOrders
+        .map(order => `${order.customerAddress.longitude},${order.customerAddress.latitude}`)
+        .join(';');
+
+      const fullCoordinates = `${currentPosition};${coordinates}`;
+
+      this.osrmService.getDistanceMatrix(fullCoordinates).subscribe(
+        (data) => {
+          const distances = data.distances[0];
+
+          this.activeOrders.forEach((order, index) => {
+            order.distance = distances[index + 1] / 1000; 
+          });
+
+          this.activeOrders.sort((a, b) => (a.distance ?? 0) - (b.distance ?? 0)); 
+
+          console.log('Sorted Orders (Closest First):', this.activeOrders);
+        },
+        (error) => {
+          console.error('Error fetching distance matrix:', error);
+          alert(`Error fetching distance matrix: ${error.message}`);
+        }
+      );
+    } else {
+      alert('Current location is not available.');
+    }
+  }
+  sortOrdersByOldest(): void {
+    this.activeOrders.sort((a, b) => {
+      const timeA = a.timeCreated ? new Date(a.timeCreated).getTime() : 0;
+      const timeB = b.timeCreated ? new Date(b.timeCreated).getTime() : 0;
+      return timeA - timeB; 
+    });
+
+    console.log('Sorted Orders (Oldest First):', this.activeOrders);
+  }
+  sortOrdersByMostFoodItems(): void {
+    this.activeOrders.sort((a, b) => {
+      const totalItemsA = a.orderFoods.reduce((sum, food) => sum + food.quantity, 0);
+      const totalItemsB = b.orderFoods.reduce((sum, food) => sum + food.quantity, 0);
+      return totalItemsB - totalItemsA; // Most food items first
+    });
+
+    console.log('Sorted Orders (Most Food Items First):', this.activeOrders);
+  }
   viewOrderInfo(order: Order): void {
     if (order.customerAddress.latitude && order.customerAddress.longitude) {
       const lat = parseFloat(order.customerAddress.latitude);
       const lon = parseFloat(order.customerAddress.longitude);
 
-      // Center the map on the order's location
+      
       this.map.setView([lat, lon], 15);
 
-      // Find the marker for this order and open its popup
+      
       const orderMarker = this.markers.find(marker => {
         const markerLatLng = marker.getLatLng();
         return markerLatLng.lat === lat && markerLatLng.lng === lon;

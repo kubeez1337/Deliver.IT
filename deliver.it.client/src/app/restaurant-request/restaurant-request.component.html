@@ -1,24 +1,32 @@
-<div class="restaurant-request-container">
-  <h2>Request a New Restaurant</h2>
-  <form (ngSubmit)="onSubmit()" #restaurantForm="ngForm">
-    <div>
-      <label for="name">Restaurant Name:</label>
-      <input type="text" id="name" required [(ngModel)]="restaurant.name" name="name" #name="ngModel">
-      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
-        Restaurant name is required.
-      </div>
-    </div>
-    <div>
-      <label for="searchQuery">Search Address:</label>
-      <input type="text" id="searchQuery" [(ngModel)]="searchQuery" (input)="filterAddresses($event)" (focus)="showAddressList()" (blur)="hideAddressList()" name="searchQuery">
-    </div>
-    <div *ngIf="showAddresses && filteredAddresses.length" class="address-results">
-      <mat-list>
-        <mat-list-item *ngFor="let address of filteredAddresses" (click)="selectAddress(address)">
-          {{ address.street }} {{ address.houseNumber }}, {{ address.city }}
+<div class="restaurant-request-container mat-elevation-z3">
+  <h2 class="mat-headline">Vytvoriť novú reštauráciu</h2>
+  <form (ngSubmit)="onSubmit()" #restaurantForm="ngForm" class="restaurant-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Meno reštaurácie</mat-label>
+      <input matInput type="text" id="name" required [(ngModel)]="restaurant.name" name="name" #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+        Vyplňte toto pole
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Vyhľadať adresu</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="text" id="searchQuery" [(ngModel)]="searchQuery" (input)="filterAddresses($event)"
+             (focus)="showAddressList()" name="searchQuery">
+    </mat-form-field>
+
+    <mat-card *ngIf="showAddresses && filteredAddresses.length" class="address-results">
+      <mat-selection-list>
+        <mat-list-item *ngFor="let address of filteredAddresses" (click)="selectAddress(address)" class="address-item">
+          <span class="address-text">{{ address.street }} {{ address.houseNumber }}, {{ address.city }}</span>
         </mat-list-item>
-      </mat-list>
-    </div>
-    <button type="submit" [disabled]="restaurantForm.invalid">Request Restaurant</button>
+      </mat-selection-list>
+    </mat-card>
+
+    <button mat-raised-button color="primary" type="button" (click)="showMap()">Vybrať adresu z mapy</button>
+    <app-map-viewer *ngIf="mapVisible" (addressSelected)="onAddressSelected($event)"></app-map-viewer>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="restaurantForm.invalid" class="submit-button">Požiadať o vytvorenie reštaurácie</button>
   </form>
 </div>

@@ -14,6 +14,7 @@ export class ChatComponent {
   messages: Message[] = [];
   newMessage: string = '';
   users: User[] = [];
+  currentUserId: string = '';
   selectedUserId: string = '';
   isAdmin: boolean = false;
   constructor(private http: HttpClient, private authService: AuthService) { }
@@ -28,7 +29,7 @@ export class ChatComponent {
           this.getMessages();
         },
         (error) => {
-          console.error('Error fetching admin user', error);
+          console.error('Nepodarilo sa nájsť admina', error);
         }
       );
     }

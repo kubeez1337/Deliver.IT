@@ -6,11 +6,25 @@
   margin: auto;
   border-radius: 8px;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .user-select {
   padding: 10px;
 }
+
+.user-select-field {
+  width: 100%;
+}
+
+.user-option {
+  display: flex;
+  align-items: center;
+}
+
+  .user-option mat-icon {
+    margin-right: 8px;
+  }
 
 .messages {
   flex: 1;
@@ -23,6 +37,16 @@
   margin-bottom: 10px;
 }
 
+  .message.sent mat-card {
+    background-color: #e0f7fa;
+    align-self: flex-end;
+  }
+
+  .message.received mat-card {
+    background-color: #fff;
+    align-self: flex-start;
+  }
+
 .message-input {
   display: flex;
   align-items: center;
@@ -34,4 +58,24 @@
 .message-input-field {
   flex: 1;
   margin-right: 10px;
+}
+
+button {
+  font-size: 0.9rem;
+}
+
+mat-toolbar {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-card-title {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-card-subtitle {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-label {
+  font-family: 'Trebuchet MS', sans-serif;
 }

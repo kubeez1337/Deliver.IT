@@ -231,6 +231,16 @@ namespace Deliver.IT.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TimeClaimed")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TimeCreated")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TimeDelivered")
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("TEXT");
 
@@ -375,45 +385,45 @@ namespace Deliver.IT.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5778ccd4-1005-492c-8c31-65eb482777d1",
+                            Id = "b2c4b933-76c0-462e-9e93-29d1ce43ad22",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb201750-6cb2-401a-a142-6759d531804e",
+                            ConcurrencyStamp = "44391230-ccdd-4322-8585-026630a31c0f",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LastName = "Adminovic",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "36125c76-b68b-403e-bf7f-b53ab7fa9b01",
+                            SecurityStamp = "36f42f1b-3427-47ed-b98a-742d86c3e5cd",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             UserRole = "1"
                         },
                         new
                         {
-                            Id = "3bd0e20b-b681-4e08-8fab-434dec6d9772",
+                            Id = "fca4bf51-af66-49d8-b61c-328b09adb442",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f51b2fad-6945-48b7-a650-5b2a6d14906a",
+                            ConcurrencyStamp = "29e8faaf-33a6-48c9-acc0-9fe9e92e92f6",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Facka",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a920396d-5248-4837-89e5-caec62f75c71",
+                            SecurityStamp = "da660d81-e3c8-4f33-b423-a98f44722428",
                             TwoFactorEnabled = false,
                             UserName = "cigorigo",
                             UserRole = "2"
                         },
                         new
                         {
-                            Id = "29538c7e-2d46-4d33-ae64-fef7174376c6",
+                            Id = "4854b993-c4ef-42e6-9008-b59890fa2c2f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "046d9e4d-c4b5-4f89-a7bd-1289f3153650",
+                            ConcurrencyStamp = "8ea2e959-a25a-4651-88fa-e6aeba795f47",
                             EmailConfirmed = false,
                             FirstName = "Roman",
                             LastName = "Hladny",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8cce39af-6c26-4251-a08a-973a784a3315",
+                            SecurityStamp = "6fbadaec-988c-4e05-ae03-ec823fca471e",
                             TwoFactorEnabled = false,
                             UserName = "romanek",
                             UserRole = "0"

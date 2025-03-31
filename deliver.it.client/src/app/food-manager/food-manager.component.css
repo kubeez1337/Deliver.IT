@@ -1,37 +1,30 @@
 .food-manager-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100vh; /* Ensure the container takes the full height of the viewport */
-  box-sizing: border-box;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.table-container {
-  flex: 1;
-  overflow: auto;
-}
-
-.file-upload-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-table {
+.restaurant-select {
   width: 100%;
-}
-
-mat-form-field {
-  width: 100%;
+  margin-bottom: 20px;
 }
 
 .button-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 .food-image {
@@ -39,4 +32,20 @@ mat-form-field {
   height: 50px;
   object-fit: cover;
   margin-right: 10px;
+}
+
+mat-toolbar {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-card-title {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-card-subtitle {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-label {
+  font-family: 'Trebuchet MS', sans-serif;
 }

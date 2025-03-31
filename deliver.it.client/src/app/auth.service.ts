@@ -57,6 +57,7 @@ export class AuthService {
   isLoggedIn(): Observable<boolean> {
     return this.isLoggedInSubject.asObservable();
   }
+  
   isManager(): Observable<boolean> {
     if (this.isManagerSubject.value === true) {
       return this.isManagerSubject.asObservable();

@@ -44,6 +44,9 @@ import { PendingRequestsComponent } from './pending-requests/pending-requests.co
 import { RequestsComponent } from './requests/requests.component';
 import { RestaurantManagerComponent } from './restaurant-manager/restaurant-manager.component';
 import { CourierOrdersComponent } from './courier-orders/courier-orders.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { HelpDialogComponent } from './help-dialog/help-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -69,6 +72,7 @@ import { CourierOrdersComponent } from './courier-orders/courier-orders.componen
     RequestsComponent,
     RestaurantManagerComponent,
     CourierOrdersComponent,
+    HelpDialogComponent,
     
   ],
   imports: [
@@ -79,7 +83,7 @@ import { CourierOrdersComponent } from './courier-orders/courier-orders.componen
     MatSelectModule,
     MatOptionModule, MatDialogModule,
     MatFormFieldModule, MatInputModule, MatSelectModule,
-    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, DragDropModule
+    AppRoutingModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, DragDropModule, MatGridListModule
   ],
   providers: [
     provideAnimationsAsync(), { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

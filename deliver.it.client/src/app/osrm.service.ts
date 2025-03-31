@@ -9,6 +9,7 @@ import { catchError, map } from 'rxjs/operators';
 export class OsrmService {
   private osrmUrlRoute = '/osrm/route/v1/driving';
   private osrmUrlTrip = '/osrm/trip/v1/driving';
+  private osrmUrlTable = '/osrm/table/v1/driving';
 
   constructor(private http: HttpClient) { }
 
@@ -38,5 +39,13 @@ export class OsrmService {
   private handleError(error: HttpErrorResponse) {
     console.error('OSRM API Error:', error);
     return throwError(() => new Error('Failed to fetch route from OSRM.'));
+  }
+  getDistanceMatrix(coordinates: string): Observable<any> {
+    const url = `${this.osrmUrlTable}/${coordinates}?annotations=distance`;
+
+    return this.http.get<any>(url).pipe(
+      map(response => response),
+      catchError(this.handleError)
+    );
   }
 }

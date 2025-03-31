@@ -4,27 +4,37 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
+
+
+
+  
 <div class="courier-orders-container">
   <div class="button-group">
-    <button mat-raised-button color="primary" (click)="computeOptimalRoute()">Compute Optimal Route</button>
-    <button mat-raised-button color="accent" (click)="loadCurrentPosition()">Load Current Position</button>
-    <button mat-raised-button color="warn" (click)="sortOrdersByFurthest()">Sort by Furthest</button>
+    <h2>Voľba postupnosti objednávok</h2>
+    <button mat-raised-button color="warn" (click)="sortOrdersByFurthest()">Podľa najvzdialenejšej objednávky</button>
+    <button mat-raised-button color="warn" (click)="sortOrdersByClosest()">Podľa najbližšej objednávky</button>
+    <button mat-raised-button color="warn" (click)="sortOrdersByOldest()">Podľa najstaršej objednávky</button>
+    <button mat-raised-button color="warn" (click)="sortOrdersByMostFoodItems()">Podľa najobjemnejšej objednávky</button>
   </div>
+  <button mat-raised-button color="primary" (click)="computeOptimalRoute()">Vyrátaj najlepšiu trasu</button>
 
   <div class="orders-container">
+
     <div class="order-list" cdkDropList (cdkDropListDropped)="drop($event)">
+      <button mat-raised-button color="accent" (click)="loadCurrentPosition()">Načítajte aktuálnu polohu</button>
+
       <div *ngFor="let order of activeOrders; let i = index" cdkDrag class="order-card">
         <mat-card>
           <mat-card-header>
             <mat-card-title>Order {{ i + 1 }}: {{ order.customerName }}</mat-card-title>
             <mat-card-subtitle>
-            <button mat-icon-button (click)="viewOrderInfo(order)">
-              <i class="material-icons">house</i>
-            </button>
+              <button mat-icon-button (click)="viewOrderInfo(order)">
+                <i class="material-icons">house</i>
+              </button>
               <button mat-icon-button (click)="viewOrderDetails(order)">
                 <mat-icon>info</mat-icon>
               </button>
-          </mat-card-subtitle>
+            </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p>{{ order.customerAddress.street }} {{ order.customerAddress.houseNumber }}, {{ order.customerAddress.city }}</p>
@@ -38,4 +48,6 @@
       <div id="map"></div>
     </div>
   </div>
+
 </div>
+

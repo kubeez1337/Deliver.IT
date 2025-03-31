@@ -18,6 +18,7 @@ import { RestaurantManagerComponent } from './restaurant-manager/restaurant-mana
 import { ManagerGuard } from './guards/manager.guard';
 import { CourierOrdersComponent } from './courier-orders/courier-orders.component';
 import { CourierGuard } from './guards/courier.guard';
+import { RestaurantRequestComponent } from './restaurant-request/restaurant-request.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,8 @@ const routes: Routes = [
   { path: 'pending-requests', component: PendingRequestsComponent, canActivate: [AdminGuard] },
   { path: 'restaurant-manager', component: RestaurantManagerComponent, canActivate: [AdminGuard] },
   { path: 'courier-orders', component: CourierOrdersComponent, canActivate: [CourierGuard] },
+  { path: 'restaurant-registration', component: RestaurantRequestComponent },
+
 ];
 
 @NgModule({

@@ -1,8 +1,11 @@
-<div class="restaurant-manager-container">
-    <h2>Manage Restaurant Managers</h2>
-    <form [formGroup]="managerForm" (ngSubmit)="addManager()">
+<div class="restaurant-manager-container mat-elevation-z8">
+    <mat-toolbar color="primary">
+        <span>Pridanie manažéra reštaurácie</span>
+    </mat-toolbar>
+
+    <form [formGroup]="managerForm" (ngSubmit)="addManager()" class="manager-form">
         <mat-form-field appearance="outline">
-            <mat-label>Select User</mat-label>
+            <mat-label>Vyberte používateľa</mat-label>
             <mat-select formControlName="userId">
                 <mat-option *ngFor="let user of users" [value]="user.id">
                     {{ user.firstName }} {{ user.lastName }} ({{ user.userName }})
@@ -10,7 +13,7 @@
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Select Restaurant</mat-label>
+            <mat-label>Vyberte reštauráciu</mat-label>
             <mat-select formControlName="restaurantId">
                 <mat-option *ngFor="let restaurant of restaurants" [value]="restaurant.id">
                     {{ restaurant.name }}
@@ -18,7 +21,7 @@
             </mat-select>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit" [disabled]="managerForm.invalid">
-            Add Manager
+            Pridať manažéra
         </button>
     </form>
 </div>

@@ -119,6 +119,7 @@ namespace Deliver.IT.Server.Controllers
             order.ClaimedBy = userId;
             order.ClaimedByName = User.FindFirst(ClaimTypes.Name)?.Value;
             order.Status = "Active";
+            order.TimeClaimed = DateTime.Now.ToString();
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Order claimed successfully!" });
@@ -292,6 +293,7 @@ namespace Deliver.IT.Server.Controllers
             }
 
             order.Status = "Delivered";
+            order.TimeDelivered = DateTime.Now.ToString();
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Order delivered successfully!" });

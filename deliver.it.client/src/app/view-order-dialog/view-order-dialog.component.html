@@ -8,8 +8,11 @@
   <p><strong>Status:</strong> {{ order.status }}</p>
   <p><strong>Courier:</strong> {{ order.claimedByName }}</p>
   <p><strong>Total Price:</strong> {{ order.totalPrice }}</p>
+  <p><strong>Čas vytvorenia objednávky:</strong></p> {{order.timeCreated}}
+  <p *ngIf="timecl"><strong>Čas potvrdenia kuriérom:</strong></p> {{order.timeClaimed}}
+  <p *ngIf="timede"><strong>Čas doručenia kuriérom:</strong></p> {{order.timeDelivered}}
   <mat-divider></mat-divider>
-  <h3>Food Items</h3>
+  <h2 mat-dialog-title>Food Items</h2>
   <div *ngFor="let food of order.orderFoods">
     <p *ngIf="isAdmin"><strong>Food ID:</strong> {{ food.foodId }}</p>
     <p><strong>Food Name:</strong> {{ food.name }}</p>

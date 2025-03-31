@@ -1,43 +1,53 @@
 <div class="order-container">
-  <h2>Account Information</h2>
+  <h2>Používateľské informácie</h2>
   <form [formGroup]="accountForm" (ngSubmit)="saveChanges()" class="order-form">
     <div class="customer-details">
       <mat-form-field appearance="outline">
-        <mat-label>Meno</mat-label>
+        <mat-label>Krstné meno</mat-label>
         <input matInput formControlName="firstName" required />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Priezvisko</mat-label>
+        <mat-label>Priezivsko</mat-label>
         <input matInput formControlName="lastName" required />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Telefónne čílo</mat-label>
+        <mat-label>Tel. číslo</mat-label>
         <input matInput formControlName="phoneNumber" type="tel" required />
         <mat-error *ngIf="accountForm.get('phoneNumber')?.hasError('pattern')">
           Prosím zadajte valídne tel. číslo
         </mat-error>
       </mat-form-field>
+
+      <mat-form-field appearance="outline" disabled>
+        <mat-label>Rola</mat-label>
+        <input matInput [value]="userRole" disabled />
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Uložiť zmeny</button>
+
     </div>
 
-    <button mat-raised-button color="primary" type="submit">Uložiť zmeny</button>
 
-    <div *ngIf="!isAdmin && !isCourier" class="apply-courier">
-      <mat-checkbox formControlName="applyForCourier" [disabled]="isAdmin || isCourier || hasPendingApplication">Zažiadať o rolu kuriéra</mat-checkbox>
+    <div *ngIf="!isAdmin && !isCourier && !isManager" class="apply-courier">
+      <mat-checkbox formControlName="applyForCourier" [disabled]="isAdmin || isCourier || hasPendingApplication">Chcem sa stať kuriérom</mat-checkbox>
     </div>
 
     <div *ngIf="showCourierMessageField" class="courier-message">
       <mat-form-field appearance="outline">
-        <mat-label>Správa</mat-label>
+        <mat-label>Správa adminovi</mat-label>
         <textarea matInput formControlName="courierMessage"></textarea>
       </mat-form-field>
       <button mat-raised-button color="primary" type="button" (click)="applyForCourier()" [disabled]="hasPendingApplication">Odoslať žiadosť</button>
     </div>
   </form>
 
-  <div *ngIf="isAdmin" class="applications-container">
-    <h2>Restauracie req:</h2>
+  <div *ngIf="!isCourier">
+    <p><a routerLink="/restaurant-registration">Chcem registrovať novú reštauráciu</a></p>
+  </div>
+
+  <!--<div *ngIf="isAdmin" class="applications-container">
+    <h2>Reštauračné žiadosti</h2>
     <app-restaurant-request></app-restaurant-request>
     <h2>Kuriérske žiadosti</h2>
     <div *ngFor="let application of applications" class="application-card">
@@ -46,18 +56,24 @@
       <button mat-raised-button color="primary" (click)="processApplication(application.id, true)">Potvrdiť</button>
       <button mat-raised-button color="warn" (click)="processApplication(application.id, false)">Odmietnuť</button>
     </div>
-  </div>
+  </div>-->
+
   <div *ngIf="isAdmin" class="load-addresses-button">
-    <button mat-raised-button color="primary" (click)="setAddressesFromJson()">Načítaj databázu adries</button>
-    <button mat-raised-button color="primary" (click)="manageRestaurants()">Manazer restauracii</button>
+    <h3 >Admin privilégia</h3>
+    <button mat-raised-button color="primary" (click)="setAddressesFromJson()">Načítať databázu adries serverom</button>
+    <button mat-raised-button color="primary" (click)="manageRestaurants()">Spravovať manažérov reštaurácií</button>
   </div>
+
   <div *ngIf="managedRestaurants.length > 0" class="managed-restaurants">
-    <h3>Managed Restaurants</h3>
-    <mat-list>
-      <mat-list-item *ngFor="let restaurant of managedRestaurants">
-        <h4 mat-line>{{ restaurant.name }}</h4>
-        <p mat-line>{{ restaurant.address?.completeAddress }}</p>
-      </mat-list-item>
-    </mat-list>
+    <h3>Manažované reštaurácie</h3>
+    <mat-card class="restaurant-card" *ngFor="let restaurant of managedRestaurants">
+      <mat-card-header>
+        <mat-card-title>{{ restaurant.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ restaurant.address?.completeAddress }}</p>
+      </mat-card-content>
+    </mat-card>
   </div>
+
 </div>

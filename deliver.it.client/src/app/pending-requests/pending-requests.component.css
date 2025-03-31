@@ -1,0 +1,65 @@
+.pending-requests-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.requests-section {
+  margin-bottom: 20px;
+}
+
+.request-card,
+.application-card {
+  margin-bottom: 15px;
+}
+
+mat-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-header {
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+mat-card-content {
+  padding: 10px 15px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 15px;
+}
+
+button {
+  font-size: 0.9rem;
+}
+
+mat-toolbar {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-card-title {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-card-subtitle {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+mat-label {
+  font-family: 'Trebuchet MS', sans-serif;
+}

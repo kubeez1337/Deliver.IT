@@ -1,0 +1,62 @@
+.restaurant-request-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.address-results {
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.address-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+  .address-item:hover {
+    background-color: #f0f0f0;
+  }
+
+.address-icon {
+  margin-right: 10px;
+  color: #3f51b5;
+  font-size: 24px;
+}
+
+.address-text {
+  font-size: 14px;
+  flex-grow: 1;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.submit-button {
+  align-self: center;
+  width: 200px;
+  margin-top: 15px;
+}

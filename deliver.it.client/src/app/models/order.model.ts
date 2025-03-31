@@ -14,4 +14,8 @@ export interface Order {
   totalPrice: number;
   selected?: boolean;
   distance?: number;
+  timeCreated?: string;
+  timeClaimed?: string;
+  timeDelivered?: string;
+  restaurantName: string;
 }

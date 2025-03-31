@@ -30,7 +30,7 @@
     <a *ngIf="isLoggedIn" mat-button routerLink="chat">Chat</a>
     <a *ngIf="isCourier" mat-button routerLink="courier-orders">Courier</a>
     <a *ngIf="isAdmin || isManager" mat-button routerLink="food-manager">Ponuka jedál</a>
-    <a *ngIf="isAdmin" mat-button routerLink="map-viewer">MapDev</a>
+    <!--<a *ngIf="isAdmin" mat-button routerLink="map-viewer">MapDev</a>-->
     <a *ngIf="isAdmin" mat-button routerLink="pending-requests">Requests</a>
     <a *ngIf="isLoggedIn" mat-button (click)="navigateToAccount()">Správa účtu</a>
     <a *ngIf="!isLoggedIn" mat-button routerLink="user-login-page">Prihlásenie</a>
@@ -48,7 +48,7 @@
       <a *ngIf="isLoggedIn"mat-list-item routerLink="new-order">Nová Objednávka</a>
       <a *ngIf="isLoggedIn"mat-list-item routerLink="chat">Chat</a>
       <a *ngIf="isAdmin || isManager" mat-list-item routerLink="food-manager">Ponuka jedál</a>
-      <a *ngIf="isAdmin" mat-list-item routerLink="map-viewer">MapDev</a>
+      <!--<a *ngIf="isAdmin" mat-list-item routerLink="map-viewer">MapDev</a>-->
       <a *ngIf="isLoggedIn" mat-list-item (click)="navigateToAccount()">Správa účtu</a>
       <a *ngIf="!isLoggedIn" mat-list-item routerLink="user-login-page">Prihlásenie</a>
       <a *ngIf="isLoggedIn" mat-list-item (click)="logout()">Odhlásiť</a>

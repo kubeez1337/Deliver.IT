@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 import { Order } from '../models/order.model';
@@ -16,6 +16,7 @@ import * as polyline from '@mapbox/polyline';
 })
 export class MapViewerComponent implements AfterViewInit, OnInit {
 
+  @Output() addressSelected = new EventEmitter<Address>();
   private map!: L.Map;
   private marker!: L.Marker;
   private orders: Order[] = [];
@@ -23,6 +24,7 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
   private markers: L.Marker[] = [];
   private markerClusterGroup!: L.MarkerClusterGroup;
   private routeLayer!: L.GeoJSON;
+
   constructor(private orderService: OrderService, private addressService: AddressService, private osrmService: OsrmService) { }
   ngOnInit(): void {
     this.loadOrders();
@@ -61,11 +63,22 @@ export class MapViewerComponent implements AfterViewInit, OnInit {
     this.addressService.getAddresses().subscribe(
       (data: Address[]) => {
         this.addresses = data;
+        this.addAddressMarkers();
       },
+
       (error) => {
         console.error('Error fetching addresses:', error);
       }
     );
+  }
+  private addAddressMarkers(): void {
+    this.addresses.forEach(address => {
+      const marker = L.marker([parseFloat(address.latitude), parseFloat(address.longitude)])
+        .bindPopup(`${address.street} ${address.houseNumber}, ${address.city}`)
+        .on('click', () => this.addressSelected.emit(address));
+
+      this.markerClusterGroup.addLayer(marker);
+    });
   }
   private addMarkers(): void {
     this.orders.forEach(order => {

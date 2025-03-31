@@ -26,6 +26,9 @@ namespace Deliver.IT.Server
         {
             TotalPrice = OrderFoods.Sum(of => of.FoodPrice * of.Quantity);
         }
+        public string TimeCreated { get; set; } = DateTime.Now.ToString();
+        public string? TimeClaimed { get; set; }
+        public string? TimeDelivered { get; set; }
     }
 
     public class OrderFood

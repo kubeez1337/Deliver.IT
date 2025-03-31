@@ -51,6 +51,7 @@
 
 button {
   font-size: 0.9rem;
+  margin: 4px;
 }
 
 .submit-button {
@@ -73,3 +74,28 @@ mat-label {
 .nice-font {
   font-family: 'Trebuchet MS', sans-serif;
 }
+
+.managed-restaurants {
+  margin-top: 20px;
+}
+
+.restaurant-card {
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+  .restaurant-card mat-card-header {
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .restaurant-card mat-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .restaurant-card mat-card-content {
+    padding: 10px 15px;
+  }

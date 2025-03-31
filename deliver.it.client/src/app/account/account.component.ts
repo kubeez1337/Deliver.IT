@@ -21,9 +21,11 @@ export class AccountComponent {
   showCourierMessageField: boolean = false;
   isAdmin: boolean = false;
   isCourier: boolean = false;
+  isManager: boolean = false;
   hasPendingApplication: boolean = false;
   applications: any[] = []
   managedRestaurants: Restaurant[] = [];
+  userRole: string = '';
   constructor(private fb: FormBuilder, private authService: AuthService, private snackBar: MatSnackBar, private addressService: AddressService, private router: Router, private restaurantService: RestaurantService) {
     this.accountForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -38,6 +40,7 @@ export class AccountComponent {
       this.user = user;
       //this.isAdmin = user.userRole === '1';
       this.accountForm.patchValue({
+
         firstName: user.firstName,
         lastName: user.lastName,
         phoneNumber: user.phoneNumber
@@ -49,11 +52,20 @@ export class AccountComponent {
     const roleStatus = this.authService.getUserRole();
     if (roleStatus === '1') {
       this.isAdmin = true;
+      this.userRole = "Admin";
       this.loadApplications();
     }
-    if (roleStatus === '2') {
+    else if (roleStatus === '2') {
+      this.userRole = "Rozvozca";
+
       this.isCourier = true;
-    } else {
+
+    } else if (roleStatus === '3') {
+      this.userRole = "Manazer"
+      this.isManager = true;
+    }
+    else {
+      this.userRole = "Zakaznik"
       this.checkPendingApplication();
     }
 

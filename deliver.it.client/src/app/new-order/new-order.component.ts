@@ -39,6 +39,7 @@ export class NewOrderComponent {
   showAddresses: boolean = false;
   availableRestaurants: Restaurant[] = [];
   selectedRestaurant: Restaurant | null = null;
+  mapVisible: boolean = false;
 
   constructor(private http: HttpClient,
     private fb: FormBuilder,
@@ -59,6 +60,7 @@ export class NewOrderComponent {
       searchQuery: [''],
       selectedFood: this.selectedFood,
       foodItems: this.selectedFoods,
+      totalItems: 0
     });
   }
   private apiUrl = 'https://localhost:59038';
@@ -112,7 +114,7 @@ export class NewOrderComponent {
   }
   fetchRestaurants(): void {
     this.restaurantService.getRestaurants().subscribe((data: Restaurant[]) => {
-      this.availableRestaurants = data.filter(restaurant => restaurant.address.city === this.selectedAddress?.city);
+      this.availableRestaurants = data;
       this.cdr.detectChanges();
     });
   }
@@ -144,6 +146,7 @@ export class NewOrderComponent {
     this.authService.getUser().subscribe((user) => {
       orderData.createdBy = user.id;
       orderData.restaurantId = this.selectedRestaurant?.id;
+      
       this.orderService.createOrder(orderData).subscribe({
         next: (response) => {
           this.snackBar.open('Objednávka bola vytvorená!', '', {
@@ -202,10 +205,17 @@ export class NewOrderComponent {
   removeFood(index: number) {
     this.selectedFoods.removeAt(index);
   }
-  onAddressSelected(event: MatSelectChange): void {
-    const selectedAddress = event.value as Address;
-    this.orderForm.patchValue({
-      customerAddress: selectedAddress
-    });
+  //onAddressSelected(event: MatSelectChange): void {
+  //  const selectedAddress = event.value as Address;
+  //  this.orderForm.patchValue({
+  //    customerAddress: selectedAddress
+  //  });
+  //}
+  showMap(): void {
+    this.mapVisible = true;
+  }
+  onAddressSelected(selectedAddress: Address) {
+    this.selectAddress(selectedAddress);
+    this.mapVisible = false;
   }
 }

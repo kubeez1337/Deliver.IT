@@ -25,7 +25,8 @@
         </mat-error>
       </mat-form-field>
     </div>
-
+      <button mat-raised-button color="primary" type="button" (click)="showMap()">Vybrať adresu z mapy</button>
+      <app-map-viewer *ngIf="mapVisible" (addressSelected)="onAddressSelected($event)"></app-map-viewer>
     <div *ngIf="selectedAddress" class="restaurant-selection">
       <h3>Vyberte reštauráciu</h3>
       <div class="restaurant-cards">
@@ -38,6 +39,8 @@
           <br />
         </mat-card>
       </div>
+      
+
     </div>
 
     <div *ngIf="selectedRestaurant" class="food-selection">
